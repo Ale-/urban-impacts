@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Urban impacts</title>
+        <meta name="description" content="An explorer of budgets for the WeBudget project" />
+        <link href="css/dist/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Main angular container -->
+        <div class="region-header">
+            <div class="container">
+                <img class="site-logo" src="/img/logo.png" />
+            </div>
+        </div>
+        <div class="region-content">
+            <div ng-app="urban_impacts">
+              <div ng-view ng-cloak>
+              </div>
+            </div>
+        </div>
+        <div class="region-footer">
+        </div>
+
+        <!-- Load Angular and apps -->
+        <script src="bower_components/d3/d3.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="app/modules/services/DataService.js"></script>
+        <script src="app/modules/controllers/ViewController.js"></script>
+        <script src="app/modules/controllers/LocationController.js"></script>
+        <script src="app/app.js"></script>
+    </body>
+</html>

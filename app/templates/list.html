@@ -1,0 +1,38 @@
+<section>
+    <div class="view-description">
+      Aquí puede consultarse información básica de los
+      proyectos analizados: delimitación territorial,
+      rasgos socio-demográficos para el año 2001,
+      tipos de medidas incluidas en sus Planes de Actuación
+      e imágenes del barrio y de las actuaciones realizadas.
+      <small>[ Copiado de: <a href="http://www.centrosociologia.geographica.gs/?page_id=195]">aquí</a> ]</small>
+    </div>
+    <div class="view-location">
+        <div class="view-location__filters">
+        </div>
+        <div class="view-location__header">
+            <div class="view-location__header-col--program">
+                Programa
+            </div>
+            <div class="view-location__header-col--project">
+                Proyecto
+            </div>
+            <div class="view-location__header-col--context">
+                Contexto
+            </div>
+        </div>
+        <div class="view-location__content">
+            <a href="#/{{ item.id }}" class="view-location-item" ng-repeat="item in view.data">
+                <div class="view-location-item__col--program">
+                  {{ item.program }}
+                </div>
+                <div class="view-location-item__col--project">
+                  {{ item.name }}
+                </div>
+                <div class="view-location-item__col--context">
+                  {{ item.context }}
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

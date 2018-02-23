@@ -1,0 +1,5 @@
+# Ignore sass cache
+css/.sass-cache
+
+# Ignore bower components
+bower_components/

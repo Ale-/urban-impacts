@@ -1,0 +1,47 @@
+// Main view
+
+.view-description
+  font-size: 1.35em
+  padding: $m*2 $m
+
+.view-location__header
+  margin-top: $m
+  +clearfix
+  +h(4)
+  border-bottom: 2px solid #ddd
+
+[class^='view-location__header-col--']
+  display: inline-block
+  float: left
+
+.view-location__header-col--program,
+.view-location__header-col--context
+  width: 25%
+.view-location__header-col--project
+  width: 50%
+
+.view-location__content
+  +clearfix
+  +links_nocolor
+
+.view-location-item
+  display: block
+  +clearfix
+  +transition(background-color .25s ease)
+  &:hover
+    background-color: #f5f5f5
+
+[class^='view-location-item__col--']
+  display: inline-block
+  float: left
+  border-bottom: 1px solid #ddd
+  line-height: $m*2
+
+.view-location-item__col--program,
+.view-location-item__col--context
+  width: 25%
+.view-location-item__col--project
+  width: 50%
+
+.view-location-item__col--project
+  font-family: $font_headers

@@ -1,0 +1,30 @@
+{
+  "name": "urban-impacts",
+  "authors": [
+    "ale <ale@wwb.cc>"
+  ],
+  "description": "An explorer of the impact of Urban plans",
+  "main": "/js/app.js",
+  "keywords": [
+    "urbanism",
+    "data visualization",
+    "geography"
+  ],
+  "license": "GPL v. 3.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loading-bar": "^0.9.0",
+    "angular-route": "^1.6.9",
+    "angular-sanitize": "^1.6.9",
+    "angular": "^1.6.9",
+    "d3": "^4.13.0",
+  }
+}
