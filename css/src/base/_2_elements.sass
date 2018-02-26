@@ -12,6 +12,16 @@
   100%
     transform: scale(1, 1)
 
+// Animation that fades in an element that moves from its left
++keyframes(fadein_toright)
+  0%
+    opacity: 0
+    transform: translate(-10px, 0)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+
 =links_nocolor
   a, a:link, a:hover, a:visited, a:active
     color: inherit

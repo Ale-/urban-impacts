@@ -5,14 +5,26 @@
   padding: $m*2 $m
 
 .view-location__header
-  margin-top: $m
   +clearfix
-  +h(4)
-  border-bottom: 2px solid #ddd
+  +h(5)
+  background-color: $blue
+  color: white
+  text-transform: uppercase
 
 [class^='view-location__header-col--']
   display: inline-block
   float: left
+  line-height: $m
+  padding: 0 $m/2
+  +transition(background-color .25s ease)
+  &:hover
+    cursor: pointer
+    background-color: lighten($blue, 10%)
+  svg
+    height: .8em
+    margin-right: $m/6
+    path
+      fill: lighten($blue, 30%)
 
 .view-location__header-col--program,
 .view-location__header-col--context
@@ -23,18 +35,35 @@
 .view-location__content
   +clearfix
   +links_nocolor
+  border-bottom: 1px solid $blue
 
 .view-location-item
   display: block
   +clearfix
-  +transition(background-color .25s ease)
+  position: relative
+  +transition(background-color .15s ease)
+  i
+    display: none
+    position: absolute
+    right: $m/2
+    top: $m/2
+    background: white
+    color: $blue
+    width: $m
+    line-height: $m
+    text-align: center
+    +border-radius(50%)
   &:hover
     background-color: #f5f5f5
+    i
+      +animation(fadein_toright .25s 1)
+      display: inline-block
 
 [class^='view-location-item__col--']
   display: inline-block
   float: left
-  border-bottom: 1px solid #ddd
+  border-bottom: 1px solid $blue
+  padding: 0 $m/2
   line-height: $m*2
 
 .view-location-item__col--program,
@@ -45,3 +74,33 @@
 
 .view-location-item__col--project
   font-family: $font_headers
+
+.view-filters
+  display: flex
+
+.view-filter
+  width: 50%
+  color: $blue
+
+.view-filter__label
+  text-transform: uppercase
+  font-weight: bold
+  font-size: .85em
+
+.view-filter__select
+  +appearance(none)
+  border: 0
+  background: #fff
+  margin: 0 $m/2
+
+.view-count
+  background-color: lighten($blue, 15%)
+  line-height: $m
+  padding: 0 $m/2
+  text-transform: uppercase
+  font-size: .85em
+  color: white
+.view-count__n
+  font-weight: bold
+  font-size: .99em
+  margin: 0 $m/6

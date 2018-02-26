@@ -8,10 +8,29 @@ angular.module('urban_impacts.data_service', [])
     'CONFIG',
     function($http, CONFIG)
     {
-        var service = {}
+        var service = {
+            data : [],
+            categories : {
+                'program' : {
+                    'ARB'  : { k : 'ARB',  n : 0 },
+                    'URB'  : { k : 'URB',  n: 0 },
+                    'ZNTS' : { k : 'ZNTS', n: 0 },
+                },
+                'context' : {
+                    'CH-GC'    : { k : 'CH-GC', n : 0 },
+                    'Barriada' : { k : 'Barriada', n : 0 },
+                    'CH-CM'    : { k : 'CH-CM', n : 0 },
+                },
+            }
+        }
 
-        var rnd = function(list){
-            return list[ parseInt( Math.random() * list.length) ];
+        var rnd = function(container){
+            if(typeof container === 'object'){
+                keys = Object.keys(container);
+                return container[ keys[parseInt( Math.random() * keys.length)] ];
+            } else {
+                return container[ parseInt( Math.random() * list.length) ];
+            }
         }
 
         /**
@@ -26,7 +45,9 @@ angular.module('urban_impacts.data_service', [])
                 console.log("Data loaded");
             return $http.get(CONFIG.DATA_PATH).then(
                 function(response){
+                    // Set data
                     service.data = response.data;
+                    service.calculateCategoryItems(service.data);
                     return service.data;
                 }, function(response){
                     if(CONFIG.DEBUG && !CONFIG.FAKE_DATA)
@@ -34,6 +55,17 @@ angular.module('urban_impacts.data_service', [])
                 }
             );
         };
+
+        /**
+         *  calculateCategoryItems
+         *  Calculates the number of items in each category
+         */
+        service.calculateCategoryItems = function(items){
+            for(var i in items){
+                service.categories.context[ items[i].context ].n++;
+                service.categories.program[ items[i].program ].n++;
+            }
+        }
 
         /**
          *  get
@@ -57,23 +89,32 @@ angular.module('urban_impacts.data_service', [])
         }
 
         /**
-         *  fake_data
+         *  getCategory
+         *  Returns info about a category
+         */
+        service.getCategory = function(category){
+            return service.categories[category];
+        }
+
+        /**
+         *  getFakeData
          *  Returns fake random data
          */
         service.getFakeData = function()
         {
-            var fake_data     = [];
-            var programs = ['ARB', 'URB', 'ZNTS' ];
-            var contexts = ['CH-GC', 'Barriada', 'CH-CM' ];
+            var fake_data = [];
+            var programs  = [];
+            var contexts  = [];
             for(var i = 0; i < CONFIG.FAKE_DATA_LENGTH; i++){
                 fake_data.push({
                     id      : i,
-                    name    : 'Lorem ipsum',
-                    program : rnd(programs),
-                    context : rnd(contexts),
+                    name    : i,
+                    program : rnd(service.categories.program).k,
+                    context : rnd(service.categories.context).k,
 
                 });
-            }
+            };
+            service.calculateCategoryItems(fake_data);
             return fake_data;
         }
 

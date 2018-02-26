@@ -5,33 +5,64 @@
       rasgos socio-demográficos para el año 2001,
       tipos de medidas incluidas en sus Planes de Actuación
       e imágenes del barrio y de las actuaciones realizadas.
-      <small>[ Copiado de: <a href="http://www.centrosociologia.geographica.gs/?page_id=195]">aquí</a> ]</small>
     </div>
-    <div class="view-location">
-        <div class="view-location__filters">
+
+    <!-- View filters -->
+    <div class="view-filters">
+        <div class="view-filter">
+            <label class="view-filter__label">Filtra por programa</label>
+            <select class="view-filter__select" ng-change="view.setProgram(p)" ng-model="p"
+            ng-options="(p.k + ' (' + p.n + ')') for p in view.programs">
+                <option value="">Ver todos los programas</option>
+            </select>
         </div>
+        <div class="view-filter">
+            <label class="view-filter__label">Filtra por contexto</label>
+            <select class="view-filter__select" ng-change="view.setContext(c)" ng-model="c"
+                    ng-options="(c.k + ' (' + c.n + ')') for c in view.contexts">
+                <option value="">Ver todos los contextos</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Count of shown elements -->
+    <p class="view-count">
+        Mostrando <span class="view-count__n">{{ filtered.length }}</span> proyectos.
+        Para ver información detallada pulsa sobre cualquiera de ellos.
+    </p>
+
+    <!-- View -->
+    <div class="view-location">
         <div class="view-location__header">
-            <div class="view-location__header-col--program">
+            <div class="view-location__header-col--program"
+                 ng-click="view.sortBy('program')">
+                <i class="fa fa-sort-alpha-down"></i>
                 Programa
             </div>
-            <div class="view-location__header-col--project">
-                Proyecto
-            </div>
-            <div class="view-location__header-col--context">
+            <div class="view-location__header-col--context"
+                 ng-click="view.sortBy('context')">
+                <i class="fa fa-sort-alpha-down"></i>
                 Contexto
+            </div>
+            <div class="view-location__header-col--project"
+                 ng-click="view.sortBy('project')">
+                <i class="fa fa-sort-alpha-down"></i>
+                Proyecto
             </div>
         </div>
         <div class="view-location__content">
-            <a href="#/{{ item.id }}" class="view-location-item" ng-repeat="item in view.data">
+            <a href="#/{{ item.id }}" class="view-location-item"
+               ng-repeat="item in view.data | orderBy : view.sort_order: view.reverse | filter : view.show as filtered">
                 <div class="view-location-item__col--program">
                   {{ item.program }}
-                </div>
-                <div class="view-location-item__col--project">
-                  {{ item.name }}
                 </div>
                 <div class="view-location-item__col--context">
                   {{ item.context }}
                 </div>
+                <div class="view-location-item__col--project">
+                  {{ item.name }}
+                </div>
+                <i>➜</i>
             </a>
         </div>
     </div>
