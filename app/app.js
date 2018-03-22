@@ -15,6 +15,10 @@ angular.module('urban_impacts', [
     'urban_impacts.data_service',
     'urban_impacts.view_controller',
     'urban_impacts.location_controller',
+    'urban_impacts.location_controller',
+    'urban_impacts.map_directive',
+    'urban_impacts.barchart_directive',
+    'urban_impacts.stackedchart_directive',
   ])
 
 .value('CONFIG', {
@@ -22,6 +26,9 @@ angular.module('urban_impacts', [
     'FAKE_DATA'        : true,
     'FAKE_DATA_LENGTH' : 100,
     'DATA_PATH'        : 'app/data/data.json',
+    'PALETTE'          : [
+        '#c83741', '#eda16a', '#6c283d', '#72a68e', '#777',
+    ],
 })
 
 .config([

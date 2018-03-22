@@ -1,7 +1,113 @@
 <section>
-  <nav>
-      <a href="#">
-          Volver al listado general.
-      </a>
-  </nav>
+    <!-- Map. @see directives -->
+    <div class="project-map" w="100%" h="500px"></div>
+
+    <div class="container-fixed">
+        <!-- Project legend -->
+        <div class="project-legend">
+            <nav class="breadcrumb"><a href="#">Volver al listado general</a></nav>
+            <h1 class="project-legend__name">
+                {{ location.project.name }}
+            </h1>
+            <p class="project-legend__meta">
+                <label class="project-legend__meta-label">Programa</label>
+                <span class="project-legend__meta-value">{{ location.project.program }}</span>
+            </p>
+            <p class="project-legend__meta">
+                <label class="project-legend__meta-label">Contexto</label>
+                <span class="project-legend__meta-value">{{ location.project.context }}</span>
+            </p>
+        </div>
+        <!-- Project stats -->
+        <div class="project-stats-block">
+            <h4 class="project-stats-block__name">Área Urbana</h4>
+            <div class="project-stats-block__legend">
+              <ul class="project-stats-block__legend-list">
+                <li class="a">{{ location.project.name }}</li>
+                <li class="b">Media de proyectos por convocatoria</li>
+                <li class="c">Media de proyectos por tipo de área</li>
+                <li class="d">Media de las ciudades intervenidas</li>
+              </ul>
+            </div>
+            <div class="project-stats-block__charts">
+                <div class="bar-chart" data="location.project.data.population"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Población" unit="personas">
+                </div>
+                <div class="bar-chart" data="location.project.data.extension"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Extensión" unit="km²">
+                </div>
+                <div class="bar-chart" data="location.project.data.density"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Densidad urbana" unit="lorem">
+                </div>
+                <div class="bar-chart" data="location.project.data.height"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Altura media de edificios" unit="metros">
+                </div>
+                <div class="bar-chart" data="location.project.data.buildings"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Edificios en mal estado" unit="%">
+                </div>
+            </div>
+        </div>
+        <div class="project-stats-block">
+            <h4 class="project-stats-block__name">Composición social</h4>
+            <div class="project-stats-block__legend">
+              <ul class="project-stats-block__legend-list">
+                <li class="a">{{ location.project.name }}</li>
+                <li class="b">Media de proyectos por convocatoria</li>
+                <li class="c">Media de proyectos por tipo de área</li>
+                <li class="d">Media de las ciudades intervenidas</li>
+              </ul>
+            </div>
+            <div class="project-stats-block__charts">
+                <div class="bar-chart" data="location.project.data.childhood"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Infancia" unit="%">
+                </div>
+                <div class="bar-chart" data="location.project.data.aging"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Envejecimiento" unit="%">
+                </div>
+                <div class="bar-chart" data="location.project.data.foreigners"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Población extranjera" unit="%">
+                </div>
+                <div class="bar-chart" data="location.project.data.unemployment"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Población desempleada" unit="%">
+                </div>
+                <div class="bar-chart" data="location.project.data.illiteracy"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Población sin estudios" unit="%">
+                </div>
+                <div class="bar-chart" data="location.project.data.workers"
+                     width="100" height="100"
+                     left="0" right="0" top="0" bottom="0" title="Trabajadores no cualificados" unit="%">
+                </div>
+            </div>
+        </div>
+        <div class="project-stats-block">
+            <h4 class="project-stats-block__name">Presupuesto</h4>
+            <div class="project-stats-block__charts">
+                <div class="stacked-chart"
+                     data="location.project.data.budget"
+                     keys="location.budget_keys" indexes="location.budget_indexes"
+                     height="150" palette="location.palette" unit="€"
+                     left="20" right="20" top="20" bottom="20" title="Presupuesto desglosado">
+                </div>
+                <div class="project-stats-block__legend">
+                    <ul class="project-stats-block__legend-list">
+                        <li class="a">Territorio</li>
+                        <li class="b">Desarrollo económico</li>
+                        <li class="c">Bienestar</li>
+                        <li class="d">Medioambiente</li>
+                        <li class="e">Gestión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumb--footer"><a href="#">Volver al listado general</a></nav>
 </section>

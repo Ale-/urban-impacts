@@ -1,0 +1,124 @@
+// Project pages
+
+#map .leaflet-tile
+  filter: grayscale(100%)
+
+.project-map + .container-fixed
+  position: relative
+.project-legend
+  position: absolute
+  z-index: 10000
+  top: -$m*3
+  padding: $m
+  background: white
+  color: $blue
+  min-width: $m*15
+  +links_nocolor
+.project-legend__meta
+  border-bottom: 2px solid $blue
+.project-legend__meta-label
+  +h(5)
+.project-legend__name
+  margin-top: $m/3
+.breadcrumb
+  text-transform: uppercase
+  font-size: .8em
+.bar-chart
+  display: inline-block
+  position: relative
+  vertical-align: top
+  svg
+    display: block
+    margin: 0 auto
+    border-bottom: 1px solid $blue
+.bar-chart__title
+  fill: $blue
+  max-width: 120px
+  margin: $m/2 auto
+
+.project-legend + .project-stats-block
+  padding-top: $m*6
+
+.project-stats-block
+  padding: $m 0
+
+.project-stats-block__charts
+  width: calc(100% - 300px)
+  display: flex
+  .bar-chart
+    flex-grow: 1
+
+.project-stats-block__name
+  margin: $m*2 0
+  text-transform: uppercase
+  color: $blue
+  border-bottom: 2px solid $blue
+
+.bar-chart__title
+  color: $blue
+  font-size: .8em
+  text-transform: uppercase
+  text-align: center
+
+.project-stats-block__legend
+  color: $blue
+  font-size: .9em
+  min-width: 300px
+  padding: $m
+  display: inline-block
+  float: left
+.project-stats-block__legend-list
+  li
+    flex-grow: 1
+  li:before
+    content: "⬤"
+    margin-right: $m/3
+  .a:before
+    color: #c83741
+  .b:before
+    color: #eda16a
+  .c:before
+    color: #6c283d
+  .d:before
+    color: #72a68e
+  .e:before
+    color: #777
+
+.project-stats-block__legend-title
+  margin: 0 0 $m/2
+
+.bar-chart svg
+  +animation(scaleup_y .5s 1)
+
+.breadcrumb--footer
+  +links_nocolor
+  width: 280px
+  text-align: center
+  margin: $m*2 auto
+  background-color: $blue
+  color: white
+  line-height: $m*1.5
+  padding: 0 $m
+  text-transform: uppercase
+
+.tooltip
+  position: absolute
+  opacity: 0
+  top: 0
+  right: 0
+  background: rgba(white, .9)
+  padding: $m/3
+  +box-shadow(0 0 5px rgba(black, .15))
+
+.stacked-chart
+  position: relative
+
+.stacked-chart .chart__title
+  color: $blue
+  text-transform: uppercase
+  font-size: .8em
+  position: relative
+  left: 400px
+
+.stacked-chart circle
+  opacity: .75

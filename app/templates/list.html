@@ -1,28 +1,10 @@
-<section>
+<section class="container-fixed">
     <div class="view-description">
       Aquí puede consultarse información básica de los
       proyectos analizados: delimitación territorial,
       rasgos socio-demográficos para el año 2001,
       tipos de medidas incluidas en sus Planes de Actuación
       e imágenes del barrio y de las actuaciones realizadas.
-    </div>
-
-    <!-- View filters -->
-    <div class="view-filters">
-        <div class="view-filter">
-            <label class="view-filter__label">Filtra por programa</label>
-            <select class="view-filter__select" ng-change="view.setProgram(p)" ng-model="p"
-            ng-options="(p.k + ' (' + p.n + ')') for p in view.programs">
-                <option value="">Ver todos los programas</option>
-            </select>
-        </div>
-        <div class="view-filter">
-            <label class="view-filter__label">Filtra por contexto</label>
-            <select class="view-filter__select" ng-change="view.setContext(c)" ng-model="c"
-                    ng-options="(c.k + ' (' + c.n + ')') for c in view.contexts">
-                <option value="">Ver todos los contextos</option>
-            </select>
-        </div>
     </div>
 
     <!-- Count of shown elements -->
@@ -34,20 +16,26 @@
     <!-- View -->
     <div class="view-location">
         <div class="view-location__header">
-            <div class="view-location__header-col--program"
-                 ng-click="view.sortBy('program')">
+            <div class="view-location__header-col--program">
                 <i class="fa fa-sort-alpha-down"></i>
-                Programa
+                <span class="view-location__name" ng-click="view.sortBy('program')">Programa</span>
+                <select class="view-filter__select" ng-change="view.setProgram(p)" ng-model="p"
+                ng-options="(p.k + ' (' + p.n + ')') for p in view.programs">
+                    <option value=""><i class="fa fa-filter"></i>Ver todos los programas</option>
+                </select>
             </div>
-            <div class="view-location__header-col--context"
-                 ng-click="view.sortBy('context')">
+            <div class="view-location__header-col--context">
                 <i class="fa fa-sort-alpha-down"></i>
-                Contexto
+                <span class="view-location__name" ng-click="view.sortBy('context')">Contexto</span>
+                <select class="view-filter__select" ng-change="view.setContext(c)" ng-model="c"
+                        ng-options="(c.k + ' (' + c.n + ')') for c in view.contexts">
+                    <option value=""><i class="fa fa-filter"></i>Ver todos los contextos</option>
+                </select>
             </div>
             <div class="view-location__header-col--project"
                  ng-click="view.sortBy('project')">
                 <i class="fa fa-sort-alpha-down"></i>
-                Proyecto
+                <span class="view-location__name">Proyecto</span>
             </div>
         </div>
         <div class="view-location__content">
@@ -65,5 +53,10 @@
                 <i>➜</i>
             </a>
         </div>
+    </div>
+    <div class="view-colophon">
+      Consequatur voluptatem ut cum eveniet autem porro ducimus at.
+      Aut eos ad dolor. Optio eos magnam impedit. Dolorem quisquam architecto
+      nostrum ab. Non et et voluptates. A quia sequi sed sit ut eos dignissimos.
     </div>
 </section>

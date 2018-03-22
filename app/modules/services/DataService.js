@@ -97,6 +97,77 @@ angular.module('urban_impacts.data_service', [])
         }
 
         /**
+         *  getCategory
+         *  Returns info about a category
+         */
+        service.getProject = function(id){
+            for(var i in service.data)
+                if(service.data[i].id == id)
+                    return service.data[i];
+        }
+
+        service.rnd = function(min, max){
+            return min + Math.floor( Math.random() * (max-min) );
+        }
+
+        service.getRndItems = function(min, max){
+            return [
+                { k: 'a', v: service.rnd(min, max) },
+                { k: 'b', v: service.rnd(min, max) },
+                { k: 'c', v: service.rnd(min, max) },
+                { k: 'd', v: service.rnd(min, max) },
+            ];
+        }
+
+        service.getBudgetPrimaryKeys = function(){
+            return [
+                'Proyecto',
+                'Media de proyectos por convocatoria',
+                'Media de proyectos por tipo de área',
+                'Media de las ciudades intervenidas'
+            ]
+        }
+
+        service.getBudgetSecondaryKeys = function(){
+            return [
+                'Territorio',
+                'Desarrollo económico',
+                'Bienestar',
+                'Medioambiente',
+                'Gestión',
+            ];
+        }
+
+        service.getBudgetIndexes = function(){
+            return [
+                'Esfuerzo €/habitante',
+                'Índice de diversidad',
+            ];
+        }
+
+        service.getBudget = function(){
+            var budget   = [];
+            var keys     = service.getBudgetPrimaryKeys();
+            var keys_sec = service.getBudgetSecondaryKeys();
+            var indexes  = service.getBudgetIndexes();
+            for(var i in keys){
+                var primary = { "key" : keys[i] };
+                var total = 0;
+                for(var j in keys_sec){
+                    var val = service.rnd(1000000, 2000000);
+                    primary[ keys_sec[j] ] = val;
+                    total += val;
+                }
+                for(var k in indexes){
+                    primary[ indexes[k] ] = .15 + Math.random()*.85;
+                }
+                primary['total'] = total;
+                budget.push(primary);
+            }
+            return budget;
+        }
+
+        /**
          *  getFakeData
          *  Returns fake random data
          */
@@ -111,10 +182,24 @@ angular.module('urban_impacts.data_service', [])
                     name    : i,
                     program : rnd(service.categories.program).k,
                     context : rnd(service.categories.context).k,
-
+                    data    : {
+                        "population"   : service.getRndItems(25000, 400000),
+                        "extension"    : service.getRndItems(50, 200),
+                        "density"      : service.getRndItems(500, 1000),
+                        "height"       : service.getRndItems(6, 20),
+                        "buildings"    : service.getRndItems(10, 20),
+                        "childhood"    : service.getRndItems(15, 35),
+                        "aging"        : service.getRndItems(15, 35),
+                        "foreigners"   : service.getRndItems(10, 20),
+                        "unemployment" : service.getRndItems(5, 40),
+                        "illiteracy"   : service.getRndItems(2, 8),
+                        "workers"      : service.getRndItems(10, 20),
+                        "budget"       : service.getBudget(),
+                    }
                 });
             };
             service.calculateCategoryItems(fake_data);
+            service.data = fake_data;
             return fake_data;
         }
 
