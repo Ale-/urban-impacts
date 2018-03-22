@@ -21,7 +21,8 @@ angular.module('urban_impacts.data_service', [])
                     'Barriada' : { k : 'Barriada', n : 0 },
                     'CH-CM'    : { k : 'CH-CM', n : 0 },
                 },
-            }
+            },
+            geodata : {},
         }
 
         var rnd = function(container){

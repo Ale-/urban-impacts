@@ -26,6 +26,7 @@ angular.module('urban_impacts', [
     'FAKE_DATA'        : true,
     'FAKE_DATA_LENGTH' : 100,
     'DATA_PATH'        : 'app/data/data.json',
+    'GEODATA_PATH'     : 'app/data/shapefiles.zip',
     'PALETTE'          : [
         '#c83741', '#eda16a', '#6c283d', '#72a68e', '#777',
     ],
@@ -64,7 +65,7 @@ angular.module('urban_impacts', [
         }
     })
     .when('/:location', {
-        // Single year views
+        // Single location views
         templateUrl : 'app/templates/location.html',
         controller  : 'LocationController',
         controllerAs: 'location',

@@ -4,7 +4,7 @@ angular.module('urban_impacts.map_directive', [])
  *   Directive to render a map
  *
  */
-.directive("projectMap", function(DataService){
+.directive("projectMap", function(DataService, CONFIG){
 
     return {
         restrict : 'EAC',
@@ -25,11 +25,18 @@ angular.module('urban_impacts.map_directive', [])
 
             var map = L.map('map', {
               scrollWheelZoom: false,
-            }).setView([39.7990, -3.5233], 7);
+            });
 
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
+
+            var geodata = new L.Shapefile(CONFIG.GEODATA_PATH);
+            geodata.addTo(map);
+
+            if(CONFIG.DEBUG){
+                map.setView([37.3925705,-5.9966025], 14)
+            }
         }
     };
 });

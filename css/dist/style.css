@@ -696,6 +696,12 @@ select:hover {
 .stacked-chart circle {
   opacity: 0.75; }
 
+/* line 126, ../src/blocks/_project.sass */
+path {
+  stroke-width: 2;
+  stroke: #c83741;
+  fill: white; }
+
 /* line 3, ../src/blocks/_view.sass */
 .view-description,
 .view-colophon {
