@@ -646,87 +646,83 @@ select:hover {
   margin: 0 auto;
   border-bottom: 1px solid #063461; }
 
-/* line 60, ../src/blocks/_project.sass */
-.bar-chart__title {
-  fill: #063461;
-  max-width: 120px;
-  margin: 12px auto; }
-
-/* line 65, ../src/blocks/_project.sass */
+/* line 61, ../src/blocks/_project.sass */
 .project-legend + .project-stats-block {
   padding-top: 192px; }
 
-/* line 68, ../src/blocks/_project.sass */
+/* line 64, ../src/blocks/_project.sass */
 .project-stats-block {
   padding: 24px 0 0; }
 
 @media screen and (min-width: 992px) {
-  /* line 71, ../src/blocks/_project.sass */
+  /* line 67, ../src/blocks/_project.sass */
   .project-stats-block__charts {
     padding: 24px 0;
     display: flex; }
-    /* line 75, ../src/blocks/_project.sass */
+    /* line 71, ../src/blocks/_project.sass */
     .project-stats-block__charts .bar-chart {
       flex-grow: 1; } }
 
-/* line 78, ../src/blocks/_project.sass */
+/* line 74, ../src/blocks/_project.sass */
 .project-stats-block__name {
   margin: 0 0 24px;
   text-transform: uppercase;
   color: #063461;
   border-bottom: 2px solid #063461; }
 
-/* line 84, ../src/blocks/_project.sass */
+/* line 80, ../src/blocks/_project.sass */
 .bar-chart__title {
   color: #063461;
   font-size: 0.8em;
   text-transform: uppercase;
+  max-width: 90px;
+  margin: 12px auto;
   text-align: center; }
 
-/* line 90, ../src/blocks/_project.sass */
+/* line 88, ../src/blocks/_project.sass */
 .project-stats-block__legend {
   color: #063461;
   font-size: 0.9em;
   margin-bottom: 48px; }
 
-/* line 96, ../src/blocks/_project.sass */
+/* line 94, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li {
   flex-grow: 1; }
-/* line 98, ../src/blocks/_project.sass */
+/* line 96, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li:before {
   content: "⬤";
   margin-right: 8px; }
-/* line 101, ../src/blocks/_project.sass */
+/* line 99, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before {
   color: #c83741; }
-/* line 103, ../src/blocks/_project.sass */
+/* line 101, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .b:before {
   color: #eda16a; }
-/* line 105, ../src/blocks/_project.sass */
+/* line 103, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .c:before {
   color: #6c283d; }
-/* line 107, ../src/blocks/_project.sass */
+/* line 105, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .d:before {
   color: #72a68e; }
-/* line 109, ../src/blocks/_project.sass */
+/* line 107, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .e:before {
   color: #777; }
 
-/* line 112, ../src/blocks/_project.sass */
+/* line 110, ../src/blocks/_project.sass */
 .project-stats-block__legend-title {
   margin: 0 0 12px; }
 
-/* line 115, ../src/blocks/_project.sass */
+/* line 113, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1; }
 
-/* line 118, ../src/blocks/_project.sass */
+/* line 116, ../src/blocks/_project.sass */
 .bar-chart rect:hover {
   cursor: help; }
 
-/* line 121, ../src/blocks/_project.sass */
+/* line 119, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -743,11 +739,11 @@ select:hover {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 132, ../src/blocks/_project.sass */
+  /* line 130, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
-/* line 135, ../src/blocks/_project.sass */
+/* line 133, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -759,11 +755,11 @@ select:hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
 
-/* line 144, ../src/blocks/_project.sass */
+/* line 142, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative; }
 
-/* line 147, ../src/blocks/_project.sass */
+/* line 145, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -771,11 +767,11 @@ select:hover {
   position: relative;
   left: 400px; }
 
-/* line 154, ../src/blocks/_project.sass */
+/* line 152, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 157, ../src/blocks/_project.sass */
+/* line 155, ../src/blocks/_project.sass */
 path {
   stroke-width: 1;
   stroke: red;
