@@ -29,6 +29,7 @@
     "leaflet": "^1.3.1",
     "angular-route": "^1.6.9",
     "angular": "^1.6.9",
-    "angular-sanitize": "^1.6.9"
+    "angular-sanitize": "^1.6.9",
+    "leaflet.shapefile": "gh-pages"
   }
 }
