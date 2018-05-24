@@ -140,9 +140,17 @@
               </ul>
             </div>
             <div class="project-stats-block__charts">
+                <div class="bar-chart" data="location.get('total_cost')"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
+                     title="{{ location.getLabel('total_cost') }}" unit="€">
+                </div>
+                <div class="bar-chart" data="location.get('affected_people')"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
+                     title="{{ location.getLabel('affected_people') }}" unit="personas">
+                </div>
                 <div class="bar-chart" data="location.get('budget')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget') }}" unit="miles €">
+                     title="{{ location.getLabel('budget') }}" unit="€">
                 </div>
                 <div class="bar-chart" data="location.get('budget_territory')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
@@ -166,11 +174,11 @@
                 </div>
                 <div class="bar-chart" data="location.get('investment')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('investment') }}" unit="miles €">
+                     title="{{ location.getLabel('investment') }}" unit="€">
                 </div>
                 <div class="bar-chart" data="location.get('diversity')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('diversity') }}" unit="%">
+                     title="{{ location.getLabel('diversity') }}" unit="">
                 </div>
         </div>
         <nav class="breadcrumb--footer">
