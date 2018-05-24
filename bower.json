@@ -1,17 +1,18 @@
 {
-  "name": "urban-impacts",
+  "name": "Urban Impacts",
+  "homepage": "https://github.com/Ale-/urban-impacts",
   "authors": [
-    "ale <ale@wwb.cc>"
+    "ale <a@414c45.net>"
   ],
-  "description": "An explorer of the impact of Urban plans",
-  "main": "/js/app.js",
+  "description": "Visualization app of the research project Urban Impacts",
+  "main": "index.html",
   "keywords": [
-    "urbanism",
-    "data visualization",
-    "geography"
+    "visualizations",
+    "d3",
+    "angular",
+    "city"
   ],
-  "license": "GPL v. 3.0",
-  "homepage": "",
+  "license": "GPL v.3.0",
   "private": true,
   "ignore": [
     "**/.*",
@@ -22,9 +23,12 @@
   ],
   "dependencies": {
     "angular-loading-bar": "^0.9.0",
-    "angular-route": "^1.6.9",
-    "angular-sanitize": "^1.6.9",
-    "angular": "^1.6.9",
     "d3": "^4.13.0",
+    "js-xlsx": "^0.12.12",
+    "leaflet-fullscreen": "^1.0.2",
+    "leaflet": "^1.3.1",
+    "angular-route": "^1.6.9",
+    "angular": "^1.6.9",
+    "angular-sanitize": "^1.6.9"
   }
 }

@@ -1,10 +1,5 @@
 <section class="container-fixed">
     <div class="view-description">
-      Aquí puede consultarse información básica de los
-      proyectos analizados: delimitación territorial,
-      rasgos socio-demográficos para el año 2001,
-      tipos de medidas incluidas en sus Planes de Actuación
-      e imágenes del barrio y de las actuaciones realizadas.
     </div>
 
     <!-- Count of shown elements -->
@@ -16,47 +11,64 @@
     <!-- View -->
     <div class="view-location">
         <div class="view-location__header">
+            <div class="view-location__header-col--project"
+                 ng-click="view.sortBy(view.indicators.project.var)">
+                <i class="fa fa-sort-alpha-down"></i>
+                <span class="view-location__name">
+                    {{ view.indicators.project.label_es }}
+                </span>
+            </div>
+            <div class="view-location__header-col--town"
+                 ng-click="view.sortBy(view.indicators.town.var)">
+                <i class="fa fa-sort-alpha-down"></i>
+                <span class="view-location__name">
+                    {{ view.indicators.town.label_es }}
+                </span>
+            </div>
             <div class="view-location__header-col--program">
                 <i class="fa fa-sort-alpha-down"></i>
-                <span class="view-location__name" ng-click="view.sortBy('program')">Programa</span>
+                <span class="view-location__name" ng-click="view.sortBy(view.indicators.program.var)">
+                    {{ view.indicators.program.label_es }}
+                </span>
                 <select class="view-filter__select" ng-change="view.setProgram(p)" ng-model="p"
-                ng-options="(p.k + ' (' + p.n + ')') for p in view.programs">
-                    <option value=""><i class="fa fa-filter"></i>Ver todos los programas</option>
+                ng-options="(p.k + ' (' + p.n + ')') for p in view.program">
+                    <option value=""><i class="fa fa-filter"></i>
+                        Ver todo  ▼
+                    </option>
                 </select>
             </div>
-            <div class="view-location__header-col--context">
+            <div class="view-location__header-col--hood">
                 <i class="fa fa-sort-alpha-down"></i>
-                <span class="view-location__name" ng-click="view.sortBy('context')">Contexto</span>
-                <select class="view-filter__select" ng-change="view.setContext(c)" ng-model="c"
-                        ng-options="(c.k + ' (' + c.n + ')') for c in view.contexts">
-                    <option value=""><i class="fa fa-filter"></i>Ver todos los contextos</option>
+                <span class="view-location__name" ng-click="view.sortBy(view.indicators.hood.var)">
+                    {{ view.indicators.hood.label_es }}
+                </span>
+                <select class="view-filter__select" ng-change="view.setHood(c)" ng-model="c"
+                        ng-options="(c.k + ' (' + c.n + ')') for c in view.hood">
+                    <option value=""><i class="fa fa-filter"></i>
+                        Ver todo  ▼
+                    </option>
                 </select>
-            </div>
-            <div class="view-location__header-col--project"
-                 ng-click="view.sortBy('project')">
-                <i class="fa fa-sort-alpha-down"></i>
-                <span class="view-location__name">Proyecto</span>
             </div>
         </div>
         <div class="view-location__content">
-            <a href="#/{{ item.id }}" class="view-location-item"
+            <a href="#/{{ item[ view.indicators.id.var ] }}" class="view-location-item"
                ng-repeat="item in view.data | orderBy : view.sort_order: view.reverse | filter : view.show as filtered">
-                <div class="view-location-item__col--program">
-                  {{ item.program }}
-                </div>
-                <div class="view-location-item__col--context">
-                  {{ item.context }}
-                </div>
                 <div class="view-location-item__col--project">
-                  {{ item.name }}
+                  {{ item[ view.indicators.project.var ] }}
+                </div>
+                <div class="view-location-item__col--town">
+                  {{ item[ view.indicators.town.var ] }}
+                </div>
+                <div class="view-location-item__col--program">
+                  {{ view.program[ item[ view.indicators.program.var ]].k }}
+                </div>
+                <div class="view-location-item__col--neighborhood">
+                  {{ view.hood[ item[ view.indicators.hood.var ]].k }}
                 </div>
                 <i>➜</i>
             </a>
         </div>
     </div>
     <div class="view-colophon">
-      Consequatur voluptatem ut cum eveniet autem porro ducimus at.
-      Aut eos ad dolor. Optio eos magnam impedit. Dolorem quisquam architecto
-      nostrum ab. Non et et voluptates. A quia sequi sed sit ut eos dignissimos.
     </div>
 </section>

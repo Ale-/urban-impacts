@@ -13,20 +13,20 @@ angular.module('urban_impacts', [
     'ngSanitize',
     'angular-loading-bar',
     'urban_impacts.data_service',
+    'urban_impacts.indicators_service',
     'urban_impacts.view_controller',
     'urban_impacts.location_controller',
     'urban_impacts.location_controller',
     'urban_impacts.map_directive',
     'urban_impacts.barchart_directive',
-    'urban_impacts.stackedchart_directive',
   ])
 
 .value('CONFIG', {
-    'DEBUG'            : true,
-    'FAKE_DATA'        : true,
+    'DEBUG'            : false,
+    'FAKE_DATA'        : false,
     'FAKE_DATA_LENGTH' : 100,
-    'DATA_PATH'        : 'app/data/data.json',
-    'GEODATA_PATH'     : 'app/data/shapefiles.zip',
+    'DATA_PATH'        : 'app/data/data.xls',
+    'GEODATA_PATH'     : 'app/data/shapefiles_bckup.zip',
     'PALETTE'          : [
         '#c83741', '#eda16a', '#6c283d', '#72a68e', '#777',
     ],

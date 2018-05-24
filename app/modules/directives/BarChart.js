@@ -49,7 +49,7 @@ angular.module('urban_impacts.barchart_directive', [])
                 .attr("height", function(d) { return h - y(d.v); })
                 .attr("fill", function(d) { return c(d.k); })
                 .on("mouseover", function(d) {
-                    div.html(d.v + " " + scope.unit).transition().duration(200).style("opacity", .9);
+                    div.html(d3.format(".2f")(d.v) + " " + scope.unit).transition().duration(200).style("opacity", .9);
                 })
                 .on("mouseout", function(d) {
                     div.transition().duration(500).style("opacity", 0);

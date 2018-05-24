@@ -94,3 +94,15 @@ textarea
 select
   &:hover
     cursor: pointer
+
++keyframes(fade)
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+[ng-view]
+  +animation(fade 1s 1)
+
+.container-fixed
+  padding: $m/2

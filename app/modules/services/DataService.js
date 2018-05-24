@@ -3,207 +3,195 @@ angular.module('urban_impacts.data_service', [])
 /**
  *   Factory that stores the data visualized in the app
  */
-.factory("DataService", [
-    '$http',
-    'CONFIG',
-    function($http, CONFIG)
-    {
-        var service = {
-            data : [],
-            categories : {
-                'program' : {
-                    'ARB'  : { k : 'ARB',  n : 0 },
-                    'URB'  : { k : 'URB',  n: 0 },
-                    'ZNTS' : { k : 'ZNTS', n: 0 },
-                },
-                'context' : {
-                    'CH-GC'    : { k : 'CH-GC', n : 0 },
-                    'Barriada' : { k : 'Barriada', n : 0 },
-                    'CH-CM'    : { k : 'CH-CM', n : 0 },
-                },
+.factory("DataService", ['$http', 'IndicatorsService', 'CONFIG', function($http, IndicatorsService, CONFIG){
+
+    // Data indicators, encapsulated in another service to decouple it
+    var indicators = IndicatorsService.get();
+
+    /**
+     *  Service object
+     */
+    var service = {
+        data    : [],
+        geodata : {},
+        categories : {
+            'program' : {
+                '1' : { k : 'Urban I',  v: 1, n : 0 },
+                '2' : { k : 'Urban II', v: 2, n : 0 },
             },
-            geodata : {},
-        }
+            'hood' : {
+                '1' : { k : 'Barriada',        v: 1, n : 0 },
+                '2' : { k : 'Casco Histórico', v: 2, n : 0 },
+            },
+        },
+        geodata  : {},
+    };
 
-        var rnd = function(container){
-            if(typeof container === 'object'){
-                keys = Object.keys(container);
-                return container[ keys[parseInt( Math.random() * keys.length)] ];
-            } else {
-                return container[ parseInt( Math.random() * list.length) ];
+    /**
+     *  calculateAverages
+     *  Calculates the average value of all chapters in the dataset
+     */
+
+    var averages = {};
+    service.calculateAverages = function(items){
+        for(var i in items){
+            var p = items[i];
+            var item_program = p[ indicators.program.var ];
+            var item_hood    = p[ indicators.hood.var ];
+            service.categories.program[ item_program ].n++;
+            service.categories.hood[ item_hood ].n++;
+            for(var k in indicators){
+                var key = indicators[k].var;
+                var value = parseFloat(p[key]);
+                if(!averages[key]){
+                    averages[key] = {
+                        'program' : {
+                            '1' : {
+                               'items' : 0,
+                               'value' : 0,
+                            },
+                            '2' : {
+                               'items' : 0,
+                               'value' : 0,
+                            },
+                        },
+                        'hood'    : {
+                            '1' : {
+                               'items' : 0,
+                               'value' : 0,
+                            },
+                            '2' : {
+                               'items' : 0,
+                               'value' : 0,
+                            },
+                        },
+                        'all' : {
+                           'items' : 0,
+                           'value' : 0,
+                        },
+                    }
+                };
+
+                averages[key].program[ item_program ].value += value;
+                averages[key].program[ item_program ].items++;
+                averages[key].hood[ item_hood ].value       += value;
+                averages[key].hood[ item_hood ].items++;
+                averages[key].all.value                     += value;
+                averages[key].all.items++;
             }
         }
-
-        /**
-         *  set
-         *  Loads data into the factory from an external source
-         *  This external source (data_path) is defined as a
-         *  constant value in app.js
-         */
-        service.set = function()
-        {
-            if(CONFIG.DEBUG)
-                console.log("Data loaded");
-            return $http.get(CONFIG.DATA_PATH).then(
-                function(response){
-                    // Set data
-                    service.data = response.data;
-                    service.calculateCategoryItems(service.data);
-                    return service.data;
-                }, function(response){
-                    if(CONFIG.DEBUG && !CONFIG.FAKE_DATA)
-                        console.log(response);
-                }
-            );
-        };
-
-        /**
-         *  calculateCategoryItems
-         *  Calculates the number of items in each category
-         */
-        service.calculateCategoryItems = function(items){
-            for(var i in items){
-                service.categories.context[ items[i].context ].n++;
-                service.categories.program[ items[i].program ].n++;
-            }
+        for(var k in averages){
+            var avg = averages[k];
+            avg.program['1'].value /= avg.program['1'].items;
+            avg.program['2'].value /= avg.program['2'].items;
+            avg.hood['1'].value    /= avg.hood['1'].items;
+            avg.hood['2'].value    /= avg.hood['2'].items;
+            avg.all.value          /= avg.all.items;
         }
+    };
 
-        /**
-         *  get
-         *  Returns the data of the dataset and cache it
-         */
-        service.get = function()
-        {
-            if(!CONFIG.FAKE_DATA){
-                if(service.data){
-                    if(CONFIG.DEBUG)
-                        console.log("Data retrieved from cache");
-                    return service.data;
-                } else {
-                    return service.set();
-                }
-            } else {
+    /**
+     *  get
+     *  Returns the data of the dataset and cache it
+     */
+    service.get = function()
+    {
+        if(!CONFIG.FAKE_DATA){
+            if(service.data.length > 0){
                 if(CONFIG.DEBUG)
-                    console.log("Generating fake data");
-                return service.getFakeData();
+                    console.log("Data retrieved from cache");
+                return service.data;
+            } else {
+                return service.set();
             }
+        } else {
+            if(CONFIG.DEBUG)
+                console.log("Generating fake data");
+            return service.generateData();
         }
+    };
 
-        /**
-         *  getCategory
-         *  Returns info about a category
-         */
-        service.getCategory = function(category){
-            return service.categories[category];
-        }
+    /**
+     *  getCategory
+     *  Return info about a category
+     */
+    service.getCategory = function(category){
+        return service.categories[category];
+    }
 
-        /**
-         *  getCategory
-         *  Returns info about a category
-         */
-        service.getProject = function(id){
-            for(var i in service.data)
-                if(service.data[i].id == id)
-                    return service.data[i];
-        }
+    /**
+     *  getCategories
+     *  Return all categories
+     */
+    service.getCategories = function(){
+        return this.categories;
+    }
 
-        service.rnd = function(min, max){
-            return min + Math.floor( Math.random() * (max-min) );
-        }
+    /**
+     *  getProject
+     *  Return a project givens its id
+     *
+     *  @param {int} id - Id of the project we want to retrieve
+     */
+    service.getProject = function(id){
+        pid = indicators.id.var;
+        for(var i in service.data)
+            if(service.data[i][pid] == id)
+                return service.data[i];
+    };
 
-        service.getRndItems = function(min, max){
-            return [
-                { k: 'a', v: service.rnd(min, max) },
-                { k: 'b', v: service.rnd(min, max) },
-                { k: 'c', v: service.rnd(min, max) },
-                { k: 'd', v: service.rnd(min, max) },
-            ];
-        }
-
-        service.getBudgetPrimaryKeys = function(){
-            return [
-                'Proyecto',
-                'Media de proyectos por convocatoria',
-                'Media de proyectos por tipo de área',
-                'Media de las ciudades intervenidas'
-            ]
-        }
-
-        service.getBudgetSecondaryKeys = function(){
-            return [
-                'Territorio',
-                'Desarrollo económico',
-                'Bienestar',
-                'Medioambiente',
-                'Gestión',
-            ];
-        }
-
-        service.getBudgetIndexes = function(){
-            return [
-                'Esfuerzo €/habitante',
-                'Índice de diversidad',
-            ];
-        }
-
-        service.getBudget = function(){
-            var budget   = [];
-            var keys     = service.getBudgetPrimaryKeys();
-            var keys_sec = service.getBudgetSecondaryKeys();
-            var indexes  = service.getBudgetIndexes();
-            for(var i in keys){
-                var primary = { "key" : keys[i] };
-                var total = 0;
-                for(var j in keys_sec){
-                    var val = service.rnd(1000000, 2000000);
-                    primary[ keys_sec[j] ] = val;
-                    total += val;
-                }
-                for(var k in indexes){
-                    primary[ indexes[k] ] = .15 + Math.random()*.85;
-                }
-                primary['total'] = total;
-                budget.push(primary);
-            }
-            return budget;
-        }
-
-        /**
-         *  getFakeData
-         *  Returns fake random data
-         */
-        service.getFakeData = function()
-        {
-            var fake_data = [];
-            var programs  = [];
-            var contexts  = [];
-            for(var i = 0; i < CONFIG.FAKE_DATA_LENGTH; i++){
-                fake_data.push({
-                    id      : i,
-                    name    : i,
-                    program : rnd(service.categories.program).k,
-                    context : rnd(service.categories.context).k,
-                    data    : {
-                        "population"   : service.getRndItems(25000, 400000),
-                        "extension"    : service.getRndItems(50, 200),
-                        "density"      : service.getRndItems(500, 1000),
-                        "height"       : service.getRndItems(6, 20),
-                        "buildings"    : service.getRndItems(10, 20),
-                        "childhood"    : service.getRndItems(15, 35),
-                        "aging"        : service.getRndItems(15, 35),
-                        "foreigners"   : service.getRndItems(10, 20),
-                        "unemployment" : service.getRndItems(5, 40),
-                        "illiteracy"   : service.getRndItems(2, 8),
-                        "workers"      : service.getRndItems(10, 20),
-                        "budget"       : service.getBudget(),
+    /**
+     *  set
+     *  Loads data into the factory from an external source
+     *  This external source (data_path) is defined as a
+     *  constant value in app.js
+     */
+    service.set = function(){
+        if(CONFIG.DEBUG)
+            console.log("Data loaded");
+        return $http.get(CONFIG.DATA_PATH, { responseType:'arraybuffer' }).then(
+            function(response){
+                // Set data
+                var wb = XLSX.read(response.data, {type:"array"});
+                var d  = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+                var source_data = d;
+                service.calculateAverages(source_data);
+                service.data = source_data;
+                for(var i in source_data){
+                    var project = service.data[i];
+                    for(var key in project){
+                        if( IndicatorsService.isAveraged(key) ){
+                            project[key] = [
+                                { k : 'Proyecto', v : parseFloat(project[key]) },
+                                { k : 'Media de proyectos por convocatoria', v : averages[key].program[ project[ indicators.program.var] ].value },
+                                { k : 'Media de proyectos por tipo de área', v : averages[key].hood[ project[ indicators.hood.var] ].value },
+                                { k : 'Media de las ciudades intervenidas', v : averages[key].all.value },
+                            ];
+                        }
+                    }
+                 }
+                service.geodata = new L.Shapefile(CONFIG.GEODATA_PATH, {
+                    onEachFeature : function(feature, layer){
+                        layer.bindPopup("\
+                            <h6>Sección "    + feature.properties.SECCION    + "</h6>" +
+                            "<p>Población: " + feature.properties.POBLACIO_1 + " personas</p>");
                     }
                 });
-            };
-            service.calculateCategoryItems(fake_data);
-            service.data = fake_data;
-            return fake_data;
-        }
+                return service.data;
+            }, function(response){
+                if(CONFIG.DEBUG && !CONFIG.FAKE_DATA)
+                    console.log(response);
+            }
+        );
+    };
 
-        return service;
-    }
-]);
+    /**
+     *  getGeoata
+     *  Returns geodata
+     */
+    service.getGeodata = function(){
+        return service.geodata;
+    };
+
+    return service;
+}]);

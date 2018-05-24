@@ -4,7 +4,7 @@ angular.module('urban_impacts.map_directive', [])
  *   Directive to render a map
  *
  */
-.directive("projectMap", function(DataService, CONFIG){
+.directive("projectMap", function(DataService, CONFIG, $http){
 
     return {
         restrict : 'EAC',
@@ -13,6 +13,7 @@ angular.module('urban_impacts.map_directive', [])
             // [{ k: key, v: value }, { k, v }, { k, v }...]
             w     : '@',
             h     : '@',
+            city  : '@',
         },
         template : '<div id="map"></div>',
         transclude : true,
@@ -31,8 +32,23 @@ angular.module('urban_impacts.map_directive', [])
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            var geodata = new L.Shapefile(CONFIG.GEODATA_PATH);
-            geodata.addTo(map);
+            map.addControl(new L.Control.Fullscreen());
+
+            var geodata = DataService.getGeodata();
+            geodata.addTo(map)
+
+            $http.get('https://nominatim.openstreetmap.org/search/' + scope.city + ', España?format=json').then( function(data){
+                var i = 0;
+                var important_city = 0, important_boundary = 0;
+                for(var i = 0; i < data.data.length; i++){
+                    if(data.data[i].type == 'city' && important_city == 0)
+                        important_city = i
+                    if(data.data[i].type == 'boundary' && important_boundary == 0)
+                        important_boundary = i
+                }
+                var place = important_city ? important_city : important_boundary;
+                map.setView([data.data[place].lat, data.data[place].lon], 13);
+            });
 
             if(CONFIG.DEBUG){
                 map.setView([37.3925705,-5.9966025], 14)

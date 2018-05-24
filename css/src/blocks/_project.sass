@@ -1,8 +1,26 @@
 // Project pages
 
+#map
+  background: white
+
 #map .leaflet-tile
   filter: grayscale(100%)
+#map .leaflet-bar
+  border: 0
+  color: $blue
+  +links_nocolor
+#map .leaflet-control-attribution
+  color: $blue
+  +links_nocolor
+  a
+    text-decoration: dotted
 
+.breadcrumb
+  text-decoration: underline
+  text-decoration-style: dotted
+  +transition(opacity .2s ease)
+  &:hover
+    opacity: .75
 .project-map + .container-fixed
   position: relative
 .project-legend
@@ -12,21 +30,29 @@
   padding: $m
   background: white
   color: $blue
-  min-width: $m*15
+  max-width: calc(100% - #{$m*2})
+  +breakpoint('md')
+    min-width: $m*15
+    max-width: auto
   +links_nocolor
 .project-legend__meta
   border-bottom: 2px solid $blue
+
 .project-legend__meta-label
   +h(5)
+  display: inline-block
+  +breakpoint('md')
+    width: 33%
 .project-legend__name
   margin-top: $m/3
 .breadcrumb
   text-transform: uppercase
   font-size: .8em
 .bar-chart
-  display: inline-block
-  position: relative
-  vertical-align: top
+  +breakpoint('sm')
+    display: inline-block
+    position: relative
+    vertical-align: top
   svg
     display: block
     margin: 0 auto
@@ -37,19 +63,22 @@
   margin: $m/2 auto
 
 .project-legend + .project-stats-block
-  padding-top: $m*6
+  padding-top: $m*8
 
 .project-stats-block
-  padding: $m 0
+  padding: $m 0 0
 
 .project-stats-block__charts
-  width: calc(100% - 300px)
-  display: flex
-  .bar-chart
-    flex-grow: 1
+  +breakpoint('md')
+    width: calc(100% - 300px)
+    margin: 0 auto
+    padding: $m 0
+    display: flex
+    .bar-chart
+      flex-grow: 1
 
 .project-stats-block__name
-  margin: $m*2 0
+  margin: 0 0 $m
   text-transform: uppercase
   color: $blue
   border-bottom: 2px solid $blue
@@ -63,10 +92,11 @@
 .project-stats-block__legend
   color: $blue
   font-size: .9em
-  min-width: 300px
-  padding: $m
-  display: inline-block
-  float: left
+  margin-bottom: $m*2
+  // +breakpoint('md')
+  //   min-width: 300px
+  //   display: inline-block
+  //   float: left
 .project-stats-block__legend-list
   li
     flex-grow: 1
@@ -94,12 +124,15 @@
   +links_nocolor
   width: 280px
   text-align: center
-  margin: $m*2 auto
-  background-color: $blue
-  color: white
+  margin: $m*4 auto
+  border: 2px solid $blue
+  color: $blue
   line-height: $m*1.5
   padding: 0 $m
   text-transform: uppercase
+  +transition(opacity, .1s ease)
+  &:hover
+    opacity: .75
 
 .tooltip
   position: absolute
@@ -124,6 +157,7 @@
   opacity: .75
 
 path
-  stroke-width: 2
-  stroke: #c83741
-  fill: white
+  stroke-width: 1
+  stroke: red
+  stroke-opacity: .4
+  fill: red
