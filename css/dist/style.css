@@ -725,6 +725,10 @@ select:hover {
   animation: scaleup_y 0.5s 1; }
 
 /* line 123, ../src/blocks/_project.sass */
+.bar-chart rect:hover {
+  cursor: help; }
+
+/* line 126, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -741,11 +745,11 @@ select:hover {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 134, ../src/blocks/_project.sass */
+  /* line 137, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
-/* line 137, ../src/blocks/_project.sass */
+/* line 140, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -757,11 +761,11 @@ select:hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
 
-/* line 146, ../src/blocks/_project.sass */
+/* line 149, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative; }
 
-/* line 149, ../src/blocks/_project.sass */
+/* line 152, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -769,11 +773,11 @@ select:hover {
   position: relative;
   left: 400px; }
 
-/* line 156, ../src/blocks/_project.sass */
+/* line 159, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 159, ../src/blocks/_project.sass */
+/* line 162, ../src/blocks/_project.sass */
 path {
   stroke-width: 1;
   stroke: red;
@@ -904,8 +908,8 @@ path {
     position: absolute;
     right: 12px;
     top: 12px;
-    background: white;
-    color: #063461;
+    background: #063461;
+    color: white;
     width: 24px;
     line-height: 24px;
     text-align: center;
