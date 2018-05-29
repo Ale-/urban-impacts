@@ -36,7 +36,13 @@ angular.module('urban_impacts.barchart_directive', [])
             var c = d3.scaleOrdinal(['#c83741', '#eda16a', '#6c283d', '#72a68e']);
 
             x.domain(scope.data.map(function(d) { return d.k; }));
-            y.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
+
+            // If unit is not percentage upper limit of domain is the max value
+            // else is 100% -> to avoid perception distortions
+            if(scope.unit != '%')
+                y.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
+            else
+                y.domain([0, 100]);
 
             var div = d3.select(_this_).append("div").attr("class", "tooltip");
 
