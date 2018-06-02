@@ -39,12 +39,20 @@ angular.module('urban_impacts.barchart_directive', [])
 
             // If unit is not percentage upper limit of domain is the max value
             // else is 100% -> to avoid perception distortions
-            if(scope.unit != '%')
-                y.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
-            else
-                y.domain([0, 100]);
 
+            if(scope.unit){
+                if(scope.unit != '%')
+                    y.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
+                else
+                    y.domain([0, 100]);
+            } else {
+                y.domain([0,1]);
+            }
             var div = d3.select(_this_).append("div").attr("class", "tooltip");
+
+            g.append("g")
+                .attr("class", "axis axis--y")
+                .call(d3.axisLeft(y).ticks());
 
             g.selectAll(".bar").data(scope.data).enter()
                 .append("rect")

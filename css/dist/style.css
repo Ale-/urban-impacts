@@ -604,73 +604,72 @@ select:hover {
   @media screen and (min-width: 992px) {
     /* line 26, ../src/blocks/_project.sass */
     .project-legend {
-      min-width: 360px;
-      max-width: auto; } }
+      width: 50%; } }
   /* line 26, ../src/base/_2_elements.sass */
   .project-legend a, .project-legend a:link, .project-legend a:hover, .project-legend a:visited, .project-legend a:active {
     color: inherit; }
 
-/* line 38, ../src/blocks/_project.sass */
+/* line 37, ../src/blocks/_project.sass */
 .project-legend__meta {
   border-bottom: 2px solid #063461; }
 
-/* line 41, ../src/blocks/_project.sass */
+/* line 40, ../src/blocks/_project.sass */
 .project-legend__meta-label {
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 1rem;
   display: inline-block; }
   @media screen and (min-width: 992px) {
-    /* line 41, ../src/blocks/_project.sass */
+    /* line 40, ../src/blocks/_project.sass */
     .project-legend__meta-label {
       width: 33%; } }
 
-/* line 46, ../src/blocks/_project.sass */
+/* line 45, ../src/blocks/_project.sass */
 .project-legend__name {
   margin-top: 8px; }
 
-/* line 48, ../src/blocks/_project.sass */
+/* line 47, ../src/blocks/_project.sass */
 .breadcrumb {
   text-transform: uppercase;
   font-size: 0.8em; }
 
 @media screen and (min-width: 768px) {
-  /* line 51, ../src/blocks/_project.sass */
+  /* line 50, ../src/blocks/_project.sass */
   .bar-chart {
     display: inline-block;
     position: relative;
     vertical-align: top; } }
-/* line 56, ../src/blocks/_project.sass */
+/* line 55, ../src/blocks/_project.sass */
 .bar-chart svg {
   display: block;
   margin: 0 auto;
   border-bottom: 1px solid #063461; }
 
-/* line 61, ../src/blocks/_project.sass */
+/* line 60, ../src/blocks/_project.sass */
 .project-legend + .project-stats-block {
-  padding-top: 192px; }
+  padding-top: 240px; }
 
-/* line 64, ../src/blocks/_project.sass */
+/* line 63, ../src/blocks/_project.sass */
 .project-stats-block {
-  padding: 24px 0 0; }
+  padding: 24px 24px 0; }
 
 @media screen and (min-width: 992px) {
-  /* line 67, ../src/blocks/_project.sass */
+  /* line 66, ../src/blocks/_project.sass */
   .project-stats-block__charts {
     padding: 24px 0;
     display: flex; }
-    /* line 71, ../src/blocks/_project.sass */
+    /* line 70, ../src/blocks/_project.sass */
     .project-stats-block__charts .bar-chart {
       flex-grow: 1; } }
 
-/* line 74, ../src/blocks/_project.sass */
+/* line 73, ../src/blocks/_project.sass */
 .project-stats-block__name {
   margin: 0 0 24px;
   text-transform: uppercase;
   color: #063461;
   border-bottom: 2px solid #063461; }
 
-/* line 80, ../src/blocks/_project.sass */
+/* line 79, ../src/blocks/_project.sass */
 .bar-chart__title {
   color: #063461;
   font-size: 0.8em;
@@ -679,50 +678,50 @@ select:hover {
   margin: 12px auto;
   text-align: center; }
 
-/* line 88, ../src/blocks/_project.sass */
+/* line 87, ../src/blocks/_project.sass */
 .project-stats-block__legend {
   color: #063461;
   font-size: 0.9em;
   margin-bottom: 48px; }
 
-/* line 94, ../src/blocks/_project.sass */
+/* line 93, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li {
   flex-grow: 1; }
-/* line 96, ../src/blocks/_project.sass */
+/* line 95, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li:before {
   content: "⬤";
   margin-right: 8px; }
-/* line 99, ../src/blocks/_project.sass */
+/* line 98, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before {
   color: #c83741; }
-/* line 101, ../src/blocks/_project.sass */
+/* line 100, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .b:before {
   color: #eda16a; }
-/* line 103, ../src/blocks/_project.sass */
+/* line 102, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .c:before {
   color: #6c283d; }
-/* line 105, ../src/blocks/_project.sass */
+/* line 104, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .d:before {
   color: #72a68e; }
-/* line 107, ../src/blocks/_project.sass */
+/* line 106, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .e:before {
   color: #777; }
 
-/* line 110, ../src/blocks/_project.sass */
+/* line 109, ../src/blocks/_project.sass */
 .project-stats-block__legend-title {
   margin: 0 0 12px; }
 
-/* line 113, ../src/blocks/_project.sass */
+/* line 112, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1; }
 
-/* line 116, ../src/blocks/_project.sass */
+/* line 115, ../src/blocks/_project.sass */
 .bar-chart rect:hover {
   cursor: help; }
 
-/* line 119, ../src/blocks/_project.sass */
+/* line 118, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -739,11 +738,11 @@ select:hover {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 130, ../src/blocks/_project.sass */
+  /* line 129, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
-/* line 133, ../src/blocks/_project.sass */
+/* line 132, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -755,11 +754,11 @@ select:hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
 
-/* line 142, ../src/blocks/_project.sass */
+/* line 141, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative; }
 
-/* line 145, ../src/blocks/_project.sass */
+/* line 144, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -767,16 +766,21 @@ select:hover {
   position: relative;
   left: 400px; }
 
-/* line 152, ../src/blocks/_project.sass */
+/* line 151, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 155, ../src/blocks/_project.sass */
-path {
+/* line 154, ../src/blocks/_project.sass */
+path.leaflet-interactive {
   stroke-width: 1;
   stroke: red;
   stroke-opacity: 0.4;
   fill: red; }
+
+/* line 161, ../src/blocks/_project.sass */
+.bar-chart .domain,
+.bar-chart .tick {
+  stroke: #063461; }
 
 /* line 3, ../src/blocks/_view.sass */
 .view-description,

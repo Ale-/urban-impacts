@@ -32,8 +32,7 @@
   color: $blue
   max-width: calc(100% - #{$m*2})
   +breakpoint('md')
-    min-width: $m*15
-    max-width: auto
+    width: 50%
   +links_nocolor
 .project-legend__meta
   border-bottom: 2px solid $blue
@@ -59,10 +58,10 @@
     border-bottom: 1px solid $blue
 
 .project-legend + .project-stats-block
-  padding-top: $m*8
+  padding-top: $m*10
 
 .project-stats-block
-  padding: $m 0 0
+  padding: $m $m 0
 
 .project-stats-block__charts
   +breakpoint('md')
@@ -152,8 +151,13 @@
 .stacked-chart circle
   opacity: .75
 
-path
+path.leaflet-interactive
   stroke-width: 1
   stroke: red
   stroke-opacity: .4
   fill: red
+
+.bar-chart
+  .domain,
+  .tick
+    stroke: #063461
