@@ -172,9 +172,7 @@ angular.module('urban_impacts.data_service', [])
                  }
                 service.geodata = new L.Shapefile(CONFIG.GEODATA_PATH, {
                     onEachFeature : function(feature, layer){
-                        layer.bindPopup("\
-                            <h6>Sección "    + feature.properties.SECCION    + "</h6>" +
-                            "<p>Población: " + feature.properties.POBLACIO_1 + " personas</p>");
+                        layer.bindPopup("<h6>Sección " + feature.properties.SECCION + "</h6>");
                     }
                 });
                 return service.data;

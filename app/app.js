@@ -26,7 +26,7 @@ angular.module('urban_impacts', [
     'FAKE_DATA'        : false,
     'FAKE_DATA_LENGTH' : 100,
     'DATA_PATH'        : 'app/data/data.xls',
-    'GEODATA_PATH'     : 'app/data/shapefiles_bckup.zip',
+    'GEODATA_PATH'     : 'app/data/shapefiles.zip',
     'PALETTE'          : [
         '#c83741', '#eda16a', '#6c283d', '#72a68e', '#777',
     ],
