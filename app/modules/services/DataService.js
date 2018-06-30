@@ -162,10 +162,10 @@ angular.module('urban_impacts.data_service', [])
                     for(var key in project){
                         if( IndicatorsService.isAveraged(key) ){
                             project[key] = [
-                                { k : 'Proyecto', v : parseFloat(project[key]) },
-                                { k : 'Media de proyectos por convocatoria', v : averages[key].program[ project[ indicators.program.var] ].value },
-                                { k : 'Media de proyectos por tipo de área', v : averages[key].hood[ project[ indicators.hood.var] ].value },
-                                { k : 'Media de las ciudades incluidas en catálogo', v : averages[key].all.value },
+                                { k : project[indicators.project.var], v : parseFloat(project[key]) },
+                                { k : "Media de proyectos en " + service.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase(), v : averages[key].program[ project[ indicators.program.var] ].value },
+                                { k : "Media de proyectos en " + service.getCategory('hood')[project[indicators.program.var]]['k'].toLowerCase(), v : averages[key].hood[ project[ indicators.hood.var] ].value },
+                                { k : "Media de las ciudades incluidas en catálogo", v : averages[key].all.value },
                             ];
                         }
                     }
@@ -192,10 +192,10 @@ angular.module('urban_impacts.data_service', [])
         var budget   = [];
         var project  = this.getProject(id);
         var averages = [
-            'Proyecto',
-            'Media de proyectos por convocatoria',
-            'Media de proyectos por tipo de área',
-            'Media de las ciudades incluidas en catálogo',
+            project[indicators.project.var],
+            "Media de proyectos en " + this.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase(),
+            "Media de proyectos en " + this.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase(),
+            "Media de las ciudades incluidas en catálogo",
         ];
         for(var i in averages){
             var avg = { 'key' : averages[i] };

@@ -47,13 +47,12 @@ angular.module('urban_impacts.stackedchart_directive', [])
 
             // Set up scales of data
             var x     = d3.scaleLinear().rangeRound([250, w]);
-            var y     = d3.scaleBand().rangeRound([h, 0]).paddingInner(.5);
+            var y     = d3.scaleBand().rangeRound([0, h]).paddingInner(.5);
             var z     = d3.scaleOrdinal(scope.palette ? scope.palette : d3.schemeCategory10);
 
             x.domain([0, 100]);
             y.domain(scope.data.map(function(d) { return d.key; }));
             z.domain(scope.keys);
-
             var div = d3.select(_this_).append("div").attr("class", "tooltip");
 
             // Set layout
