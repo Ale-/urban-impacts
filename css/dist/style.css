@@ -733,11 +733,12 @@ select:hover {
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1; }
 
-/* line 124, ../src/blocks/_project.sass */
-.bar-chart rect:hover {
+/* line 126, ../src/blocks/_project.sass */
+.bar-chart rect:hover,
+.stacked-chart rect:hover {
   cursor: help; }
 
-/* line 127, ../src/blocks/_project.sass */
+/* line 129, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -754,32 +755,33 @@ select:hover {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 138, ../src/blocks/_project.sass */
+  /* line 140, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
-/* line 141, ../src/blocks/_project.sass */
+/* line 143, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
-  top: 0;
-  right: 0;
+  top: -48px;
+  right: 132px;
   background: rgba(255, 255, 255, 0.9);
   padding: 8px;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  pointer-events: none; }
 
-/* line 150, ../src/blocks/_project.sass */
+/* line 153, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative;
   width: 100%; }
-  /* line 153, ../src/blocks/_project.sass */
+  /* line 156, ../src/blocks/_project.sass */
   .stacked-chart svg {
     margin: 0 auto;
     display: block; }
 
-/* line 157, ../src/blocks/_project.sass */
+/* line 160, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -787,23 +789,23 @@ select:hover {
   position: relative;
   left: 600px; }
 
-/* line 164, ../src/blocks/_project.sass */
+/* line 167, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 167, ../src/blocks/_project.sass */
+/* line 170, ../src/blocks/_project.sass */
 path.leaflet-interactive {
   stroke-width: 1;
   stroke: red;
   stroke-opacity: 0.4;
   fill: red; }
 
-/* line 174, ../src/blocks/_project.sass */
+/* line 177, ../src/blocks/_project.sass */
 .bar-chart .domain,
 .bar-chart .tick {
   stroke: #063461; }
 
-/* line 178, ../src/blocks/_project.sass */
+/* line 181, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget + div {
   padding-top: 0; }
 

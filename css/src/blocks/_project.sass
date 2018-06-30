@@ -121,8 +121,10 @@
 .bar-chart svg
   +animation(scaleup_y .5s 1)
 
-.bar-chart rect:hover
-  cursor: help
+.bar-chart,
+.stacked-chart
+  rect:hover
+    cursor: help
 
 .breadcrumb--footer
   +links_nocolor
@@ -141,11 +143,12 @@
 .tooltip
   position: absolute
   opacity: 0
-  top: 0
-  right: 0
+  top: -$m*2
+  right: $m*5.5
   background: rgba(white, .9)
   padding: $m/3
   +box-shadow(0 0 5px rgba(black, .15))
+  pointer-events: none
 
 .stacked-chart
   position: relative
