@@ -40,16 +40,16 @@
             <div class="project-stats-block__legend">
               <ul class="project-stats-block__legend-list">
                 <li class="a">
-                    {{ location.project[ location.indicators.project.var ] }}
+                    {{ location.legend_texts.a }}
                 </li>
                 <li class="b">
-                    Media de proyectos en programa {{ location.getCategory('program')|uppercase }}
+                    {{ location.legend_texts.b }}
                 </li>
                 <li class="c">
-                    Media de proyectos en {{ location.getCategory('hood')|lowercase }}
+                    {{ location.legend_texts.c }}
                 </li>
                 <li class="d">
-                    Media de las ciudades incluidas en el catálogo
+                    {{ location.legend_texts.d }}
                 </li>
               </ul>
             </div>
@@ -81,16 +81,16 @@
             <div class="project-stats-block__legend">
               <ul class="project-stats-block__legend-list">
                 <li class="a">
-                    {{ location.project[ location.indicators.project.var ] }}
+                    {{ location.legend_texts.a }}
                 </li>
                 <li class="b">
-                    Media de proyectos en {{ location.getCategory('program')|uppercase }}
+                    {{ location.legend_texts.b }}
                 </li>
                 <li class="c">
-                    Media de proyectos en {{ location.getCategory('hood')|lowercase }}
+                    {{ location.legend_texts.c }}
                 </li>
                 <li class="d">
-                    Media de las ciudades incluidas en el catálogo
+                    {{ location.legend_texts.d }}
                 </li>
               </ul>
             </div>
@@ -127,54 +127,42 @@
         </div>
         <div class="project-stats-block">
             <h4 class="project-stats-block__name">Presupuesto</h4>
+            <div class="project-stats-block__legend--budget">
+                <ul class="project-stats-block__legend-list">
+                    <li class="a">Territorio</li>
+                    <li class="b">Desarrollo económico</li>
+                    <li class="c">Bienestar</li>
+                    <li class="d">Medioambiente</li>
+                    <li class="e">Gestión</li>
+                </ul>
+            </div>
+            <div class="project-stats-block__charts">
+                <div class="stacked-chart"
+                     data="location.budget" keys="location.budget_keys"
+                     height="150" palette="location.palette" unit="%"
+                     left="20" right="20" top="20" bottom="20" title="Presupuesto desglosado">
+                </div>
+            </div>
             <div class="project-stats-block__legend">
               <ul class="project-stats-block__legend-list">
                 <li class="a">
-                    {{ location.project[ location.indicators.project.var ] }}
+                    {{ location.legend_texts.a }}
                 </li>
                 <li class="b">
-                    Media de proyectos en {{ location.getCategory('program')|uppercase }}
+                    {{ location.legend_texts.b }}
                 </li>
                 <li class="c">
-                    Media de proyectos en {{ location.getCategory('hood')|lowercase }}
+                    {{ location.legend_texts.c }}
                 </li>
                 <li class="d">
-                    Media de las ciudades incluidas en el catálogo
+                    {{ location.legend_texts.d }}
                 </li>
               </ul>
             </div>
             <div class="project-stats-block__charts">
-                <div class="bar-chart" data="location.get('total_cost')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('total_cost') }}" unit="M. €">
-                </div>
-                <div class="bar-chart" data="location.get('affected_people')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('affected_people') }}" unit="personas">
-                </div>
                 <div class="bar-chart" data="location.get('budget')"
                      width="105" height="100" left="5" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('budget') }}" unit="M. €">
-                </div>
-                <div class="bar-chart" data="location.get('budget_territory')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget_territory') }}" unit="%">
-                </div>
-                <div class="bar-chart" data="location.get('budget_economy')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget_economy') }}" unit="%">
-                </div>
-                <div class="bar-chart" data="location.get('budget_social')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget_social') }}" unit="%">
-                </div>
-                <div class="bar-chart" data="location.get('budget_sustainability')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget_sustainability') }}" unit="%">
-                </div>
-                <div class="bar-chart" data="location.get('budget_management')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget_management') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('investment')"
                      width="105" height="100" left="5" right="0" top="0" bottom="0"
@@ -184,6 +172,15 @@
                      width="105" height="100" left="5" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('diversity') }}" unit="">
                 </div>
+                <div class="bar-chart" data="location.get('total_cost')"
+                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     title="{{ location.getLabel('total_cost') }}" unit="M. €">
+                </div>
+                <div class="bar-chart" data="location.get('affected_people')"
+                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     title="{{ location.getLabel('affected_people') }}" unit="personas">
+                </div>
+            </div>
         </div>
         <nav class="breadcrumb--footer">
             <a href="#">Volver al listado general</a>

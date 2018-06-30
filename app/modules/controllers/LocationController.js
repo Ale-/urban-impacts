@@ -11,8 +11,8 @@ angular.module('urban_impacts.location_controller', [])
      */
     this.indicators     = IndicatorsService.get();
     this.project        = DataService.getProject($routeParams.location);
+    this.budget         = DataService.getBudget($routeParams.location);
     this.budget_keys    = IndicatorsService.getBudgetKeys()
-    this.budget_indexes = IndicatorsService.getBudgetAltKeys();
     this.categories     = DataService.getCategories();
     this.palette        = CONFIG.PALETTE;
     var current_lang    = 'es';
@@ -46,6 +46,13 @@ angular.module('urban_impacts.location_controller', [])
      */
     this.getCategory = function(key){
         return this.categories[key][ this.project[ this.indicators[key].var ] ].k;
+    }
+
+    this.legend_texts   = {
+       'a' : this.project[ this.indicators.project.var ],
+       'b' : "Media de proyectos en " + this.getCategory('program').toUpperCase(),
+       'c' : "Media de proyectos en " + this.getCategory('hood').toLowerCase(),
+       'd' : "Media de las ciudades incluidas en el catálogo",
     }
 
     /**

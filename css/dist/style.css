@@ -684,44 +684,60 @@ select:hover {
   font-size: 0.9em;
   margin-bottom: 48px; }
 
-/* line 93, ../src/blocks/_project.sass */
+/* line 92, ../src/blocks/_project.sass */
+.project-stats-block__legend--budget {
+  color: #063461;
+  font-size: 0.9em; }
+
+/* line 97, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li {
   flex-grow: 1; }
-/* line 95, ../src/blocks/_project.sass */
-.project-stats-block__legend-list li:before {
+
+/* line 103, ../src/blocks/_project.sass */
+.project-stats-block__legend-list .a:before, .project-stats-block__legend-list .b:before, .project-stats-block__legend-list .c:before, .project-stats-block__legend-list .d:before, .project-stats-block__legend-list .e:before,
+.tooltip .a:before,
+.tooltip .b:before,
+.tooltip .c:before,
+.tooltip .d:before,
+.tooltip .e:before {
   content: "⬤";
   margin-right: 8px; }
-/* line 98, ../src/blocks/_project.sass */
-.project-stats-block__legend-list .a:before {
-  color: #c83741; }
-/* line 100, ../src/blocks/_project.sass */
-.project-stats-block__legend-list .b:before {
-  color: #eda16a; }
-/* line 102, ../src/blocks/_project.sass */
-.project-stats-block__legend-list .c:before {
-  color: #6c283d; }
-/* line 104, ../src/blocks/_project.sass */
-.project-stats-block__legend-list .d:before {
-  color: #72a68e; }
 /* line 106, ../src/blocks/_project.sass */
-.project-stats-block__legend-list .e:before {
+.project-stats-block__legend-list .a:before,
+.tooltip .a:before {
+  color: #c83741; }
+/* line 108, ../src/blocks/_project.sass */
+.project-stats-block__legend-list .b:before,
+.tooltip .b:before {
+  color: #eda16a; }
+/* line 110, ../src/blocks/_project.sass */
+.project-stats-block__legend-list .c:before,
+.tooltip .c:before {
+  color: #6c283d; }
+/* line 112, ../src/blocks/_project.sass */
+.project-stats-block__legend-list .d:before,
+.tooltip .d:before {
+  color: #72a68e; }
+/* line 114, ../src/blocks/_project.sass */
+.project-stats-block__legend-list .e:before,
+.tooltip .e:before {
   color: #777; }
 
-/* line 109, ../src/blocks/_project.sass */
+/* line 118, ../src/blocks/_project.sass */
 .project-stats-block__legend-title {
   margin: 0 0 12px; }
 
-/* line 112, ../src/blocks/_project.sass */
+/* line 121, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1; }
 
-/* line 115, ../src/blocks/_project.sass */
+/* line 124, ../src/blocks/_project.sass */
 .bar-chart rect:hover {
   cursor: help; }
 
-/* line 118, ../src/blocks/_project.sass */
+/* line 127, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -738,11 +754,11 @@ select:hover {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 129, ../src/blocks/_project.sass */
+  /* line 138, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
-/* line 132, ../src/blocks/_project.sass */
+/* line 141, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -754,33 +770,42 @@ select:hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
 
-/* line 141, ../src/blocks/_project.sass */
+/* line 150, ../src/blocks/_project.sass */
 .stacked-chart {
-  position: relative; }
+  position: relative;
+  width: 100%; }
+  /* line 153, ../src/blocks/_project.sass */
+  .stacked-chart svg {
+    margin: 0 auto;
+    display: block; }
 
-/* line 144, ../src/blocks/_project.sass */
+/* line 157, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
   font-size: 0.8em;
   position: relative;
-  left: 400px; }
+  left: 600px; }
 
-/* line 151, ../src/blocks/_project.sass */
+/* line 164, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 154, ../src/blocks/_project.sass */
+/* line 167, ../src/blocks/_project.sass */
 path.leaflet-interactive {
   stroke-width: 1;
   stroke: red;
   stroke-opacity: 0.4;
   fill: red; }
 
-/* line 161, ../src/blocks/_project.sass */
+/* line 174, ../src/blocks/_project.sass */
 .bar-chart .domain,
 .bar-chart .tick {
   stroke: #063461; }
+
+/* line 178, ../src/blocks/_project.sass */
+.project-stats-block__legend--budget + div {
+  padding-top: 0; }
 
 /* line 3, ../src/blocks/_view.sass */
 .view-description,

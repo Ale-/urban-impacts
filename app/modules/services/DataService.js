@@ -165,7 +165,7 @@ angular.module('urban_impacts.data_service', [])
                                 { k : 'Proyecto', v : parseFloat(project[key]) },
                                 { k : 'Media de proyectos por convocatoria', v : averages[key].program[ project[ indicators.program.var] ].value },
                                 { k : 'Media de proyectos por tipo de área', v : averages[key].hood[ project[ indicators.hood.var] ].value },
-                                { k : 'Media de las ciudades intervenidas', v : averages[key].all.value },
+                                { k : 'Media de las ciudades incluidas en catálogo', v : averages[key].all.value },
                             ];
                         }
                     }
@@ -182,6 +182,32 @@ angular.module('urban_impacts.data_service', [])
             }
         );
     };
+
+    /**
+     *  getBudget
+     *  Returns budget data
+     */
+    service.getBudget = function(id){
+        var keys     = IndicatorsService.getBudgetKeys();
+        var budget   = [];
+        var project  = this.getProject(id);
+        var averages = [
+            'Proyecto',
+            'Media de proyectos por convocatoria',
+            'Media de proyectos por tipo de área',
+            'Media de las ciudades incluidas en catálogo',
+        ];
+        for(var i in averages){
+            var avg = { 'key' : averages[i] };
+            for(var k in keys){
+                avg[ keys[k] ] = project[ keys[k] ].find( function(element){
+                    return element.k == averages[i];
+                })['v'];
+            }
+            budget.push(avg);
+        }
+        return budget;
+    }
 
     /**
      *  getGeoata

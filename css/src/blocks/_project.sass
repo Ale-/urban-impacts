@@ -89,12 +89,20 @@
   font-size: .9em
   margin-bottom: $m*2
 
+.project-stats-block__legend--budget
+  color: $blue
+  font-size: .9em
+
 .project-stats-block__legend-list
   li
     flex-grow: 1
-  li:before
-    content: "⬤"
-    margin-right: $m/3
+
+.project-stats-block__legend-list,
+.tooltip
+  .a, .b, .c, .d, .e
+    &:before
+      content: "⬤"
+      margin-right: $m/3
   .a:before
     color: #c83741
   .b:before
@@ -105,6 +113,7 @@
     color: #72a68e
   .e:before
     color: #777
+
 
 .project-stats-block__legend-title
   margin: 0 0 $m/2
@@ -140,13 +149,17 @@
 
 .stacked-chart
   position: relative
+  width: 100%
+  svg
+    margin: 0 auto
+    display: block
 
 .stacked-chart .chart__title
   color: $blue
   text-transform: uppercase
   font-size: .8em
   position: relative
-  left: 400px
+  left: 600px
 
 .stacked-chart circle
   opacity: .75
@@ -161,3 +174,6 @@ path.leaflet-interactive
   .domain,
   .tick
     stroke: #063461
+
+.project-stats-block__legend--budget + div
+  padding-top: 0
