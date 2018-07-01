@@ -164,7 +164,7 @@ angular.module('urban_impacts.data_service', [])
                             project[key] = [
                                 { k : project[indicators.project.var], v : parseFloat(project[key]) },
                                 { k : "Media de proyectos en " + service.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase(), v : averages[key].program[ project[ indicators.program.var] ].value },
-                                { k : "Media de proyectos en " + service.getCategory('hood')[project[indicators.program.var]]['k'].toLowerCase(), v : averages[key].hood[ project[ indicators.hood.var] ].value },
+                                { k : "Media de proyectos en " + service.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase(), v : averages[key].hood[ project[ indicators.hood.var] ].value },
                                 { k : "Media de las ciudades incluidas en catálogo", v : averages[key].all.value },
                             ];
                         }
@@ -199,7 +199,9 @@ angular.module('urban_impacts.data_service', [])
         ];
         for(var i in averages){
             var avg = { 'key' : averages[i] };
+            console.log(averages[i]);
             for(var k in keys){
+                console.log(project[ keys[k] ]);
                 avg[ keys[k] ] = project[ keys[k] ].find( function(element){
                     return element.k == averages[i];
                 })['v'];
