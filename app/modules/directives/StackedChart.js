@@ -37,7 +37,11 @@ angular.module('urban_impacts.stackedchart_directive', [])
             // set up initial svg object with the Dimensions
             // passed in the directive parameters
             var _this_ = element[0];
-            var max_width = d3.select('.project-stats-block').node().getBoundingClientRect().width - 300;
+            var mobile = d3.select('body').node().getBoundingClientRect().width < '720';
+            if(mobile)
+                var max_width = d3.select('.project-stats-block').node().getBoundingClientRect().width - 24;
+            else
+                var max_width = d3.select('.project-stats-block').node().getBoundingClientRect().width * .75;
             w = (scope.width ? scope.width : max_width) - scope.left - scope.right;
             h = scope.height - scope.top - scope.bottom;
             var svg   = d3.select(_this_).append("svg")
@@ -46,7 +50,7 @@ angular.module('urban_impacts.stackedchart_directive', [])
             var g     = svg.append("g").attr("transform", "translate(" + scope.left + "," + scope.top + ")");
 
             // Set up scales of data
-            var x     = d3.scaleLinear().rangeRound([250, w]);
+            var x     = mobile ? d3.scaleLinear().rangeRound([0, w]) : d3.scaleLinear().rangeRound([0, w-250]);
             var y     = d3.scaleBand().rangeRound([0, h]).paddingInner(.5);
             var z     = d3.scaleOrdinal(scope.palette ? scope.palette : d3.schemeCategory10);
 
@@ -89,8 +93,9 @@ angular.module('urban_impacts.stackedchart_directive', [])
               .selectAll("text")
               .data( scope.data )
               .enter().append("text")
-              .text(function(d){
-                  return d.key
+              .text(function(d, i){
+                  var text = mobile ? i+1 : d.key;
+                  return text;
               })
               .attr("class", "category")
               .attr("font-size", "12")
@@ -98,7 +103,7 @@ angular.module('urban_impacts.stackedchart_directive', [])
               .attr("y", function(d){
                   return y(d.key) + (y.bandwidth()*.75);
               })
-              .attr("x", 0)
+              .attr("x", mobile ? -20 : w-226)
 
             // Title
             var title = d3.select(_this_).append("p")

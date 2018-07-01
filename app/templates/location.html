@@ -55,23 +55,23 @@
             </div>
             <div class="project-stats-block__charts">
                 <div class="bar-chart" data="location.get('population')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('population') }}" unit="personas">
                 </div>
                 <div class="bar-chart" data="location.get('area')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('area') }}" unit="km²">
                 </div>
                 <div class="bar-chart" data="location.get('density')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('density') }}" unit="hab./km²">
                 </div>
                 <div class="bar-chart" data="location.get('average_height')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('average_height') }}" unit="metros">
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
+                     title="{{ location.getLabel('average_height') }}" unit="plantas">
                 </div>
                 <div class="bar-chart" data="location.get('bad_housing')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('bad_housing') }}" unit="%">
                 </div>
             </div>
@@ -96,31 +96,31 @@
             </div>
             <div class="project-stats-block__charts">
                 <div class="bar-chart" data="location.get('youth')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('youth') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('aging')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('aging') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('foreigners')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('foreigners') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('unemployment')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('unemployment') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('illiteracy')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('illiteracy') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('non_cualified')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('non_cualified') }}" unit="%">
                 </div>
                 <div class="bar-chart" data="location.get('economy_level')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('economy_level') }}" unit="%">
                 </div>
             </div>
@@ -136,11 +136,27 @@
                     <li class="e">Gestión</li>
                 </ul>
             </div>
+            <div class="project-stats-block__legend--budget-averages">
+                <ul class="project-stats-block__legend-list">
+                    <li>
+                        <span class="key">1</span> {{ location.legend_texts.a }}
+                    </li>
+                    <li>
+                        <span class="key">2</span> {{ location.legend_texts.b }}
+                    </li>
+                    <li>
+                        <span class="key">3</span> {{ location.legend_texts.c }}
+                    </li>
+                    <li>
+                        <span class="key">4</span> {{ location.legend_texts.d }}
+                    </li>
+                </ul>
+            </div>
             <div class="project-stats-block__charts">
                 <div class="stacked-chart"
                      data="location.budget" keys="location.budget_keys"
                      height="150" palette="location.palette" unit="%"
-                     left="20" right="20" top="20" bottom="20" title="Presupuesto desglosado">
+                     left="48" right="48" top="20" bottom="20" title="Presupuesto desglosado">
                 </div>
             </div>
             <div class="project-stats-block__legend">
@@ -161,23 +177,23 @@
             </div>
             <div class="project-stats-block__charts">
                 <div class="bar-chart" data="location.get('budget')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('budget') }}" unit="M. €">
                 </div>
                 <div class="bar-chart" data="location.get('investment')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('investment') }}" unit="€">
                 </div>
                 <div class="bar-chart" data="location.get('diversity')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('diversity') }}" unit="">
                 </div>
                 <div class="bar-chart" data="location.get('total_cost')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('total_cost') }}" unit="M. €">
                 </div>
                 <div class="bar-chart" data="location.get('affected_people')"
-                     width="105" height="100" left="5" right="0" top="0" bottom="0"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('affected_people') }}" unit="personas">
                 </div>
             </div>

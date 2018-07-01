@@ -12,7 +12,7 @@ angular.module('urban_impacts.location_controller', [])
     this.indicators     = IndicatorsService.get();
     this.project        = DataService.getProject($routeParams.location);
     this.budget         = DataService.getBudget($routeParams.location);
-    this.budget_keys    = IndicatorsService.getBudgetKeys()
+    this.budget_keys    = IndicatorsService.getBudgetKeys();
     this.categories     = DataService.getCategories();
     this.palette        = CONFIG.PALETTE;
     var current_lang    = 'es';

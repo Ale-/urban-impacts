@@ -550,15 +550,20 @@ select:hover {
   .region-header .site-logo {
     max-width: 120px; }
 
-/* line 3, ../src/blocks/_project.sass */
+/* line 5, ../src/blocks/_project.sass */
 #map {
-  background: white; }
+  background: white;
+  position: absolute;
+  height: 480px;
+  left: 0;
+  width: 100%;
+  z-index: 0; }
 
-/* line 6, ../src/blocks/_project.sass */
+/* line 12, ../src/blocks/_project.sass */
 #map .leaflet-tile {
   filter: grayscale(100%); }
 
-/* line 8, ../src/blocks/_project.sass */
+/* line 14, ../src/blocks/_project.sass */
 #map .leaflet-bar {
   border: 0;
   color: #063461; }
@@ -566,134 +571,148 @@ select:hover {
   #map .leaflet-bar a, #map .leaflet-bar a:link, #map .leaflet-bar a:hover, #map .leaflet-bar a:visited, #map .leaflet-bar a:active {
     color: inherit; }
 
-/* line 12, ../src/blocks/_project.sass */
+/* line 18, ../src/blocks/_project.sass */
 #map .leaflet-control-attribution {
   color: #063461; }
   /* line 26, ../src/base/_2_elements.sass */
   #map .leaflet-control-attribution a, #map .leaflet-control-attribution a:link, #map .leaflet-control-attribution a:hover, #map .leaflet-control-attribution a:visited, #map .leaflet-control-attribution a:active {
     color: inherit; }
-  /* line 15, ../src/blocks/_project.sass */
+  /* line 21, ../src/blocks/_project.sass */
   #map .leaflet-control-attribution a {
     text-decoration: dotted; }
 
-/* line 18, ../src/blocks/_project.sass */
+/* line 23, ../src/blocks/_project.sass */
+path.leaflet-interactive {
+  stroke-width: 1;
+  stroke: red;
+  stroke-opacity: 0.4;
+  fill: red; }
+
+/* line 32, ../src/blocks/_project.sass */
 .breadcrumb {
   text-decoration: underline;
   text-decoration-style: dotted;
+  text-transform: uppercase;
+  font-size: 0.8em;
   -moz-transition: opacity 0.2s ease;
   -o-transition: opacity 0.2s ease;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease; }
-  /* line 22, ../src/blocks/_project.sass */
+  /* line 38, ../src/blocks/_project.sass */
   .breadcrumb:hover {
     opacity: 0.75; }
 
-/* line 24, ../src/blocks/_project.sass */
+/* line 40, ../src/blocks/_project.sass */
 .project-map + .container-fixed {
   position: relative; }
 
-/* line 26, ../src/blocks/_project.sass */
+/* line 42, ../src/blocks/_project.sass */
 .project-legend {
-  position: absolute;
-  z-index: 10000;
-  top: -72px;
   padding: 24px;
+  margin-top: calc(384px);
   background: white;
-  color: #063461;
-  max-width: calc(100% - 48px); }
+  color: #063461; }
   @media screen and (min-width: 992px) {
-    /* line 26, ../src/blocks/_project.sass */
+    /* line 42, ../src/blocks/_project.sass */
     .project-legend {
+      max-width: calc(100% - 48px);
       width: 50%; } }
   /* line 26, ../src/base/_2_elements.sass */
   .project-legend a, .project-legend a:link, .project-legend a:hover, .project-legend a:visited, .project-legend a:active {
     color: inherit; }
 
-/* line 37, ../src/blocks/_project.sass */
-.project-legend__meta {
+/* line 51, ../src/blocks/_project.sass */
+.project-legend__meta:not(:last-child) {
   border-bottom: 2px solid #063461; }
 
-/* line 40, ../src/blocks/_project.sass */
+/* line 53, ../src/blocks/_project.sass */
 .project-legend__meta-label {
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 1rem;
   display: inline-block; }
   @media screen and (min-width: 992px) {
-    /* line 40, ../src/blocks/_project.sass */
+    /* line 53, ../src/blocks/_project.sass */
     .project-legend__meta-label {
       width: 33%; } }
 
-/* line 45, ../src/blocks/_project.sass */
+/* line 58, ../src/blocks/_project.sass */
 .project-legend__name {
   margin-top: 8px; }
 
-/* line 47, ../src/blocks/_project.sass */
-.breadcrumb {
-  text-transform: uppercase;
-  font-size: 0.8em; }
-
 @media screen and (min-width: 768px) {
-  /* line 50, ../src/blocks/_project.sass */
+  /* line 60, ../src/blocks/_project.sass */
   .bar-chart {
     display: inline-block;
     position: relative;
     vertical-align: top; } }
-/* line 55, ../src/blocks/_project.sass */
+/* line 65, ../src/blocks/_project.sass */
 .bar-chart svg {
   display: block;
   margin: 0 auto;
   border-bottom: 1px solid #063461; }
 
-/* line 60, ../src/blocks/_project.sass */
+/* line 69, ../src/blocks/_project.sass */
 .project-legend + .project-stats-block {
-  padding-top: 240px; }
+  margin-top: 24px; }
 
-/* line 63, ../src/blocks/_project.sass */
-.project-stats-block {
-  padding: 24px 24px 0; }
+@media screen and (min-width: 768px) {
+  /* line 73, ../src/blocks/_project.sass */
+  .project-stats-block {
+    padding: 24px 24px 0; } }
+
+/* line 76, ../src/blocks/_project.sass */
+.project-stats-block__legend {
+  color: #063461;
+  font-size: 0.9em;
+  margin-bottom: 24px; }
+
+/* line 80, ../src/blocks/_project.sass */
+.project-stats-block__legend--budget,
+.project-stats-block__legend--budget-averages {
+  color: #063461;
+  font-size: 0.9em; }
+
+/* line 84, ../src/blocks/_project.sass */
+.project-stats-block__legend--budget-averages {
+  margin-top: 24px; }
+  /* line 86, ../src/blocks/_project.sass */
+  .project-stats-block__legend--budget-averages .key {
+    font-weight: bold; }
+  @media screen and (min-width: 768px) {
+    /* line 84, ../src/blocks/_project.sass */
+    .project-stats-block__legend--budget-averages {
+      display: none; } }
+
+/* line 91, ../src/blocks/_project.sass */
+.project-stats-block__legend-list li {
+  flex-grow: 1; }
+
+/* line 93, ../src/blocks/_project.sass */
+.project-stats-block__legend-title {
+  margin: 0 0 12px; }
 
 @media screen and (min-width: 992px) {
-  /* line 66, ../src/blocks/_project.sass */
+  /* line 95, ../src/blocks/_project.sass */
   .project-stats-block__charts {
-    padding: 24px 0;
+    padding: 24px 0 0;
     display: flex; }
-    /* line 70, ../src/blocks/_project.sass */
+    /* line 99, ../src/blocks/_project.sass */
     .project-stats-block__charts .bar-chart {
       flex-grow: 1; } }
 
-/* line 73, ../src/blocks/_project.sass */
+/* line 101, ../src/blocks/_project.sass */
 .project-stats-block__name {
   margin: 0 0 24px;
   text-transform: uppercase;
   color: #063461;
   border-bottom: 2px solid #063461; }
 
-/* line 79, ../src/blocks/_project.sass */
-.bar-chart__title {
-  color: #063461;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  max-width: 90px;
-  margin: 12px auto;
-  text-align: center; }
+/* line 106, ../src/blocks/_project.sass */
+.project-stats-block__legend--budget + div {
+  padding-top: 0; }
 
-/* line 87, ../src/blocks/_project.sass */
-.project-stats-block__legend {
-  color: #063461;
-  font-size: 0.9em;
-  margin-bottom: 48px; }
-
-/* line 92, ../src/blocks/_project.sass */
-.project-stats-block__legend--budget {
-  color: #063461;
-  font-size: 0.9em; }
-
-/* line 97, ../src/blocks/_project.sass */
-.project-stats-block__legend-list li {
-  flex-grow: 1; }
-
-/* line 103, ../src/blocks/_project.sass */
+/* line 111, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before, .project-stats-block__legend-list .b:before, .project-stats-block__legend-list .c:before, .project-stats-block__legend-list .d:before, .project-stats-block__legend-list .e:before,
 .tooltip .a:before,
 .tooltip .b:before,
@@ -702,43 +721,108 @@ select:hover {
 .tooltip .e:before {
   content: "⬤";
   margin-right: 8px; }
-/* line 106, ../src/blocks/_project.sass */
+/* line 114, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before,
 .tooltip .a:before {
   color: #c83741; }
-/* line 108, ../src/blocks/_project.sass */
+/* line 116, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .b:before,
 .tooltip .b:before {
   color: #eda16a; }
-/* line 110, ../src/blocks/_project.sass */
+/* line 118, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .c:before,
 .tooltip .c:before {
   color: #6c283d; }
-/* line 112, ../src/blocks/_project.sass */
+/* line 120, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .d:before,
 .tooltip .d:before {
   color: #72a68e; }
-/* line 114, ../src/blocks/_project.sass */
+/* line 122, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .e:before,
 .tooltip .e:before {
   color: #777; }
 
-/* line 118, ../src/blocks/_project.sass */
-.project-stats-block__legend-title {
-  margin: 0 0 12px; }
+/* line 126, ../src/blocks/_project.sass */
+.bar-chart__title {
+  color: #063461;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  max-width: 90px;
+  margin: 12px auto;
+  text-align: center; }
 
-/* line 121, ../src/blocks/_project.sass */
+/* line 133, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1; }
 
-/* line 126, ../src/blocks/_project.sass */
-.bar-chart rect:hover,
-.stacked-chart rect:hover {
-  cursor: help; }
+/* line 136, ../src/blocks/_project.sass */
+.bar-chart .domain,
+.bar-chart .tick {
+  stroke: #063461; }
 
-/* line 129, ../src/blocks/_project.sass */
+/* line 139, ../src/blocks/_project.sass */
+.stacked-chart {
+  position: relative;
+  width: 100%; }
+  /* line 142, ../src/blocks/_project.sass */
+  .stacked-chart svg {
+    margin: 0 auto;
+    display: block; }
+
+@media screen and (min-width: 768px) {
+  /* line 145, ../src/blocks/_project.sass */
+  .project-stats-block__legend--budget-averages + .project-stats-block__charts {
+    padding-top: 0; } }
+
+/* line 148, ../src/blocks/_project.sass */
+.stacked-chart .chart__title {
+  color: #063461;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  position: relative;
+  left: 48px;
+  margin-bottom: 24px; }
+  @media screen and (min-width: 768px) {
+    /* line 148, ../src/blocks/_project.sass */
+    .stacked-chart .chart__title {
+      left: 400px; } }
+
+/* line 157, ../src/blocks/_project.sass */
+.stacked-chart circle {
+  opacity: 0.75; }
+
+/* line 159, ../src/blocks/_project.sass */
+text.category {
+  max-width: 240px;
+  color: pink; }
+
+/* line 165, ../src/blocks/_project.sass */
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  padding: 8px;
+  color: #063461;
+  pointer-events: none;
+  top: -48px;
+  font-family: "Montserrat", sans-serif; }
+  @media screen and (max-width: 768px) {
+    /* line 165, ../src/blocks/_project.sass */
+    .tooltip {
+      display: none; } }
+
+/* line 175, ../src/blocks/_project.sass */
+.bar-chart .tooltip {
+  width: 80%;
+  left: 10%;
+  text-align: center; }
+
+/* line 179, ../src/blocks/_project.sass */
+.stacked-chart .tooltip {
+  right: 132px; }
+
+/* line 184, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -755,59 +839,15 @@ select:hover {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 140, ../src/blocks/_project.sass */
+  /* line 195, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
-/* line 143, ../src/blocks/_project.sass */
-.tooltip {
-  position: absolute;
-  opacity: 0;
-  top: -48px;
-  right: 132px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 8px;
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  pointer-events: none; }
-
-/* line 153, ../src/blocks/_project.sass */
-.stacked-chart {
-  position: relative;
-  width: 100%; }
-  /* line 156, ../src/blocks/_project.sass */
-  .stacked-chart svg {
-    margin: 0 auto;
-    display: block; }
-
-/* line 160, ../src/blocks/_project.sass */
-.stacked-chart .chart__title {
-  color: #063461;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  position: relative;
-  left: 600px; }
-
-/* line 167, ../src/blocks/_project.sass */
-.stacked-chart circle {
-  opacity: 0.75; }
-
-/* line 170, ../src/blocks/_project.sass */
-path.leaflet-interactive {
-  stroke-width: 1;
-  stroke: red;
-  stroke-opacity: 0.4;
-  fill: red; }
-
-/* line 177, ../src/blocks/_project.sass */
-.bar-chart .domain,
-.bar-chart .tick {
-  stroke: #063461; }
-
-/* line 181, ../src/blocks/_project.sass */
-.project-stats-block__legend--budget + div {
-  padding-top: 0; }
+@media screen and (min-width: 768px) {
+  /* line 203, ../src/blocks/_project.sass */
+  .bar-chart rect:hover,
+  .stacked-chart rect:hover {
+    cursor: help; } }
 
 /* line 3, ../src/blocks/_view.sass */
 .view-description,

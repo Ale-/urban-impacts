@@ -1,8 +1,14 @@
 // Project pages
 
+// Map
+
 #map
   background: white
-
+  position: absolute
+  height: $m*20
+  left: 0
+  width: 100%
+  z-index: 0
 #map .leaflet-tile
   filter: grayscale(100%)
 #map .leaflet-bar
@@ -14,29 +20,36 @@
   +links_nocolor
   a
     text-decoration: dotted
+path.leaflet-interactive
+  stroke-width: 1
+  stroke: red
+  stroke-opacity: .4
+  fill: red
+
+
+// Header
 
 .breadcrumb
   text-decoration: underline
   text-decoration-style: dotted
+  text-transform: uppercase
+  font-size: .8em
   +transition(opacity .2s ease)
   &:hover
     opacity: .75
 .project-map + .container-fixed
   position: relative
 .project-legend
-  position: absolute
-  z-index: 10000
-  top: -$m*3
   padding: $m
+  margin-top: calc(#{$m*16})
   background: white
   color: $blue
-  max-width: calc(100% - #{$m*2})
   +breakpoint('md')
+    max-width: calc(100% - #{$m*2})
     width: 50%
   +links_nocolor
-.project-legend__meta
+.project-legend__meta:not(:last-child)
   border-bottom: 2px solid $blue
-
 .project-legend__meta-label
   +h(5)
   display: inline-block
@@ -44,9 +57,6 @@
     width: 33%
 .project-legend__name
   margin-top: $m/3
-.breadcrumb
-  text-transform: uppercase
-  font-size: .8em
 .bar-chart
   +breakpoint('sm')
     display: inline-block
@@ -56,47 +66,45 @@
     display: block
     margin: 0 auto
     border-bottom: 1px solid $blue
-
 .project-legend + .project-stats-block
-  padding-top: $m*10
+  margin-top: $m
 
+// Charts blocks
 .project-stats-block
-  padding: $m $m 0
-
+  +breakpoint('sm')
+    padding: $m $m 0
+.project-stats-block__legend
+  color: $blue
+  font-size: .9em
+  margin-bottom: $m
+.project-stats-block__legend--budget,
+.project-stats-block__legend--budget-averages
+  color: $blue
+  font-size: .9em
+.project-stats-block__legend--budget-averages
+  margin-top: $m
+  .key
+    font-weight: bold
+  +breakpoint('sm')
+    display: none
+.project-stats-block__legend-list
+  li
+    flex-grow: 1
+.project-stats-block__legend-title
+  margin: 0 0 $m/2
 .project-stats-block__charts
   +breakpoint('md')
-    padding: $m 0
+    padding: $m 0 0
     display: flex
     .bar-chart
       flex-grow: 1
-
 .project-stats-block__name
   margin: 0 0 $m
   text-transform: uppercase
   color: $blue
   border-bottom: 2px solid $blue
-
-.bar-chart__title
-  color: $blue
-  font-size: .8em
-  text-transform: uppercase
-  max-width: 90px
-  margin: $m/2 auto
-  text-align: center
-
-.project-stats-block__legend
-  color: $blue
-  font-size: .9em
-  margin-bottom: $m*2
-
-.project-stats-block__legend--budget
-  color: $blue
-  font-size: .9em
-
-.project-stats-block__legend-list
-  li
-    flex-grow: 1
-
+.project-stats-block__legend--budget + div
+  padding-top: 0
 .project-stats-block__legend-list,
 .tooltip
   .a, .b, .c, .d, .e
@@ -114,17 +122,64 @@
   .e:before
     color: #777
 
-
-.project-stats-block__legend-title
-  margin: 0 0 $m/2
-
+// Bar charts
+.bar-chart__title
+  color: $blue
+  font-size: .8em
+  text-transform: uppercase
+  max-width: 90px
+  margin: $m/2 auto
+  text-align: center
 .bar-chart svg
   +animation(scaleup_y .5s 1)
-
-.bar-chart,
+.bar-chart
+  .domain,
+  .tick
+    stroke: #063461
 .stacked-chart
-  rect:hover
-    cursor: help
+  position: relative
+  width: 100%
+  svg
+    margin: 0 auto
+    display: block
+.project-stats-block__legend--budget-averages + .project-stats-block__charts
+  +breakpoint('sm')
+    padding-top: 0
+.stacked-chart .chart__title
+  color: $blue
+  text-transform: uppercase
+  font-size: .8em
+  position: relative
+  left: $m*2
+  margin-bottom: $m
+  +breakpoint('sm')
+    left: 400px
+.stacked-chart circle
+  opacity: .75
+text.category
+  max-width: 240px
+  color: pink
+
+// Tooltips
+
+.tooltip
+  position: absolute
+  opacity: 0
+  padding: $m/3
+  color: $blue
+  pointer-events: none
+  top: -$m*2
+  font-family: $font_headers
+  +breakpoint('xs')
+    display: none
+.bar-chart .tooltip
+  width: 80%
+  left: 10%
+  text-align: center
+.stacked-chart .tooltip
+  right: $m*5.5
+
+// Footer
 
 .breadcrumb--footer
   +links_nocolor
@@ -140,43 +195,10 @@
   &:hover
     opacity: .75
 
-.tooltip
-  position: absolute
-  opacity: 0
-  top: -$m*2
-  right: $m*5.5
-  background: rgba(white, .9)
-  padding: $m/3
-  +box-shadow(0 0 5px rgba(black, .15))
-  pointer-events: none
+// Other
 
+.bar-chart,
 .stacked-chart
-  position: relative
-  width: 100%
-  svg
-    margin: 0 auto
-    display: block
-
-.stacked-chart .chart__title
-  color: $blue
-  text-transform: uppercase
-  font-size: .8em
-  position: relative
-  left: 600px
-
-.stacked-chart circle
-  opacity: .75
-
-path.leaflet-interactive
-  stroke-width: 1
-  stroke: red
-  stroke-opacity: .4
-  fill: red
-
-.bar-chart
-  .domain,
-  .tick
-    stroke: #063461
-
-.project-stats-block__legend--budget + div
-  padding-top: 0
+  +breakpoint('sm')
+    rect:hover
+      cursor: help
