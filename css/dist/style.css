@@ -680,17 +680,20 @@ path.leaflet-interactive {
   fill: red; }
 
 /* line 31, ../src/blocks/_project.sass */
+.project {
+  top: calc(384px) !important; }
+
+/* line 33, ../src/blocks/_project.sass */
 .project-map + .container-fixed {
   position: relative; }
 
-/* line 33, ../src/blocks/_project.sass */
+/* line 35, ../src/blocks/_project.sass */
 .project-legend {
   padding: 24px;
-  margin-top: calc(384px);
   background: white;
   color: #063461; }
   @media screen and (min-width: 992px) {
-    /* line 33, ../src/blocks/_project.sass */
+    /* line 35, ../src/blocks/_project.sass */
     .project-legend {
       max-width: calc(100% - 48px);
       width: 50%; } }
@@ -698,97 +701,97 @@ path.leaflet-interactive {
   .project-legend a, .project-legend a:link, .project-legend a:hover, .project-legend a:visited, .project-legend a:active {
     color: inherit; }
 
-/* line 42, ../src/blocks/_project.sass */
+/* line 43, ../src/blocks/_project.sass */
 .project-legend__meta:not(:last-child) {
   border-bottom: 2px solid #063461; }
 
-/* line 44, ../src/blocks/_project.sass */
+/* line 45, ../src/blocks/_project.sass */
 .project-legend__meta-label {
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 1rem;
   display: inline-block; }
   @media screen and (min-width: 992px) {
-    /* line 44, ../src/blocks/_project.sass */
+    /* line 45, ../src/blocks/_project.sass */
     .project-legend__meta-label {
       width: 33%; } }
 
-/* line 49, ../src/blocks/_project.sass */
+/* line 50, ../src/blocks/_project.sass */
 .project-legend__name {
   margin-top: 8px; }
 
 @media screen and (min-width: 768px) {
-  /* line 51, ../src/blocks/_project.sass */
+  /* line 52, ../src/blocks/_project.sass */
   .bar-chart {
     display: inline-block;
     position: relative;
     vertical-align: top; } }
-/* line 56, ../src/blocks/_project.sass */
+/* line 57, ../src/blocks/_project.sass */
 .bar-chart svg {
   display: block;
   margin: 0 auto; }
 
-/* line 59, ../src/blocks/_project.sass */
+/* line 60, ../src/blocks/_project.sass */
 .project-legend + .project-stats-block {
   margin-top: 24px; }
 
 @media screen and (min-width: 768px) {
-  /* line 63, ../src/blocks/_project.sass */
+  /* line 64, ../src/blocks/_project.sass */
   .project-stats-block {
     padding: 24px 24px 0; } }
 
-/* line 66, ../src/blocks/_project.sass */
+/* line 67, ../src/blocks/_project.sass */
 .project-stats-block__legend {
   color: #063461;
   font-size: 0.9em;
   margin-bottom: 24px; }
 
-/* line 70, ../src/blocks/_project.sass */
+/* line 71, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget,
 .project-stats-block__legend--budget-averages {
   color: #063461;
   font-size: 0.9em; }
 
-/* line 74, ../src/blocks/_project.sass */
+/* line 75, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget-averages {
   margin-top: 24px; }
-  /* line 76, ../src/blocks/_project.sass */
+  /* line 77, ../src/blocks/_project.sass */
   .project-stats-block__legend--budget-averages .key {
     font-weight: bold; }
   @media screen and (min-width: 768px) {
-    /* line 74, ../src/blocks/_project.sass */
+    /* line 75, ../src/blocks/_project.sass */
     .project-stats-block__legend--budget-averages {
       display: none; } }
 
-/* line 81, ../src/blocks/_project.sass */
+/* line 82, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li {
   flex-grow: 1; }
 
-/* line 83, ../src/blocks/_project.sass */
+/* line 84, ../src/blocks/_project.sass */
 .project-stats-block__legend-title {
   margin: 0 0 12px; }
 
 @media screen and (min-width: 992px) {
-  /* line 85, ../src/blocks/_project.sass */
+  /* line 86, ../src/blocks/_project.sass */
   .project-stats-block__charts {
     padding: 24px 0 0;
     display: flex; }
-    /* line 89, ../src/blocks/_project.sass */
+    /* line 90, ../src/blocks/_project.sass */
     .project-stats-block__charts .bar-chart {
       flex-grow: 1; } }
 
-/* line 91, ../src/blocks/_project.sass */
+/* line 92, ../src/blocks/_project.sass */
 .project-stats-block__name {
   margin: 0 0 24px;
   text-transform: uppercase;
   color: #063461;
   border-bottom: 2px solid #063461; }
 
-/* line 96, ../src/blocks/_project.sass */
+/* line 97, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget + div {
   padding-top: 0; }
 
-/* line 101, ../src/blocks/_project.sass */
+/* line 102, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before, .project-stats-block__legend-list .b:before, .project-stats-block__legend-list .c:before, .project-stats-block__legend-list .d:before, .project-stats-block__legend-list .e:before,
 .tooltip .a:before,
 .tooltip .b:before,
@@ -797,28 +800,28 @@ path.leaflet-interactive {
 .tooltip .e:before {
   content: "⬤";
   margin-right: 8px; }
-/* line 104, ../src/blocks/_project.sass */
+/* line 105, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before,
 .tooltip .a:before {
   color: #c83741; }
-/* line 106, ../src/blocks/_project.sass */
+/* line 107, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .b:before,
 .tooltip .b:before {
   color: #eda16a; }
-/* line 108, ../src/blocks/_project.sass */
+/* line 109, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .c:before,
 .tooltip .c:before {
   color: #6c283d; }
-/* line 110, ../src/blocks/_project.sass */
+/* line 111, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .d:before,
 .tooltip .d:before {
   color: #72a68e; }
-/* line 112, ../src/blocks/_project.sass */
+/* line 113, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .e:before,
 .tooltip .e:before {
   color: #777; }
 
-/* line 116, ../src/blocks/_project.sass */
+/* line 117, ../src/blocks/_project.sass */
 .bar-chart__title {
   color: #063461;
   font-size: 0.8em;
@@ -827,37 +830,37 @@ path.leaflet-interactive {
   margin: 12px auto;
   text-align: center;
   display: block; }
-  /* line 124, ../src/blocks/_project.sass */
+  /* line 125, ../src/blocks/_project.sass */
   .bar-chart__title:hover {
     cursor: help; }
 
-/* line 126, ../src/blocks/_project.sass */
+/* line 127, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1;
   overflow: visible; }
 
-/* line 130, ../src/blocks/_project.sass */
+/* line 131, ../src/blocks/_project.sass */
 .bar-chart .domain,
 .bar-chart .tick {
   stroke: #063461; }
 
-/* line 133, ../src/blocks/_project.sass */
+/* line 134, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative;
   width: 100%; }
-  /* line 136, ../src/blocks/_project.sass */
+  /* line 137, ../src/blocks/_project.sass */
   .stacked-chart svg {
     margin: 0 auto;
     display: block; }
 
 @media screen and (min-width: 768px) {
-  /* line 139, ../src/blocks/_project.sass */
+  /* line 140, ../src/blocks/_project.sass */
   .project-stats-block__legend--budget-averages + .project-stats-block__charts {
     padding-top: 0; } }
 
-/* line 142, ../src/blocks/_project.sass */
+/* line 143, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -866,20 +869,20 @@ path.leaflet-interactive {
   left: 48px;
   margin-bottom: 24px; }
   @media screen and (min-width: 768px) {
-    /* line 142, ../src/blocks/_project.sass */
+    /* line 143, ../src/blocks/_project.sass */
     .stacked-chart .chart__title {
       left: 400px; } }
 
-/* line 151, ../src/blocks/_project.sass */
+/* line 152, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 153, ../src/blocks/_project.sass */
+/* line 154, ../src/blocks/_project.sass */
 text.category {
   max-width: 240px;
   color: pink; }
 
-/* line 159, ../src/blocks/_project.sass */
+/* line 160, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -889,21 +892,21 @@ text.category {
   top: -48px;
   font-family: "Montserrat", sans-serif; }
   @media screen and (max-width: 768px) {
-    /* line 159, ../src/blocks/_project.sass */
+    /* line 160, ../src/blocks/_project.sass */
     .tooltip {
       display: none; } }
 
-/* line 169, ../src/blocks/_project.sass */
+/* line 170, ../src/blocks/_project.sass */
 .bar-chart .tooltip {
   width: 80%;
   left: 10%;
   text-align: center; }
 
-/* line 173, ../src/blocks/_project.sass */
+/* line 174, ../src/blocks/_project.sass */
 .stacked-chart .tooltip {
   right: 132px; }
 
-/* line 178, ../src/blocks/_project.sass */
+/* line 179, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -920,17 +923,17 @@ text.category {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 189, ../src/blocks/_project.sass */
+  /* line 190, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
 @media screen and (min-width: 768px) {
-  /* line 197, ../src/blocks/_project.sass */
+  /* line 198, ../src/blocks/_project.sass */
   .bar-chart rect:hover,
   .stacked-chart rect:hover {
     cursor: help; } }
 
-/* line 200, ../src/blocks/_project.sass */
+/* line 201, ../src/blocks/_project.sass */
 .tick text {
   font-size: 0.75em;
   font-family: monospace; }
