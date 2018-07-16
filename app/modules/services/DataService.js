@@ -18,6 +18,7 @@ angular.module('urban_impacts.data_service', [])
             'program' : {
                 '1' : { k : 'Urban I',  v: 1, n : 0 },
                 '2' : { k : 'Urban II', v: 2, n : 0 },
+                '3' : { k : 'Urban III', v: 2, n : 0 },
             },
             'hood' : {
                 '1' : { k : 'Barriada',        v: 1, n : 0 },
@@ -51,6 +52,10 @@ angular.module('urban_impacts.data_service', [])
                                'value' : 0,
                             },
                             '2' : {
+                               'items' : 0,
+                               'value' : 0,
+                            },
+                            '3' : {
                                'items' : 0,
                                'value' : 0,
                             },
@@ -197,11 +202,10 @@ angular.module('urban_impacts.data_service', [])
             "Media de proyectos en " + this.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase(),
             "Media de las ciudades incluidas en catálogo",
         ];
+        console.log(project);
         for(var i in averages){
             var avg = { 'key' : averages[i] };
-            console.log(averages[i]);
             for(var k in keys){
-                console.log(project[ keys[k] ]);
                 avg[ keys[k] ] = project[ keys[k] ].find( function(element){
                     return element.k == averages[i];
                 })['v'];

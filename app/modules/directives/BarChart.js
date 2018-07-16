@@ -4,7 +4,7 @@ angular.module('urban_impacts.barchart_directive', [])
  *   Directive to render a map
  *
  */
-.directive("barChart", function(DataService){
+.directive("barChart", function(DataService, IndicatorsService){
 
     return {
         restrict : 'EAC',
@@ -16,8 +16,10 @@ angular.module('urban_impacts.barchart_directive', [])
           left   : '=',
           right  : '=',
           data   : '=',
+          max    : '=',
           unit   : '@',
           title  : '@',
+          help   : '@',
         },
 
         link     : function (scope, element, attrs)
@@ -41,8 +43,10 @@ angular.module('urban_impacts.barchart_directive', [])
             // else is 100% -> to avoid perception distortions
 
             if(scope.unit){
-                if(scope.unit != '%')
-                    y.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
+                if(scope.max)
+                    y.domain([0, scope.max]);
+                else if(scope.unit != '%')
+                    y.domain([0, d3.max(scope.data, function(d) { console.log(d); return d.v; })]);
                 else
                     y.domain([0, 100]);
             } else {
@@ -52,7 +56,11 @@ angular.module('urban_impacts.barchart_directive', [])
 
             g.append("g")
                 .attr("class", "axis axis--y")
-                .call(d3.axisLeft(y).ticks());
+                .call(
+                    d3.axisLeft(y).
+                    ticks(5).
+                    tickSize(1)
+                );
 
             g.selectAll(".bar").data(scope.data).enter()
                 .append("rect")
@@ -72,9 +80,10 @@ angular.module('urban_impacts.barchart_directive', [])
                 .on("mouseout", function(d) {
                     div.transition().duration(500).style("opacity", 0);
                 });
-                var title = d3.select(_this_).append("p")
+                var title = d3.select(_this_).append("abbr")
                     .attr("class", "bar-chart__title")
-                    .text( scope.title );
+                    .attr("title", scope.help)
+                    .text(scope.title);
         }
     };
 });

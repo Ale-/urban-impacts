@@ -5,7 +5,9 @@
     <div class="container-fixed">
         <!-- Project legend -->
         <div class="project-legend">
-            <nav class="breadcrumb"><a href="#">Volver al listado general</a></nav>
+            <nav class="breadcrumb">
+                <a href="#">Volver al listado general</a>
+            </nav>
             <h1 class="project-legend__name">
                 {{ location.get('project') }}
             </h1>
@@ -56,23 +58,28 @@
             <div class="project-stats-block__charts">
                 <div class="bar-chart" data="location.get('population')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('population') }}" unit="personas">
+                     title="{{ location.getLabel('population') }}" unit="personas"
+                     help="{{ location.getNote('population') }}">
                 </div>
                 <div class="bar-chart" data="location.get('area')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('area') }}" unit="km²">
+                     title="{{ location.getLabel('area') }}" unit="km²"
+                     help="{{ location.getNote('area') }}">
                 </div>
                 <div class="bar-chart" data="location.get('density')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('density') }}" unit="hab./km²">
+                     title="{{ location.getLabel('density') }}" unit="hab./km²"
+                     help="{{ location.getNote('density') }}">
                 </div>
                 <div class="bar-chart" data="location.get('average_height')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('average_height') }}" unit="plantas">
+                     title="{{ location.getLabel('average_height') }}" unit="plantas"
+                     help="{{ location.getNote('average_height') }}">
                 </div>
                 <div class="bar-chart" data="location.get('bad_housing')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('bad_housing') }}" unit="%">
+                     title="{{ location.getLabel('bad_housing') }}" unit="%"
+                     help="{{ location.getNote('bad_housing') }}">
                 </div>
             </div>
         </div>
@@ -97,31 +104,38 @@
             <div class="project-stats-block__charts">
                 <div class="bar-chart" data="location.get('youth')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('youth') }}" unit="%">
+                     title="{{ location.getLabel('youth') }}" unit="%"
+                     help="{{ location.getNote('youth') }}">
                 </div>
                 <div class="bar-chart" data="location.get('aging')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('aging') }}" unit="%">
+                     title="{{ location.getLabel('aging') }}" unit="%"
+                     help="{{ location.getNote('aging') }}">
                 </div>
                 <div class="bar-chart" data="location.get('foreigners')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('foreigners') }}" unit="%">
+                     title="{{ location.getLabel('foreigners') }}" unit="%" max="10"
+                     help="{{ location.getNote('foreigners') }}">
                 </div>
                 <div class="bar-chart" data="location.get('unemployment')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('unemployment') }}" unit="%">
+                     title="{{ location.getLabel('unemployment') }}" unit="%"
+                     help="{{ location.getNote('unemployment') }}">
                 </div>
                 <div class="bar-chart" data="location.get('illiteracy')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('illiteracy') }}" unit="%">
+                     title="{{ location.getLabel('illiteracy') }}" unit="%"
+                     help="{{ location.getNote('illiteracy') }}">
                 </div>
                 <div class="bar-chart" data="location.get('non_cualified')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('non_cualified') }}" unit="%">
+                     title="{{ location.getLabel('non_cualified') }}" unit="%"
+                     help="{{ location.getNote('non_cualified') }}">
                 </div>
                 <div class="bar-chart" data="location.get('economy_level')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('economy_level') }}" unit="%">
+                     title="{{ location.getLabel('economy_level') }}" unit="%"
+                     help="{{ location.getNote('economy_level') }}">
                 </div>
             </div>
         </div>
@@ -129,11 +143,11 @@
             <h4 class="project-stats-block__name">Presupuesto</h4>
             <div class="project-stats-block__legend--budget">
                 <ul class="project-stats-block__legend-list">
-                    <li class="a">Territorio</li>
-                    <li class="b">Desarrollo económico</li>
-                    <li class="c">Bienestar</li>
-                    <li class="d">Medioambiente</li>
-                    <li class="e">Gestión</li>
+                    <li class="a"><abbr title="{{ location.getNote('budget_territory') }}">Territorio</abbr></li>
+                    <li class="b"><abbr title="{{ location.getNote('budget_economy') }}">Desarrollo económico</abbr></li>
+                    <li class="c"><abbr title="{{ location.getNote('budget_social') }}">Bienestar</abbr></li>
+                    <li class="d"><abbr title="{{ location.getNote('budget_sustainability') }}">Medioambiente</abbr></li>
+                    <li class="e"><abbr title="{{ location.getNote('budget_management') }}">Gestión</abbr></li>
                 </ul>
             </div>
             <div class="project-stats-block__legend--budget-averages">
@@ -176,10 +190,6 @@
               </ul>
             </div>
             <div class="project-stats-block__charts">
-                <div class="bar-chart" data="location.get('budget')"
-                     width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('budget') }}" unit="M. €">
-                </div>
                 <div class="bar-chart" data="location.get('investment')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('investment') }}" unit="€">
@@ -192,13 +202,20 @@
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('total_cost') }}" unit="M. €">
                 </div>
-                <div class="bar-chart" data="location.get('affected_people')"
-                     width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('affected_people') }}" unit="personas">
-                </div>
             </div>
         </div>
-        <nav class="breadcrumb--footer">
-            <a href="#">Volver al listado general</a>
-        </nav>
+        <div class="view-colophon">
+            <div class="methodology-notes">
+                <h5>Nota metodológica:</h5>
+                <p><a href="#/metodologia">Consultar nota metodológica de la investigación</a></p>
+            </div>
+            <div class="citation-notes">
+                <h5>Citar de la forma siguiente:</h5>
+                <p>Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.</p>
+                <p><a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">https://www.upo.es/investiga/urbanimpacts</a></p>
+            </div>
+            <nav class="breadcrumb--footer">
+                <a href="#">Volver al listado general</a>
+            </nav>
+        </div>
 </section>

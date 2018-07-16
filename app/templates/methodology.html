@@ -1,0 +1,82 @@
+<section class="methodology container-fixed">
+    <nav class="breadcrumb">
+        <button onclick="history.go(-1)">Volver atrás</button>
+    </nav>
+    <h1 class="methodology__title">
+        Catálogo de Proyectos URBAN IMPACTS:<br/>Nota Metodológica
+    </h1>
+    <div class="methodology__content">
+        <p>A continuación se detalla la metodología para obtener las variables
+        mostradas en el catálogo de proyectos.</p>
+        <ul class="methodology__section">
+            <li class="methodology__indicator" ng-repeat="var in methodology.general_variables">
+                <h5>{{ methodology.indicators[var].label_es }}</h5>
+                <p ng-bind-html="methodology.indicators[var].meth_es"></p>
+            </li>
+        </ul>
+        <ul class="methodology__section">
+            <h3>Área urbana y composición social</h3>
+            <p class="methodology__section-intro">
+              Las variables de área urbana y composición social han sido calculadas
+              en base a la agrupación de las secciones censales afectadas por el
+              proyecto, debido a esto la población y la superficie puede no coincidir
+              exactamente con la original del proyecto. En proyectos muy pequeños
+              ha sido necesario aumentar el número de secciones afectadas para
+              obtener muestra suficiente para los análisis, esto se ha hecho
+              siguiendo dos criterios, siempre dentro del mismo distrito e
+              intentando agrupar secciones con un índice de nivel socio-económica
+              similar. Para los proyectos de la convocatoria Urban I los datos
+              provienen del censo del Instituto Nacional de Estadística del año
+              1991. En el caso de los proyecto de la convocatoria Urban II del
+              Censo del año 91 2001.
+            </p>
+            <li class="methodology__indicator" ng-repeat="var in methodology.urban_variables">
+                <h5>{{ methodology.indicators[var].label_es }}</h5>
+                <p ng-bind-html="methodology.indicators[var].meth_es"></p>
+            </li>
+        </ul>
+        <ul class="methodology__section">
+            <h3>Estrategia del proyecto</h3>
+            <p class="methodology__section-intro">
+              Las  Variables incluidas en este apartado se han obtenido a partir
+              del análisis de los documentos de programación y seguimiento de los
+              proyectos facilitados por la Dirección general de Fondos Comunitarios
+              del Ministerio de Hacienda. Para más información acerca los análisis
+              realizados ver Gómez et al 2018.
+            </p>
+            <li class="methodology__indicator">
+                <h5>{{ methodology.indicators.budget.label_es }}</h5>
+                <p ng-bind-html="methodology.indicators.budget.meth_es"></p>
+            </li>
+            <li class="methodology__indicator">
+                <h5>Porcentaje de presupuestos por áreas</h5>
+                <p>
+                    Porcentaje de presupuesto <strong>ejecutado</strong> agrupadas
+                    en cada una de las macro áreas de actuación definidas por el
+                    equipo de investigación a partir de las áreas oficiales de los proyectos:
+                </p>
+                <ul>
+                    <li class="methodology__indicator" ng-repeat="var in methodology.budget_variables">
+                        <h5>{{ methodology.indicators[var].label_es }}</h5>
+                        <p ng-bind-html="methodology.indicators[var].meth_es"></p>
+                    </li>
+                </ul>
+            </li>
+            <li class="methodology__indicator">
+                <h5>{{ methodology.indicators.investment.label_es }}</h5>
+                <p ng-bind-html="methodology.indicators.investment.meth_es"></p>
+            </li>
+            <li class="methodology__indicator">
+                <h5>{{ methodology.indicators.diversity.label_es }}</h5>
+                <p ng-bind-html="methodology.indicators.diversity.meth_es"></p>
+            </li>
+        </ul>
+    </div>
+    <div class="view-colophon">
+        <div class="citation-notes">
+            <h5>Citar de la forma siguiente:</h5>
+            <p>Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.</p>
+            <p><a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">https://www.upo.es/investiga/urbanimpacts</a></p>
+        </div>
+    </div>
+</section>

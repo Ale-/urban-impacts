@@ -26,17 +26,8 @@ path.leaflet-interactive
   stroke-opacity: .4
   fill: red
 
-
 // Header
 
-.breadcrumb
-  text-decoration: underline
-  text-decoration-style: dotted
-  text-transform: uppercase
-  font-size: .8em
-  +transition(opacity .2s ease)
-  &:hover
-    opacity: .75
 .project-map + .container-fixed
   position: relative
 .project-legend
@@ -65,7 +56,6 @@ path.leaflet-interactive
   svg
     display: block
     margin: 0 auto
-    border-bottom: 1px solid $blue
 .project-legend + .project-stats-block
   margin-top: $m
 
@@ -130,8 +120,12 @@ path.leaflet-interactive
   max-width: 90px
   margin: $m/2 auto
   text-align: center
+  display: block
+  &:hover
+    cursor: help
 .bar-chart svg
   +animation(scaleup_y .5s 1)
+  overflow: visible
 .bar-chart
   .domain,
   .tick
@@ -202,3 +196,7 @@ text.category
   +breakpoint('sm')
     rect:hover
       cursor: help
+
+.tick text
+  font-size: .75em
+  font-family: monospace

@@ -74,54 +74,48 @@ a {
 /* Text-level semantics
  * ========================================================================== */
 /**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
-/* line 86, ../src/base/_0_normalize.sass */
-abbr[title] {
-  border-bottom: 1px dotted; }
-
-/**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
-/* line 92, ../src/base/_0_normalize.sass */
+/* line 86, ../src/base/_0_normalize.sass */
 b, strong {
   font-weight: bold; }
 
 /**
  * Address styling not present in Safari and Chrome. */
-/* line 98, ../src/base/_0_normalize.sass */
+/* line 92, ../src/base/_0_normalize.sass */
 dfn {
   font-style: italic; }
 
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome. */
-/* line 105, ../src/base/_0_normalize.sass */
+/* line 99, ../src/base/_0_normalize.sass */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
 /**
  * Address styling not present in IE 8/9. */
-/* line 112, ../src/base/_0_normalize.sass */
+/* line 106, ../src/base/_0_normalize.sass */
 mark {
   background: #ff0;
   color: #000; }
 
 /**
  * Address inconsistent and variable font size in all browsers. */
-/* line 119, ../src/base/_0_normalize.sass */
+/* line 113, ../src/base/_0_normalize.sass */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-/* line 125, ../src/base/_0_normalize.sass */
+/* line 119, ../src/base/_0_normalize.sass */
 sub {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
-/* line 131, ../src/base/_0_normalize.sass */
+/* line 125, ../src/base/_0_normalize.sass */
 sup {
   font-size: 75%;
   line-height: 0;
@@ -129,7 +123,7 @@ sup {
   vertical-align: baseline;
   top: -0.5em; }
 
-/* line 138, ../src/base/_0_normalize.sass */
+/* line 132, ../src/base/_0_normalize.sass */
 sub {
   bottom: -0.25em; }
 
@@ -137,13 +131,13 @@ sub {
  * ========================================================================== */
 /**
  * Remove border when inside `a` element in IE 8/9/10. */
-/* line 147, ../src/base/_0_normalize.sass */
+/* line 141, ../src/base/_0_normalize.sass */
 img {
   border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11. */
-/* line 153, ../src/base/_0_normalize.sass */
+/* line 147, ../src/base/_0_normalize.sass */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -151,26 +145,26 @@ svg:not(:root) {
  * ========================================================================== */
 /**
  * Address margin not present in IE 8/9 and Safari. */
-/* line 162, ../src/base/_0_normalize.sass */
+/* line 156, ../src/base/_0_normalize.sass */
 figure {
   margin: 1em 40px; }
 
 /**
  * Address differences between Firefox and other browsers. */
-/* line 168, ../src/base/_0_normalize.sass */
+/* line 162, ../src/base/_0_normalize.sass */
 hr {
   box-sizing: content-box;
   height: 0; }
 
 /**
  * Contain overflow in all browsers. */
-/* line 175, ../src/base/_0_normalize.sass */
+/* line 169, ../src/base/_0_normalize.sass */
 pre {
   overflow: auto; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers. */
-/* line 181, ../src/base/_0_normalize.sass */
+/* line 175, ../src/base/_0_normalize.sass */
 code, kbd, pre, samp {
   font-family: monospace, monospace;
   font-size: 1em; }
@@ -185,7 +179,7 @@ code, kbd, pre, samp {
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome. */
-/* line 198, ../src/base/_0_normalize.sass */
+/* line 192, ../src/base/_0_normalize.sass */
 button, input, optgroup, select, textarea {
   color: inherit;
   /* 1 */
@@ -196,7 +190,7 @@ button, input, optgroup, select, textarea {
 
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11. */
-/* line 212, ../src/base/_0_normalize.sass */
+/* line 206, ../src/base/_0_normalize.sass */
 button {
   overflow: visible;
   text-transform: none; }
@@ -206,7 +200,7 @@ button {
  * All other form control elements do not inherit `text-transform` values.
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox. */
-/* line 222, ../src/base/_0_normalize.sass */
+/* line 216, ../src/base/_0_normalize.sass */
 select {
   text-transform: none; }
 
@@ -216,14 +210,14 @@ select {
  * 2. Correct inability to style clickable `input` types in iOS.
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others. */
-/* line 232, ../src/base/_0_normalize.sass */
+/* line 226, ../src/base/_0_normalize.sass */
 button, html input[type="button"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
   /* 3 */ }
 
-/* line 241, ../src/base/_0_normalize.sass */
+/* line 235, ../src/base/_0_normalize.sass */
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -232,40 +226,40 @@ input[type="reset"], input[type="submit"] {
 
 /**
  * Re-set default cursor for disabled elements. */
-/* line 252, ../src/base/_0_normalize.sass */
+/* line 246, ../src/base/_0_normalize.sass */
 button[disabled], html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+. */
-/* line 258, ../src/base/_0_normalize.sass */
+/* line 252, ../src/base/_0_normalize.sass */
 button::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/* line 262, ../src/base/_0_normalize.sass */
+/* line 256, ../src/base/_0_normalize.sass */
 input {
   line-height: normal; }
-  /* line 263, ../src/base/_0_normalize.sass */
+  /* line 257, ../src/base/_0_normalize.sass */
   input::-moz-focus-inner {
     border: 0;
     padding: 0; }
-  /* line 269, ../src/base/_0_normalize.sass */
+  /* line 263, ../src/base/_0_normalize.sass */
   input[type="checkbox"], input[type="radio"] {
     box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 2 */ }
-  /* line 278, ../src/base/_0_normalize.sass */
+  /* line 272, ../src/base/_0_normalize.sass */
   input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
     height: auto; }
-  /* line 281, ../src/base/_0_normalize.sass */
+  /* line 275, ../src/base/_0_normalize.sass */
   input[type="search"] {
     -webkit-appearance: textfield;
     /* 1 */
     box-sizing: content-box;
     /* 2 */ }
-    /* line 289, ../src/base/_0_normalize.sass */
+    /* line 283, ../src/base/_0_normalize.sass */
     input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
       -webkit-appearance: none; }
 
@@ -291,7 +285,7 @@ input {
  * padding (and `textfield` appearance). */
 /**
  * Define consistent border, margin, and padding. */
-/* line 320, ../src/base/_0_normalize.sass */
+/* line 314, ../src/base/_0_normalize.sass */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -300,7 +294,7 @@ fieldset {
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets. */
-/* line 329, ../src/base/_0_normalize.sass */
+/* line 323, ../src/base/_0_normalize.sass */
 legend {
   border: 0;
   /* 1 */
@@ -309,14 +303,14 @@ legend {
 
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11. */
-/* line 340, ../src/base/_0_normalize.sass */
+/* line 334, ../src/base/_0_normalize.sass */
 textarea {
   overflow: auto; }
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
-/* line 347, ../src/base/_0_normalize.sass */
+/* line 341, ../src/base/_0_normalize.sass */
 optgroup {
   font-weight: bold; }
 
@@ -324,12 +318,12 @@ optgroup {
  * ========================================================================== */
 /**
  * Remove most spacing between table cells. */
-/* line 356, ../src/base/_0_normalize.sass */
+/* line 350, ../src/base/_0_normalize.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 360, ../src/base/_0_normalize.sass */
+/* line 354, ../src/base/_0_normalize.sass */
 td, th {
   padding: 0; }
 
@@ -550,6 +544,103 @@ select:hover {
   .region-header .site-logo {
     max-width: 120px; }
 
+/* line 3, ../src/blocks/_common.sass */
+.methodology-notes,
+.citation-notes {
+  color: #063461;
+  background-color: #f5f5f5;
+  padding: 12px;
+  margin: 12px 24px; }
+  /* line 26, ../src/base/_2_elements.sass */
+  .methodology-notes a, .methodology-notes a:link, .methodology-notes a:hover, .methodology-notes a:visited, .methodology-notes a:active,
+  .citation-notes a,
+  .citation-notes a:link,
+  .citation-notes a:hover,
+  .citation-notes a:visited,
+  .citation-notes a:active {
+    color: inherit; }
+  /* line 10, ../src/blocks/_common.sass */
+  .methodology-notes a,
+  .citation-notes a {
+    border-bottom: 1px dotted;
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease; }
+  /* line 13, ../src/blocks/_common.sass */
+  .methodology-notes a:hover,
+  .citation-notes a:hover {
+    opacity: 0.75; }
+  /* line 15, ../src/blocks/_common.sass */
+  .methodology-notes h5,
+  .citation-notes h5 {
+    margin: 0 0 8px; }
+
+/* line 18, ../src/blocks/_common.sass */
+abbr:hover {
+  cursor: help; }
+
+/* line 21, ../src/blocks/_common.sass */
+.view-description {
+  font-size: 1.35em;
+  padding: 48px 24px; }
+
+/* line 25, ../src/blocks/_common.sass */
+.view-colophon {
+  margin-top: 96px;
+  color: #063461; }
+
+/* line 30, ../src/blocks/_common.sass */
+.breadcrumb a, .breadcrumb button {
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease; }
+  /* line 38, ../src/blocks/_common.sass */
+  .breadcrumb a:hover, .breadcrumb button:hover {
+    opacity: 0.75; }
+
+/* line 3, ../src/blocks/_methodology.sass */
+.methodology {
+  color: #063461;
+  padding: 48px 192px 192px; }
+  /* line 6, ../src/blocks/_methodology.sass */
+  .methodology a {
+    text-decoration: underline !important; }
+  /* line 8, ../src/blocks/_methodology.sass */
+  .methodology a, .methodology a:link, .methodology a:visited {
+    color: #DC9C38; }
+  /* line 10, ../src/blocks/_methodology.sass */
+  .methodology a:hover {
+    color: #d59125; }
+  /* line 12, ../src/blocks/_methodology.sass */
+  .methodology a:active {
+    color: #DC9C38; }
+  /* line 14, ../src/blocks/_methodology.sass */
+  .methodology h3 {
+    border-bottom: 4px solid #063461; }
+
+/* line 17, ../src/blocks/_methodology.sass */
+.methodology__section {
+  margin: 48px 48px 0 0; }
+  /* line 19, ../src/blocks/_methodology.sass */
+  .methodology__section h5 {
+    border-bottom: 2px solid #063461; }
+
+/* line 22, ../src/blocks/_methodology.sass */
+.methodology__indicator {
+  padding-left: 48px; }
+
+/* line 25, ../src/blocks/_methodology.sass */
+.methodology__section-intro {
+  font-size: 1.2em; }
+
 /* line 5, ../src/blocks/_project.sass */
 #map {
   background: white;
@@ -588,32 +679,18 @@ path.leaflet-interactive {
   stroke-opacity: 0.4;
   fill: red; }
 
-/* line 32, ../src/blocks/_project.sass */
-.breadcrumb {
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  -moz-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease; }
-  /* line 38, ../src/blocks/_project.sass */
-  .breadcrumb:hover {
-    opacity: 0.75; }
-
-/* line 40, ../src/blocks/_project.sass */
+/* line 31, ../src/blocks/_project.sass */
 .project-map + .container-fixed {
   position: relative; }
 
-/* line 42, ../src/blocks/_project.sass */
+/* line 33, ../src/blocks/_project.sass */
 .project-legend {
   padding: 24px;
   margin-top: calc(384px);
   background: white;
   color: #063461; }
   @media screen and (min-width: 992px) {
-    /* line 42, ../src/blocks/_project.sass */
+    /* line 33, ../src/blocks/_project.sass */
     .project-legend {
       max-width: calc(100% - 48px);
       width: 50%; } }
@@ -621,98 +698,97 @@ path.leaflet-interactive {
   .project-legend a, .project-legend a:link, .project-legend a:hover, .project-legend a:visited, .project-legend a:active {
     color: inherit; }
 
-/* line 51, ../src/blocks/_project.sass */
+/* line 42, ../src/blocks/_project.sass */
 .project-legend__meta:not(:last-child) {
   border-bottom: 2px solid #063461; }
 
-/* line 53, ../src/blocks/_project.sass */
+/* line 44, ../src/blocks/_project.sass */
 .project-legend__meta-label {
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 1rem;
   display: inline-block; }
   @media screen and (min-width: 992px) {
-    /* line 53, ../src/blocks/_project.sass */
+    /* line 44, ../src/blocks/_project.sass */
     .project-legend__meta-label {
       width: 33%; } }
 
-/* line 58, ../src/blocks/_project.sass */
+/* line 49, ../src/blocks/_project.sass */
 .project-legend__name {
   margin-top: 8px; }
 
 @media screen and (min-width: 768px) {
-  /* line 60, ../src/blocks/_project.sass */
+  /* line 51, ../src/blocks/_project.sass */
   .bar-chart {
     display: inline-block;
     position: relative;
     vertical-align: top; } }
-/* line 65, ../src/blocks/_project.sass */
+/* line 56, ../src/blocks/_project.sass */
 .bar-chart svg {
   display: block;
-  margin: 0 auto;
-  border-bottom: 1px solid #063461; }
+  margin: 0 auto; }
 
-/* line 69, ../src/blocks/_project.sass */
+/* line 59, ../src/blocks/_project.sass */
 .project-legend + .project-stats-block {
   margin-top: 24px; }
 
 @media screen and (min-width: 768px) {
-  /* line 73, ../src/blocks/_project.sass */
+  /* line 63, ../src/blocks/_project.sass */
   .project-stats-block {
     padding: 24px 24px 0; } }
 
-/* line 76, ../src/blocks/_project.sass */
+/* line 66, ../src/blocks/_project.sass */
 .project-stats-block__legend {
   color: #063461;
   font-size: 0.9em;
   margin-bottom: 24px; }
 
-/* line 80, ../src/blocks/_project.sass */
+/* line 70, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget,
 .project-stats-block__legend--budget-averages {
   color: #063461;
   font-size: 0.9em; }
 
-/* line 84, ../src/blocks/_project.sass */
+/* line 74, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget-averages {
   margin-top: 24px; }
-  /* line 86, ../src/blocks/_project.sass */
+  /* line 76, ../src/blocks/_project.sass */
   .project-stats-block__legend--budget-averages .key {
     font-weight: bold; }
   @media screen and (min-width: 768px) {
-    /* line 84, ../src/blocks/_project.sass */
+    /* line 74, ../src/blocks/_project.sass */
     .project-stats-block__legend--budget-averages {
       display: none; } }
 
-/* line 91, ../src/blocks/_project.sass */
+/* line 81, ../src/blocks/_project.sass */
 .project-stats-block__legend-list li {
   flex-grow: 1; }
 
-/* line 93, ../src/blocks/_project.sass */
+/* line 83, ../src/blocks/_project.sass */
 .project-stats-block__legend-title {
   margin: 0 0 12px; }
 
 @media screen and (min-width: 992px) {
-  /* line 95, ../src/blocks/_project.sass */
+  /* line 85, ../src/blocks/_project.sass */
   .project-stats-block__charts {
     padding: 24px 0 0;
     display: flex; }
-    /* line 99, ../src/blocks/_project.sass */
+    /* line 89, ../src/blocks/_project.sass */
     .project-stats-block__charts .bar-chart {
       flex-grow: 1; } }
 
-/* line 101, ../src/blocks/_project.sass */
+/* line 91, ../src/blocks/_project.sass */
 .project-stats-block__name {
   margin: 0 0 24px;
   text-transform: uppercase;
   color: #063461;
   border-bottom: 2px solid #063461; }
 
-/* line 106, ../src/blocks/_project.sass */
+/* line 96, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget + div {
   padding-top: 0; }
 
-/* line 111, ../src/blocks/_project.sass */
+/* line 101, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before, .project-stats-block__legend-list .b:before, .project-stats-block__legend-list .c:before, .project-stats-block__legend-list .d:before, .project-stats-block__legend-list .e:before,
 .tooltip .a:before,
 .tooltip .b:before,
@@ -721,62 +797,67 @@ path.leaflet-interactive {
 .tooltip .e:before {
   content: "⬤";
   margin-right: 8px; }
-/* line 114, ../src/blocks/_project.sass */
+/* line 104, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before,
 .tooltip .a:before {
   color: #c83741; }
-/* line 116, ../src/blocks/_project.sass */
+/* line 106, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .b:before,
 .tooltip .b:before {
   color: #eda16a; }
-/* line 118, ../src/blocks/_project.sass */
+/* line 108, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .c:before,
 .tooltip .c:before {
   color: #6c283d; }
-/* line 120, ../src/blocks/_project.sass */
+/* line 110, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .d:before,
 .tooltip .d:before {
   color: #72a68e; }
-/* line 122, ../src/blocks/_project.sass */
+/* line 112, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .e:before,
 .tooltip .e:before {
   color: #777; }
 
-/* line 126, ../src/blocks/_project.sass */
+/* line 116, ../src/blocks/_project.sass */
 .bar-chart__title {
   color: #063461;
   font-size: 0.8em;
   text-transform: uppercase;
   max-width: 90px;
   margin: 12px auto;
-  text-align: center; }
+  text-align: center;
+  display: block; }
+  /* line 124, ../src/blocks/_project.sass */
+  .bar-chart__title:hover {
+    cursor: help; }
 
-/* line 133, ../src/blocks/_project.sass */
+/* line 126, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
-  animation: scaleup_y 0.5s 1; }
+  animation: scaleup_y 0.5s 1;
+  overflow: visible; }
 
-/* line 136, ../src/blocks/_project.sass */
+/* line 130, ../src/blocks/_project.sass */
 .bar-chart .domain,
 .bar-chart .tick {
   stroke: #063461; }
 
-/* line 139, ../src/blocks/_project.sass */
+/* line 133, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative;
   width: 100%; }
-  /* line 142, ../src/blocks/_project.sass */
+  /* line 136, ../src/blocks/_project.sass */
   .stacked-chart svg {
     margin: 0 auto;
     display: block; }
 
 @media screen and (min-width: 768px) {
-  /* line 145, ../src/blocks/_project.sass */
+  /* line 139, ../src/blocks/_project.sass */
   .project-stats-block__legend--budget-averages + .project-stats-block__charts {
     padding-top: 0; } }
 
-/* line 148, ../src/blocks/_project.sass */
+/* line 142, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -785,20 +866,20 @@ path.leaflet-interactive {
   left: 48px;
   margin-bottom: 24px; }
   @media screen and (min-width: 768px) {
-    /* line 148, ../src/blocks/_project.sass */
+    /* line 142, ../src/blocks/_project.sass */
     .stacked-chart .chart__title {
       left: 400px; } }
 
-/* line 157, ../src/blocks/_project.sass */
+/* line 151, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 159, ../src/blocks/_project.sass */
+/* line 153, ../src/blocks/_project.sass */
 text.category {
   max-width: 240px;
   color: pink; }
 
-/* line 165, ../src/blocks/_project.sass */
+/* line 159, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -808,21 +889,21 @@ text.category {
   top: -48px;
   font-family: "Montserrat", sans-serif; }
   @media screen and (max-width: 768px) {
-    /* line 165, ../src/blocks/_project.sass */
+    /* line 159, ../src/blocks/_project.sass */
     .tooltip {
       display: none; } }
 
-/* line 175, ../src/blocks/_project.sass */
+/* line 169, ../src/blocks/_project.sass */
 .bar-chart .tooltip {
   width: 80%;
   left: 10%;
   text-align: center; }
 
-/* line 179, ../src/blocks/_project.sass */
+/* line 173, ../src/blocks/_project.sass */
 .stacked-chart .tooltip {
   right: 132px; }
 
-/* line 184, ../src/blocks/_project.sass */
+/* line 178, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 280px;
   text-align: center;
@@ -839,28 +920,27 @@ text.category {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 195, ../src/blocks/_project.sass */
+  /* line 189, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
 @media screen and (min-width: 768px) {
-  /* line 203, ../src/blocks/_project.sass */
+  /* line 197, ../src/blocks/_project.sass */
   .bar-chart rect:hover,
   .stacked-chart rect:hover {
     cursor: help; } }
 
-/* line 3, ../src/blocks/_view.sass */
-.view-description,
-.view-colophon {
-  font-size: 1.35em;
-  padding: 48px 24px; }
+/* line 200, ../src/blocks/_project.sass */
+.tick text {
+  font-size: 0.75em;
+  font-family: monospace; }
 
 @media screen and (min-width: 992px) {
-  /* line 8, ../src/blocks/_view.sass */
+  /* line 3, ../src/blocks/_view.sass */
   .view-location {
     font-size: 0.8em; } }
 
-/* line 12, ../src/blocks/_view.sass */
+/* line 7, ../src/blocks/_view.sass */
 .view-location__header {
   *zoom: 1;
   text-transform: uppercase;
@@ -875,17 +955,17 @@ text.category {
   .view-location__header:after {
     clear: both; }
 
-/* line 19, ../src/blocks/_view.sass */
+/* line 14, ../src/blocks/_view.sass */
 .view-location__name {
   line-height: 48px;
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 0.85rem; }
-  /* line 22, ../src/blocks/_view.sass */
+  /* line 17, ../src/blocks/_view.sass */
   .view-location__name:hover {
     cursor: pointer; }
 
-/* line 25, ../src/blocks/_view.sass */
+/* line 20, ../src/blocks/_view.sass */
 [class^='view-location__header-col--'] {
   line-height: 24px;
   padding: 0 12px;
@@ -895,32 +975,32 @@ text.category {
   -webkit-transition: background-color 0.25s ease;
   transition: background-color 0.25s ease; }
   @media screen and (min-width: 992px) {
-    /* line 25, ../src/blocks/_view.sass */
+    /* line 20, ../src/blocks/_view.sass */
     [class^='view-location__header-col--'] {
       display: inline-block;
       float: left; } }
-  /* line 33, ../src/blocks/_view.sass */
+  /* line 28, ../src/blocks/_view.sass */
   [class^='view-location__header-col--'] svg {
     height: 0.8em;
     margin-right: 4px; }
-    /* line 36, ../src/blocks/_view.sass */
+    /* line 31, ../src/blocks/_view.sass */
     [class^='view-location__header-col--'] svg path {
       fill: #DC9C38; }
 
 @media screen and (min-width: 992px) {
-  /* line 40, ../src/blocks/_view.sass */
+  /* line 35, ../src/blocks/_view.sass */
   .view-location__header-col--town {
     width: 15%; }
 
-  /* line 42, ../src/blocks/_view.sass */
+  /* line 37, ../src/blocks/_view.sass */
   .view-location__header-col--program,
   .view-location__header-col--hood {
     width: 22.5%; }
 
-  /* line 45, ../src/blocks/_view.sass */
+  /* line 40, ../src/blocks/_view.sass */
   .view-location__header-col--project {
     width: 40%; } }
-/* line 48, ../src/blocks/_view.sass */
+/* line 43, ../src/blocks/_view.sass */
 .view-location__content {
   *zoom: 1;
   color: #063461;
@@ -936,7 +1016,7 @@ text.category {
   .view-location__content a, .view-location__content a:link, .view-location__content a:hover, .view-location__content a:visited, .view-location__content a:active {
     color: inherit; }
 
-/* line 54, ../src/blocks/_view.sass */
+/* line 49, ../src/blocks/_view.sass */
 .view-location-item {
   display: block;
   *zoom: 1;
@@ -954,20 +1034,20 @@ text.category {
   /* line 38, ../src/base/_2_elements.sass */
   .view-location-item:after {
     clear: both; }
-  /* line 61, ../src/blocks/_view.sass */
+  /* line 56, ../src/blocks/_view.sass */
   .view-location-item .view-location-item__col--town,
   .view-location-item .view-location-item__col--program,
   .view-location-item .view-location-item__col--neighborhood {
     display: inline; }
-  /* line 65, ../src/blocks/_view.sass */
+  /* line 60, ../src/blocks/_view.sass */
   .view-location-item .view-location-item__col--program,
   .view-location-item .view-location-item__col--neighborhood {
     margin-left: 12px; }
   @media screen and (min-width: 992px) {
-    /* line 54, ../src/blocks/_view.sass */
+    /* line 49, ../src/blocks/_view.sass */
     .view-location-item {
       padding: 0; } }
-  /* line 72, ../src/blocks/_view.sass */
+  /* line 67, ../src/blocks/_view.sass */
   .view-location-item i {
     display: none;
     position: absolute;
@@ -981,10 +1061,10 @@ text.category {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%; }
-  /* line 83, ../src/blocks/_view.sass */
+  /* line 78, ../src/blocks/_view.sass */
   .view-location-item:hover {
     background-color: #f5f5f5; }
-    /* line 85, ../src/blocks/_view.sass */
+    /* line 80, ../src/blocks/_view.sass */
     .view-location-item:hover i {
       -moz-animation: fadein_toright 0.25s 1;
       -webkit-animation: fadein_toright 0.25s 1;
@@ -992,7 +1072,7 @@ text.category {
       display: inline-block; }
 
 @media screen and (min-width: 992px) {
-  /* line 89, ../src/blocks/_view.sass */
+  /* line 84, ../src/blocks/_view.sass */
   [class^='view-location-item__col--'] {
     display: inline-block;
     float: left;
@@ -1000,38 +1080,38 @@ text.category {
     line-height: 48px; } }
 
 @media screen and (min-width: 992px) {
-  /* line 97, ../src/blocks/_view.sass */
+  /* line 92, ../src/blocks/_view.sass */
   .view-location-item__col--town {
     width: 15%; }
 
-  /* line 99, ../src/blocks/_view.sass */
+  /* line 94, ../src/blocks/_view.sass */
   .view-location-item__col--program,
   .view-location-item__col--hood {
     width: 22.5%; }
 
-  /* line 102, ../src/blocks/_view.sass */
+  /* line 97, ../src/blocks/_view.sass */
   .view-location-item__col--project {
     width: 40%; } }
-/* line 105, ../src/blocks/_view.sass */
+/* line 100, ../src/blocks/_view.sass */
 .view-location-item__col--project {
   font-family: "Montserrat", sans-serif; }
 
-/* line 108, ../src/blocks/_view.sass */
+/* line 103, ../src/blocks/_view.sass */
 .view-filters {
   display: flex; }
 
-/* line 111, ../src/blocks/_view.sass */
+/* line 106, ../src/blocks/_view.sass */
 .view-filter {
   width: 50%;
   color: #063461; }
 
-/* line 115, ../src/blocks/_view.sass */
+/* line 110, ../src/blocks/_view.sass */
 .view-filter__label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.85em; }
 
-/* line 120, ../src/blocks/_view.sass */
+/* line 115, ../src/blocks/_view.sass */
 .view-filter__select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1041,13 +1121,13 @@ text.category {
   font-size: 0.8em;
   z-index: 10; }
 
-/* line 128, ../src/blocks/_view.sass */
+/* line 123, ../src/blocks/_view.sass */
 .view-count {
   line-height: 24px;
   padding: 0 12px;
   color: #063461; }
 
-/* line 132, ../src/blocks/_view.sass */
+/* line 127, ../src/blocks/_view.sass */
 .view-count__n {
   font-weight: bold;
   font-size: 0.99em; }

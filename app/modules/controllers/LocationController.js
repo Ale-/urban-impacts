@@ -48,6 +48,16 @@ angular.module('urban_impacts.location_controller', [])
         return this.categories[key][ this.project[ this.indicators[key].var ] ].k;
     }
 
+    /**
+     *  getNote
+     *  Gets the methodological note of a variable
+     *
+     *  @param key {String} - Category name
+     */
+    this.getNote = function(key){
+        return this.indicators[key]['meth_' + current_lang ];
+    }
+
     this.legend_texts   = {
        'a' : this.project[ this.indicators.project.var ],
        'b' : "Media de proyectos en " + this.getCategory('program').toUpperCase(),

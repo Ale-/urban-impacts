@@ -16,7 +16,7 @@ angular.module('urban_impacts', [
     'urban_impacts.indicators_service',
     'urban_impacts.view_controller',
     'urban_impacts.location_controller',
-    'urban_impacts.location_controller',
+    'urban_impacts.methodology_controller',
     'urban_impacts.map_directive',
     'urban_impacts.barchart_directive',
     'urban_impacts.stackedchart_directive',
@@ -64,6 +64,12 @@ angular.module('urban_impacts', [
                  return DataService.get();
              }
         }
+    })
+    .when('/metodologia', {
+        // Single location views
+        templateUrl : 'app/templates/methodology.html',
+        controller  : 'MethodologyController',
+        controllerAs: 'methodology',
     })
     .when('/:location', {
         // Single location views
