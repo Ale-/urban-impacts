@@ -18,7 +18,7 @@ angular.module('urban_impacts.data_service', [])
             'program' : {
                 '1' : { k : 'Urban I',  v: 1, n : 0 },
                 '2' : { k : 'Urban II', v: 2, n : 0 },
-                '3' : { k : 'Urban III', v: 2, n : 0 },
+                '3' : { k : 'Urbana',   v: 2, n : 0 },
             },
             'hood' : {
                 '1' : { k : 'Barriada',        v: 1, n : 0 },

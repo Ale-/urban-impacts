@@ -17,18 +17,15 @@
         <ul class="methodology__section">
             <h3>Área urbana y composición social</h3>
             <p class="methodology__section-intro">
-              Las variables de área urbana y composición social han sido calculadas
-              en base a la agrupación de las secciones censales afectadas por el
-              proyecto, debido a esto la población y la superficie puede no coincidir
-              exactamente con la original del proyecto. En proyectos muy pequeños
-              ha sido necesario aumentar el número de secciones afectadas para
-              obtener muestra suficiente para los análisis, esto se ha hecho
-              siguiendo dos criterios, siempre dentro del mismo distrito e
-              intentando agrupar secciones con un índice de nivel socio-económica
-              similar. Para los proyectos de la convocatoria Urban I los datos
-              provienen del censo del Instituto Nacional de Estadística del año
-              1991. En el caso de los proyecto de la convocatoria Urban II del
-              Censo del año 91 2001.
+              La fuente de las variables de área urbana y composición social es
+              el Censo de Población y Vivienda del Instituto Nacional de Estadística
+              en una fecha previa al inicio de los proyectos. Por tanto, se toma
+              el año 1991 para los proyectos URBAN I y el año 2001 para los proyectos
+              URBAN II y URBANA. Los indicadores se refieren al área territorial
+              afectada por el proyecto, que ha sido definida como la agregación
+              de secciones censales, a partir de la información que proporciona
+              la documentación de los proyectos facilitada Dirección general de
+              Fondos Comunitarios del Ministerio de Hacienda.
             </p>
             <li class="methodology__indicator" ng-repeat="var in methodology.urban_variables">
                 <h5>{{ methodology.indicators[var].label_es }}</h5>
@@ -38,22 +35,24 @@
         <ul class="methodology__section">
             <h3>Estrategia del proyecto</h3>
             <p class="methodology__section-intro">
-              Las  Variables incluidas en este apartado se han obtenido a partir
-              del análisis de los documentos de programación y seguimiento de los
-              proyectos facilitados por la Dirección general de Fondos Comunitarios
-              del Ministerio de Hacienda. Para más información acerca los análisis
-              realizados ver Gómez et al 2018.
+              La fuente para los indicadores incluidos en este apartado se ha
+              obtenido a partir del análisis de los documentos de programación
+              y seguimiento de los proyectos facilitados por la Dirección general
+              de Fondos Comunitarios del Ministerio de Hacienda. Para más
+              información acerca los análisis realizados ver Gómez et al., 2018.
             </p>
             <li class="methodology__indicator">
                 <h5>{{ methodology.indicators.budget.label_es }}</h5>
                 <p ng-bind-html="methodology.indicators.budget.meth_es"></p>
             </li>
             <li class="methodology__indicator">
-                <h5>Porcentaje de presupuestos por áreas</h5>
+                <h5>Porcentaje de presupuestos por áreas de actuación</h5>
                 <p>
                     Porcentaje de presupuesto <strong>ejecutado</strong> agrupadas
-                    en cada una de las macro áreas de actuación definidas por el
-                    equipo de investigación a partir de las áreas oficiales de los proyectos:
+                    en cada una de las macro áreas de actuación definidas por
+                    el equipo de investigación a partir de las áreas oficiales
+                    de los proyectos. Estas macro-áreas son: territorio, desarrollo
+                    económico, bienestar, medio ambiente y gobernanza/gestión.
                 </p>
                 <ul>
                     <li class="methodology__indicator" ng-repeat="var in methodology.budget_variables">

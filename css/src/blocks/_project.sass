@@ -5,7 +5,7 @@
 #map
   background: white
   position: absolute
-  height: $m*20
+  height: $m*15
   left: 0
   width: 100%
   z-index: 0
@@ -18,6 +18,8 @@
 #map .leaflet-control-attribution
   color: $blue
   +links_nocolor
+  font-size: .75em
+  opacity: .75
   a
     text-decoration: dotted
 path.leaflet-interactive
@@ -66,12 +68,12 @@ path.leaflet-interactive
     padding: $m $m 0
 .project-stats-block__legend
   color: $blue
-  font-size: .9em
-  margin-bottom: $m
+  font-size: .8em
+  margin-bottom: $m*1.5
 .project-stats-block__legend--budget,
 .project-stats-block__legend--budget-averages
   color: $blue
-  font-size: .9em
+  font-size: .8em
 .project-stats-block__legend--budget-averages
   margin-top: $m
   .key
@@ -79,13 +81,14 @@ path.leaflet-interactive
   +breakpoint('sm')
     display: none
 .project-stats-block__legend-list
-  li
-    flex-grow: 1
+  +breakpoint('sm')
+    li
+      display: inline
+      margin-right: $m/3
 .project-stats-block__legend-title
   margin: 0 0 $m/2
 .project-stats-block__charts
   +breakpoint('md')
-    padding: $m 0 0
     display: flex
     .bar-chart
       flex-grow: 1
@@ -100,8 +103,11 @@ path.leaflet-interactive
 .tooltip
   .a, .b, .c, .d, .e
     &:before
+      font-size: .8em
       content: "⬤"
-      margin-right: $m/3
+      margin-right: 2px
+      position: relative
+      bottom: 3px
   .a:before
     color: #c83741
   .b:before
@@ -116,12 +122,13 @@ path.leaflet-interactive
 // Bar charts
 .bar-chart__title
   color: $blue
-  font-size: .8em
+  font-size: .7em
   text-transform: uppercase
   max-width: 90px
   margin: $m/2 auto
   text-align: center
   display: block
+  font-weight: bold
   &:hover
     cursor: help
 .bar-chart svg
@@ -143,7 +150,8 @@ path.leaflet-interactive
 .stacked-chart .chart__title
   color: $blue
   text-transform: uppercase
-  font-size: .8em
+  font-size: .7em
+  font-weight: bold
   position: relative
   left: $m*2
   margin-bottom: $m
@@ -163,8 +171,9 @@ text.category
   padding: $m/3
   color: $blue
   pointer-events: none
-  top: -$m*2
+  top: -$m*1.5
   font-family: $font_headers
+  font-size: .85em
   +breakpoint('xs')
     display: none
 .bar-chart .tooltip
@@ -172,19 +181,21 @@ text.category
   left: 10%
   text-align: center
 .stacked-chart .tooltip
-  right: $m*5.5
+  right: $m*7
+  top: -$m
 
 // Footer
 
 .breadcrumb--footer
   +links_nocolor
-  width: 280px
+  width: 220px
   text-align: center
-  margin: $m*4 auto
+  margin: $m*2 auto
   border: 2px solid $blue
   color: $blue
   line-height: $m*1.5
   padding: 0 $m
+  font-size: .8em
   text-transform: uppercase
   +transition(opacity, .1s ease)
   &:hover
@@ -197,7 +208,15 @@ text.category
   +breakpoint('sm')
     rect:hover
       cursor: help
-
 .tick text
   font-size: .75em
   font-family: monospace
+.breadcrumb
+  font-size: .8em
+  a:before
+    content: "◀"
+    font-size: .95em
+    position: relative
+    bottom: 2px
+    margin-right: 4px
+    color: $orange
