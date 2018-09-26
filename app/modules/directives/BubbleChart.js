@@ -1,10 +1,10 @@
-angular.module('urban_impacts.barchart_directive', [])
+angular.module('urban_impacts.bubblechart_directive', [])
 
 /**
  *   Directive to render a map
  *
  */
-.directive("barChart", function(DataService, IndicatorsService){
+.directive("bubbleChart", function(DataService, IndicatorsService){
 
     return {
         restrict : 'EAC',
@@ -33,43 +33,25 @@ angular.module('urban_impacts.barchart_directive', [])
             // Set up root svg group
             var g     = svg.append("g").attr("transform", "translate(" + scope.left + "," + scope.top + ")");
 
-            var x = d3.scaleBand().rangeRound([0, w]).padding(0.3);
-            var y = d3.scaleLinear().rangeRound([h, 0]);
-            var c = d3.scaleOrdinal(['#c83741', '#eda16a', '#6c283d', '#72a68e']);
+            var s = d3.scaleLinear().rangeRound([0, 360]);
+            var y = d3.scaleBand().rangeRound([0, h]);
 
-            x.domain(scope.data.map(function(d) { return d.k; }));
+            y.domain(scope.data.map(function(d) { return d.k; })).paddingInner(.5);
+            s.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
 
-            // If unit is not percentage upper limit of domain is the max value
-            // else is 100% -> to avoid perception distortions
-
-            if(scope.unit){
-                if(scope.max)
-                    y.domain([0, scope.max]);
-                else if(scope.unit != '%')
-                    y.domain([0, d3.max(scope.data, function(d) { return d.v; })]);
-                else
-                    y.domain([0, 100]);
-            } else {
-                y.domain([0,1]);
+            var r = function(v){
+                var sup = s(v);
+                return Math.sqrt( sup / Math.PI );
             }
             var div = d3.select(_this_).append("div").attr("class", "tooltip");
 
-            g.append("g")
-                .attr("class", "axis axis--y")
-                .call(
-                    d3.axisLeft(y).
-                    ticks(5).
-                    tickSize(1)
-                );
-
-            g.selectAll(".bar").data(scope.data).enter()
-                .append("rect")
-                .attr("class", "bar")
-                .attr("x", function(d) { return x(d.k); })
-                .attr("y", function(d) { return y(d.v); })
-                .attr("width", x.bandwidth())
-                .attr("height", function(d) { return h - y(d.v); })
-                .attr("fill", function(d) { return c(d.k); })
+            g.selectAll(".bubble").data(scope.data).enter()
+                .append("circle")
+                .attr("class", "bubble")
+                .attr("cx", w/2 - 10)
+                .attr("cy", function(d) { return y(d.k) + r(d.v)/2; })
+                .attr("r", function(d) { return r(d.v); })
+                .attr("fill", "#063461" )
                 .on("mouseover", function(d) {
                     if(scope.unit != 'M. €')
                         var n = d3.format(".2f")(d.v);

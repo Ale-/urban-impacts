@@ -69,7 +69,7 @@ angular.module('urban_impacts.stackedchart_directive', [])
               .selectAll("rect")
               .data( function(d){ return d })
               .enter().append("rect")
-              .attr("x", function(d) { return x(d[0]); })
+              .attr("x", function(d) { return mobile ? 20 + x(d[0]) : 226 + x(d[0]); })
               .attr("y", function(d) { return y(d.data.key); })
               .attr("height", y.bandwidth())
               .attr("width", function(d) { return x(d[1]) - x(d[0]); })
@@ -103,7 +103,7 @@ angular.module('urban_impacts.stackedchart_directive', [])
               .attr("y", function(d){
                   return y(d.key) + (y.bandwidth()*.75);
               })
-              .attr("x", mobile ? -20 : w-226)
+              .attr("x", 0)
 
             // Title
             var title = d3.select(_this_).append("p")

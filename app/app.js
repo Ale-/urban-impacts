@@ -19,6 +19,7 @@ angular.module('urban_impacts', [
     'urban_impacts.methodology_controller',
     'urban_impacts.map_directive',
     'urban_impacts.barchart_directive',
+    'urban_impacts.bubblechart_directive',
     'urban_impacts.stackedchart_directive',
   ])
 

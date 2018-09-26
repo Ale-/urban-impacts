@@ -175,10 +175,25 @@
                 <div class="stacked-chart"
                      data="location.budget" keys="location.budget_keys"
                      height="150" palette="location.palette" unit="%"
-                     left="48" right="48" top="20" bottom="20" title="Presupuesto desglosado">
+                     left="0" right="0" top="20" bottom="20" title="Presupuesto desglosado">
+                </div>
+                <div class="bubble-chart" data="location.get('investment')"
+                     width="60" height="150" left="0" right="0" top="20" bottom="20"
+                     title="{{ location.getLabel('investment') }}" unit="€"
+                     help="{{ location.getNote('investment') }}">
+                </div>
+                <div class="bubble-chart" data="location.get('diversity')"
+                     width="60" height="150" left="0" right="0" top="20" bottom="20"
+                     title="{{ location.getLabel('diversity') }}" unit="€"
+                     help="{{ location.getNote('diversity') }}">
+                </div>
+                <div class="bubble-chart" data="location.get('total_cost')"
+                     width="60" height="150" left="0" right="0" top="20" bottom="20"
+                     title="{{ location.getLabel('total_cost') }}" unit="M. €"
+                     help="{{ location.getNote('total_cost') }}">
                 </div>
             </div>
-            <div class="project-stats-block__legend">
+            <div class="project-stats-block__legend mobile-workaround">
               <ul class="project-stats-block__legend-list">
                 <li class="a">
                     {{ location.legend_texts.a }}
@@ -194,7 +209,7 @@
                 </li>
               </ul>
             </div>
-            <div class="project-stats-block__charts">
+            <div class="project-stats-block__charts mobile-workaround">
                 <div class="bar-chart" data="location.get('investment')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
                      title="{{ location.getLabel('investment') }}" unit="€"
