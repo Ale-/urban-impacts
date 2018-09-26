@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="view-location__content">
-            <a href="#/{{ item[ view.indicators.id.var ] }}" class="view-location-item"
+            <a href="#/{{ item[ view.indicators.id.var ] }}" class="view-location-item" title="Ver este proyecto"
                ng-repeat="item in view.data | orderBy : view.sort_order: view.reverse | filter : view.show as filtered">
                 <div class="view-location-item__col--project">
                   {{ item[ view.indicators.project.var ] }}
