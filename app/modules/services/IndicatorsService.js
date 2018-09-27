@@ -114,9 +114,9 @@ angular.module('urban_impacts.indicators_service', [])
           },
           'economy_level' : {
               'var'      : 'INSE',
-              'label_es' : 'Indicador de nivel socioeconómico INSE',
+              'label_es' : 'Nivel socioeconómico',
               'label_en' : '',
-              'meth_es'  : 'Indicador aditivo de nivel socioeconómico calculado a partir de los 4 cuatro anteriores (población desempleada, población sin estudios, trabajadores no cualificados y edificios en mal estado). Para más información acerca de este ver Fernández et al., 2018.'
+              'meth_es'  : 'Indicador aditivo de nivel socioeconómico calculado a partir de los 4 cuatro anteriores (población desempleada, población sin estudios, trabajadores no cualificados y edificios en mal estado). Para más información acerca de este ver Fernández et al., 2018 [https://doi.org/10.5944/empiria.39.2018.20877].'
           },
           'total_cost' : {
               'var'      : 'CosteElegibletotal',
