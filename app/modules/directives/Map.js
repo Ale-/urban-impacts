@@ -11,9 +11,10 @@ angular.module('urban_impacts.map_directive', [])
         scope    : {
             // Values of the set in the format:
             // [{ k: key, v: value }, { k, v }, { k, v }...]
-            w     : '@',
-            h     : '@',
-            city  : '@',
+            w         : '@',
+            h         : '@',
+            city      : '@',
+            code : '@',
         },
         template : '<div id="map"></div>',
         transclude : true,
@@ -34,11 +35,22 @@ angular.module('urban_impacts.map_directive', [])
 
             map.addControl(new L.Control.Fullscreen());
 
-            var geodata = DataService.getGeodata();
-            geodata.addTo(map)
+            var geodata   = DataService.getGeodata();
+            geodata.addTo(map);
 
             $http.get('https://nominatim.openstreetmap.org/search/' + scope.city + ', España?format=json').then( function(data){
                 var i = 0;
+                // Invisibilize not selected map features
+                Object.keys(geodata._layers).forEach(function(key){
+                    var layer = geodata._layers[key];
+                    if(layer.feature.properties.COD_PROY != "" + scope.code){
+                        layer.options.fillColor   = 'transparent';
+                        layer.options.color = 'transparent';
+                    } else {
+                        layer.options.fillColor   = 'red';
+                        layer.options.color = 'red';
+                    }
+                });
                 var important_city = 0, important_boundary = 0;
                 for(var i = 0; i < data.data.length; i++){
                     if(data.data[i].type == 'city' && important_city == 0)

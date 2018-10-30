@@ -202,7 +202,6 @@ angular.module('urban_impacts.data_service', [])
             "Media de proyectos en " + this.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase(),
             "Media de las ciudades incluidas en catálogo",
         ];
-        console.log(project);
         for(var i in averages){
             var avg = { 'key' : averages[i] };
             for(var k in keys){

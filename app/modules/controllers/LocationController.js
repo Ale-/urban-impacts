@@ -9,13 +9,14 @@ angular.module('urban_impacts.location_controller', [])
     /**
      *  Scope
      */
-    this.indicators     = IndicatorsService.get();
-    this.project        = DataService.getProject($routeParams.location);
-    this.budget         = DataService.getBudget($routeParams.location);
-    this.budget_keys    = IndicatorsService.getBudgetKeys();
-    this.categories     = DataService.getCategories();
-    this.palette        = CONFIG.PALETTE;
-    var current_lang    = 'es';
+    this.indicators  = IndicatorsService.get();
+    this.town_code   = $routeParams.location;
+    this.project     = DataService.getProject($routeParams.location);
+    this.budget      = DataService.getBudget($routeParams.location);
+    this.budget_keys = IndicatorsService.getBudgetKeys();
+    this.categories  = DataService.getCategories();
+    this.palette     = CONFIG.PALETTE;
+    var current_lang = 'es';
 
     /**
      *  get

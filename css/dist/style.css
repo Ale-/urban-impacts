@@ -702,25 +702,23 @@ abbr:hover {
 /* line 23, ../src/blocks/_project.sass */
 path.leaflet-interactive {
   stroke-width: 1;
-  stroke: red;
-  stroke-opacity: 0.4;
-  fill: red; }
+  stroke-opacity: 0.4; }
 
-/* line 31, ../src/blocks/_project.sass */
+/* line 30, ../src/blocks/_project.sass */
 .project {
   top: 384px; }
 
-/* line 33, ../src/blocks/_project.sass */
+/* line 32, ../src/blocks/_project.sass */
 .project-map + .container-fixed {
   position: relative; }
 
-/* line 35, ../src/blocks/_project.sass */
+/* line 34, ../src/blocks/_project.sass */
 .project-legend {
   padding: 24px;
   background: white;
   color: #063461; }
   @media screen and (min-width: 992px) {
-    /* line 35, ../src/blocks/_project.sass */
+    /* line 34, ../src/blocks/_project.sass */
     .project-legend {
       max-width: calc(100% - 48px);
       width: 50%; } }
@@ -728,102 +726,102 @@ path.leaflet-interactive {
   .project-legend a, .project-legend a:link, .project-legend a:hover, .project-legend a:visited, .project-legend a:active {
     color: inherit; }
 
-/* line 43, ../src/blocks/_project.sass */
+/* line 42, ../src/blocks/_project.sass */
 .project-legend__meta:not(:last-child) {
   border-bottom: 2px solid #063461; }
 
-/* line 45, ../src/blocks/_project.sass */
+/* line 44, ../src/blocks/_project.sass */
 .project-legend__meta-label {
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 1rem;
   display: inline-block; }
   @media screen and (min-width: 992px) {
-    /* line 45, ../src/blocks/_project.sass */
+    /* line 44, ../src/blocks/_project.sass */
     .project-legend__meta-label {
       width: 33%; } }
 
-/* line 50, ../src/blocks/_project.sass */
+/* line 49, ../src/blocks/_project.sass */
 .project-legend__name {
   margin-top: 8px; }
 
 @media screen and (min-width: 768px) {
-  /* line 52, ../src/blocks/_project.sass */
+  /* line 51, ../src/blocks/_project.sass */
   .bar-chart,
   .bubble-chart {
     display: inline-block;
     position: relative;
     vertical-align: top; } }
-/* line 58, ../src/blocks/_project.sass */
+/* line 57, ../src/blocks/_project.sass */
 .bar-chart svg,
 .bubble-chart svg {
   display: block;
   margin: 0 auto; }
 
-/* line 61, ../src/blocks/_project.sass */
+/* line 60, ../src/blocks/_project.sass */
 .project-legend + .project-stats-block {
   margin-top: 24px; }
 
 @media screen and (min-width: 768px) {
-  /* line 65, ../src/blocks/_project.sass */
+  /* line 64, ../src/blocks/_project.sass */
   .project-stats-block {
     padding: 24px 24px 0; } }
 
-/* line 68, ../src/blocks/_project.sass */
+/* line 67, ../src/blocks/_project.sass */
 .project-stats-block__legend {
   color: #063461;
   font-size: 0.8em;
   margin-bottom: 36px;
   margin-left: 24px; }
 
-/* line 73, ../src/blocks/_project.sass */
+/* line 72, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget,
 .project-stats-block__legend--budget-averages {
   margin-left: 24px;
   color: #063461;
   font-size: 0.8em; }
 
-/* line 78, ../src/blocks/_project.sass */
+/* line 77, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget-averages {
   margin-top: 24px; }
-  /* line 80, ../src/blocks/_project.sass */
+  /* line 79, ../src/blocks/_project.sass */
   .project-stats-block__legend--budget-averages .key {
     font-weight: bold; }
   @media screen and (min-width: 768px) {
-    /* line 78, ../src/blocks/_project.sass */
+    /* line 77, ../src/blocks/_project.sass */
     .project-stats-block__legend--budget-averages {
       display: none; } }
 
 @media screen and (min-width: 768px) {
-  /* line 86, ../src/blocks/_project.sass */
+  /* line 85, ../src/blocks/_project.sass */
   .project-stats-block__legend-list li {
     display: inline;
     margin-right: 8px; } }
 
-/* line 89, ../src/blocks/_project.sass */
+/* line 88, ../src/blocks/_project.sass */
 .project-stats-block__legend-title {
   margin: 0 0 12px; }
 
 @media screen and (min-width: 992px) {
-  /* line 91, ../src/blocks/_project.sass */
+  /* line 90, ../src/blocks/_project.sass */
   .project-stats-block__charts {
     display: flex; }
-    /* line 94, ../src/blocks/_project.sass */
+    /* line 93, ../src/blocks/_project.sass */
     .project-stats-block__charts .bar-chart {
       flex-grow: 1; } }
 
-/* line 96, ../src/blocks/_project.sass */
+/* line 95, ../src/blocks/_project.sass */
 .project-stats-block__name {
   margin: 0 0 24px;
   text-transform: uppercase;
   color: #063461;
   border-bottom: 2px solid #063461; }
 
-/* line 101, ../src/blocks/_project.sass */
+/* line 100, ../src/blocks/_project.sass */
 .project-stats-block__legend--budget + div {
   padding-top: 0; }
 
-/* line 106, ../src/blocks/_project.sass */
+/* line 105, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before, .project-stats-block__legend-list .b:before, .project-stats-block__legend-list .c:before, .project-stats-block__legend-list .d:before, .project-stats-block__legend-list .e:before,
 .tooltip .a:before,
 .tooltip .b:before,
@@ -836,28 +834,28 @@ path.leaflet-interactive {
   margin-right: 2px;
   position: relative;
   bottom: 3px; }
-/* line 113, ../src/blocks/_project.sass */
+/* line 112, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .a:before,
 .tooltip .a:before {
   color: #c83741; }
-/* line 115, ../src/blocks/_project.sass */
+/* line 114, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .b:before,
 .tooltip .b:before {
   color: #eda16a; }
-/* line 117, ../src/blocks/_project.sass */
+/* line 116, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .c:before,
 .tooltip .c:before {
   color: #6c283d; }
-/* line 119, ../src/blocks/_project.sass */
+/* line 118, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .d:before,
 .tooltip .d:before {
   color: #72a68e; }
-/* line 121, ../src/blocks/_project.sass */
+/* line 120, ../src/blocks/_project.sass */
 .project-stats-block__legend-list .e:before,
 .tooltip .e:before {
   color: #777; }
 
-/* line 125, ../src/blocks/_project.sass */
+/* line 124, ../src/blocks/_project.sass */
 .bar-chart__title {
   color: #063461;
   font-size: 0.7em;
@@ -866,37 +864,37 @@ path.leaflet-interactive {
   margin: 12px auto;
   display: block;
   font-weight: bold; }
-  /* line 133, ../src/blocks/_project.sass */
+  /* line 132, ../src/blocks/_project.sass */
   .bar-chart__title:hover {
     cursor: help; }
 
-/* line 135, ../src/blocks/_project.sass */
+/* line 134, ../src/blocks/_project.sass */
 .bar-chart svg {
   -moz-animation: scaleup_y 0.5s 1;
   -webkit-animation: scaleup_y 0.5s 1;
   animation: scaleup_y 0.5s 1;
   overflow: visible; }
 
-/* line 139, ../src/blocks/_project.sass */
+/* line 138, ../src/blocks/_project.sass */
 .bar-chart .domain,
 .bar-chart .tick {
   stroke: #063461; }
 
-/* line 142, ../src/blocks/_project.sass */
+/* line 141, ../src/blocks/_project.sass */
 .stacked-chart {
   position: relative;
   width: 100%; }
-  /* line 145, ../src/blocks/_project.sass */
+  /* line 144, ../src/blocks/_project.sass */
   .stacked-chart svg {
     margin: 0 auto;
     display: block; }
 
 @media screen and (min-width: 768px) {
-  /* line 148, ../src/blocks/_project.sass */
+  /* line 147, ../src/blocks/_project.sass */
   .project-stats-block__legend--budget-averages + .project-stats-block__charts {
     padding-top: 0; } }
 
-/* line 151, ../src/blocks/_project.sass */
+/* line 150, ../src/blocks/_project.sass */
 .stacked-chart .chart__title {
   color: #063461;
   text-transform: uppercase;
@@ -906,21 +904,21 @@ path.leaflet-interactive {
   left: 48px;
   margin-bottom: 24px; }
   @media screen and (min-width: 768px) {
-    /* line 151, ../src/blocks/_project.sass */
+    /* line 150, ../src/blocks/_project.sass */
     .stacked-chart .chart__title {
       left: 400px; } }
 
-/* line 161, ../src/blocks/_project.sass */
+/* line 160, ../src/blocks/_project.sass */
 .stacked-chart circle {
   opacity: 0.75; }
 
-/* line 163, ../src/blocks/_project.sass */
+/* line 162, ../src/blocks/_project.sass */
 text.category {
   max-width: 240px !important;
   overflow: hidden;
   text-overflow: ellipsis; }
 
-/* line 170, ../src/blocks/_project.sass */
+/* line 169, ../src/blocks/_project.sass */
 .tooltip {
   position: absolute;
   opacity: 0;
@@ -931,22 +929,22 @@ text.category {
   font-family: "Montserrat", sans-serif;
   font-size: 0.85em; }
   @media screen and (max-width: 768px) {
-    /* line 170, ../src/blocks/_project.sass */
+    /* line 169, ../src/blocks/_project.sass */
     .tooltip {
       display: none; } }
 
-/* line 181, ../src/blocks/_project.sass */
+/* line 180, ../src/blocks/_project.sass */
 .bar-chart .tooltip {
   width: 80%;
   left: 10%;
   text-align: center; }
 
-/* line 185, ../src/blocks/_project.sass */
+/* line 184, ../src/blocks/_project.sass */
 .stacked-chart .tooltip {
   right: 168px;
   top: -24px; }
 
-/* line 191, ../src/blocks/_project.sass */
+/* line 190, ../src/blocks/_project.sass */
 .breadcrumb--footer {
   width: 220px;
   text-align: center;
@@ -964,30 +962,30 @@ text.category {
   /* line 26, ../src/base/_2_elements.sass */
   .breadcrumb--footer a, .breadcrumb--footer a:link, .breadcrumb--footer a:hover, .breadcrumb--footer a:visited, .breadcrumb--footer a:active {
     color: inherit; }
-  /* line 203, ../src/blocks/_project.sass */
+  /* line 202, ../src/blocks/_project.sass */
   .breadcrumb--footer:hover {
     opacity: 0.75; }
 
 @media screen and (min-width: 768px) {
-  /* line 211, ../src/blocks/_project.sass */
+  /* line 210, ../src/blocks/_project.sass */
   .bar-chart rect:hover,
   .stacked-chart rect:hover {
     cursor: help; } }
 
 @media screen and (min-width: 768px) {
-  /* line 215, ../src/blocks/_project.sass */
+  /* line 214, ../src/blocks/_project.sass */
   .bubble-chart circle:hover {
     cursor: help; } }
 
-/* line 217, ../src/blocks/_project.sass */
+/* line 216, ../src/blocks/_project.sass */
 .tick text {
   font-size: 0.75em;
   font-family: monospace; }
 
-/* line 220, ../src/blocks/_project.sass */
+/* line 219, ../src/blocks/_project.sass */
 .breadcrumb {
   font-size: 0.8em; }
-  /* line 222, ../src/blocks/_project.sass */
+  /* line 221, ../src/blocks/_project.sass */
   .breadcrumb a:before {
     font-family: sans-serif;
     content: "◀";
@@ -998,15 +996,15 @@ text.category {
     color: #DC9C38; }
 
 @media screen and (min-width: 992px) {
-  /* line 230, ../src/blocks/_project.sass */
+  /* line 229, ../src/blocks/_project.sass */
   .mobile-workaround {
     display: none; } }
 
-/* line 233, ../src/blocks/_project.sass */
+/* line 232, ../src/blocks/_project.sass */
 .bubble-chart {
   display: none; }
   @media screen and (min-width: 992px) {
-    /* line 233, ../src/blocks/_project.sass */
+    /* line 232, ../src/blocks/_project.sass */
     .bubble-chart {
       display: inline-block; } }
 
