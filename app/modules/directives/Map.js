@@ -37,13 +37,13 @@ angular.module('urban_impacts.map_directive', [])
 
             var geodata   = DataService.getGeodata();
             geodata.addTo(map);
-
             $http.get('https://nominatim.openstreetmap.org/search/' + scope.city + ', España?format=json').then( function(data){
                 var i = 0;
                 // Invisibilize not selected map features
                 Object.keys(geodata._layers).forEach(function(key){
                     var layer = geodata._layers[key];
-                    if(layer.feature.properties.COD_PROY != "" + scope.code){
+                    console.log(layer.feature.properties);
+                    if(layer.feature.properties.Cod_proy != "" + scope.code){
                         layer.options.fillColor   = 'transparent';
                         layer.options.color = 'transparent';
                     } else {
