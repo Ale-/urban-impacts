@@ -6,14 +6,14 @@
         <!-- Project legend -->
         <div class="project-legend">
             <nav class="breadcrumb">
-                <a href="#">Volver al listado general</a>
+                <a href="#">{{ 'Volver al listado general' | t }}</a>
             </nav>
             <h1 class="project-legend__name">
                 {{ location.get('project') }}
             </h1>
             <p class="project-legend__meta">
                 <label class="project-legend__meta-label">
-                    {{ location.indicators.town.label_es }}
+                    {{ location.indicators.town | t_ind  }}
                 </label>
                 <span class="project-legend__meta-value">
                     {{ location.get('town') }}
@@ -21,7 +21,7 @@
             </p>
             <p class="project-legend__meta">
                 <label class="project-legend__meta-label">
-                    {{ location.indicators.program.label_es }}
+                    {{ location.indicators.program | t_ind  }}
                 </label>
                 <span class="project-legend__meta-value">
                     {{ location.categories.program[ location.get('program') ].k }}
@@ -29,21 +29,20 @@
             </p>
             <p class="project-legend__meta">
                 <label class="project-legend__meta-label">
-                    {{ location.indicators.hood.label_es }}
+                    {{ location.indicators.hood | t_ind  }}
                 </label>
                 <span class="project-legend__meta-value">
-                    {{ location.categories.hood[ location.get('hood') ].k }}
+                    {{ location.categories.hood[ location.get('hood') ].k | t }}
                 </span>
             </p>
         </div>
         <div class="page-explanation">
-            <strong>Nota:</strong>
-            se pueden consultar los valores de las gráficas, así como la definición de las
-            variables, pasando el cursor por encima de los mismas.
+            <strong>{{ 'Nota' | t }}:</strong>
+            {{ 'se pueden consultar los valores de las gráficas, así como la definición de las variables, pasando el cursor por encima de los mismas' | t }}.
         </div>
         <!-- Project stats -->
         <div class="project-stats-block">
-            <h4 class="project-stats-block__name">Área Urbana</h4>
+            <h4 class="project-stats-block__name">{{ 'Área Urbana' | t }}</h4>
             <div class="project-stats-block__legend">
               <ul class="project-stats-block__legend-list">
                 <li class="a">
@@ -89,7 +88,9 @@
             </div>
         </div>
         <div class="project-stats-block">
-            <h4 class="project-stats-block__name">Composición social</h4>
+            <h4 class="project-stats-block__name">
+                {{ 'Composición social' | t }}
+            </h4>
             <div class="project-stats-block__legend">
               <ul class="project-stats-block__legend-list">
                 <li class="a">
@@ -145,14 +146,16 @@
             </div>
         </div>
         <div class="project-stats-block">
-            <h4 class="project-stats-block__name">Estrategia</h4>
+            <h4 class="project-stats-block__name">
+                {{ 'Estrategia' | t }}
+            </h4>
             <div class="project-stats-block__legend--budget">
                 <ul class="project-stats-block__legend-list">
-                    <li class="a">Territorio</li>
-                    <li class="b">Desarrollo económico</li>
-                    <li class="c">Bienestar</li>
-                    <li class="d">Medioambiente</li>
-                    <li class="e">Gestión</li>
+                    <li class="a">{{ 'Territorio' | t }}</li>
+                    <li class="b">{{ 'Desarrollo económico' | t }}</li>
+                    <li class="c">{{ 'Bienestar' | t }}</li>
+                    <li class="d">{{ 'Medioambiente' | t }}</li>
+                    <li class="e">{{ 'Gestión' | t }}</li>
                 </ul>
             </div>
             <div class="project-stats-block__legend--budget-averages">
@@ -175,7 +178,7 @@
                 <div class="stacked-chart"
                      data="location.budget" keys="location.budget_keys"
                      height="150" palette="location.palette" unit="%"
-                     left="0" right="0" top="20" bottom="20" title="Presupuesto desglosado">
+                     left="0" right="0" top="20" bottom="20" title="{{ 'Presupuesto desglosado' | t }}">
                 </div>
                 <div class="bubble-chart" data="location.get('investment')"
                      width="60" height="150" left="0" right="0" top="20" bottom="20"
@@ -229,16 +232,20 @@
         </div>
         <div class="view-colophon">
             <div class="methodology-notes">
-                <h5>Nota metodológica:</h5>
-                <p><a href="#/metodologia">Consultar nota metodológica de la investigación</a></p>
+                <h5>{{ 'Nota metodológica' | t }}:</h5>
+                <p><a href="#/metodologia">
+                    {{ 'Consultar nota metodológica de la investigación' | t }}
+                </a></p>
             </div>
             <div class="citation-notes">
-                <h5>Citar de la forma siguiente:</h5>
+                <h5>
+                    {{ 'Citar de la forma siguiente' | t }}:
+                </h5>
                 <p>Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.</p>
                 <p><a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">https://www.upo.es/investiga/urbanimpacts</a></p>
             </div>
             <nav class="breadcrumb--footer">
-                <a href="#">Volver al listado general</a>
+                <a href="#">{{ 'Volver al listado general' | t }}</a>
             </nav>
         </div>
 </section>

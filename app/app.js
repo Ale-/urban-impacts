@@ -21,6 +21,7 @@ angular.module('urban_impacts', [
     'urban_impacts.barchart_directive',
     'urban_impacts.bubblechart_directive',
     'urban_impacts.stackedchart_directive',
+    'urban_impacts.i18n',
   ])
 
 .value('CONFIG', {

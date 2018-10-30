@@ -2,9 +2,8 @@
     <div class="view-description">
     </div>
     <div class="page-explanation">
-        <strong>Nota:</strong>
-        se pueden reordenar la tabla en función de cualquiera de las variables
-        mostradas pulsando sobre el nombre de la variable en la cabecera de la tabla.
+        <strong>{{ 'Nota' | t }}:</strong>
+        {{ 'se pueden reordenar la tabla en función de cualquiera de las variables mostradas pulsando sobre el nombre de la variable en la cabecera de la tabla' | t }}.
     </div>
     <!-- View -->
     <div class="view-location">
@@ -13,37 +12,37 @@
                  ng-click="view.sortBy(view.indicators.project.var)">
                 <i class="fa fa-sort-alpha-down"></i>
                 <span class="view-location__name">
-                    {{ view.indicators.project.label_es }}
+                    {{ view.indicators.project | t_ind }}
                 </span>
             </div>
             <div class="view-location__header-col--town"
                  ng-click="view.sortBy(view.indicators.town.var)">
                 <i class="fa fa-sort-alpha-down"></i>
                 <span class="view-location__name">
-                    {{ view.indicators.town.label_es }}
+                    {{ view.indicators.town | t_ind  }}
                 </span>
             </div>
             <div class="view-location__header-col--program">
                 <i class="fa fa-sort-alpha-down"></i>
                 <span class="view-location__name" ng-click="view.sortBy(view.indicators.program.var)">
-                    {{ view.indicators.program.label_es }}
+                    {{ view.indicators.program | t_ind  }}
                 </span>
                 <select class="view-filter__select" ng-change="view.setProgram(p)" ng-model="p"
                 ng-options="(p.k + ' (' + p.n + ')') for p in view.program">
                     <option value=""><i class="fa fa-filter"></i>
-                        Ver todo  ▼
+                        {{ 'Ver todo' | t }}  ▼
                     </option>
                 </select>
             </div>
             <div class="view-location__header-col--hood">
                 <i class="fa fa-sort-alpha-down"></i>
                 <span class="view-location__name" ng-click="view.sortBy(view.indicators.hood.var)">
-                    {{ view.indicators.hood.label_es }}
+                    {{ view.indicators.hood | t_ind  }}
                 </span>
                 <select class="view-filter__select" ng-change="view.setHood(c)" ng-model="c"
                         ng-options="(c.k + ' (' + c.n + ')') for c in view.hood">
                     <option value=""><i class="fa fa-filter"></i>
-                        Ver todo  ▼
+                        {{ 'Ver todo' | t }}  ▼
                     </option>
                 </select>
             </div>
@@ -61,7 +60,7 @@
                   {{ view.program[ item[ view.indicators.program.var ]].k }}
                 </div>
                 <div class="view-location-item__col--neighborhood">
-                  {{ view.hood[ item[ view.indicators.hood.var ]].k }}
+                  {{ view.hood[ item[ view.indicators.hood.var ]].k | t }}
                 </div>
                 <i>➜</i>
             </a>
@@ -69,11 +68,11 @@
     </div>
     <div class="view-colophon">
         <div class="methodology-notes">
-            <h5>Nota metodológica:</h5>
-            <p><a href="#/metodologia">Consultar nota metodológica de la investigación</a></p>
+            <h5>{{ 'Nota metodológica' | t }}:</h5>
+            <p><a href="#/metodologia">{{ 'Consultar nota metodológica de la investigación' | t }}</a></p>
         </div>
         <div class="citation-notes">
-            <h5>Citar de la forma siguiente:</h5>
+            <h5>{{ 'Citar de la forma siguiente' | t }}:</h5>
             <p>Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.</p>
             <p><a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">https://www.upo.es/investiga/urbanimpacts</a></p>
         </div>

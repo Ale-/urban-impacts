@@ -4,7 +4,7 @@ angular.module('urban_impacts.location_controller', [])
  *   Controller that handles a single location
  */
 
-.controller("LocationController", ['CONFIG', 'DataService', '$routeParams', 'IndicatorsService', function(CONFIG, DataService, $routeParams, IndicatorsService){
+.controller("LocationController", ['CONFIG', 'DataService', '$routeParams', 'IndicatorsService' ,'Langs', function(CONFIG, DataService, $routeParams, IndicatorsService, Langs){
 
     /**
      *  Scope
@@ -16,7 +16,6 @@ angular.module('urban_impacts.location_controller', [])
     this.budget_keys = IndicatorsService.getBudgetKeys();
     this.categories  = DataService.getCategories();
     this.palette     = CONFIG.PALETTE;
-    var current_lang = 'es';
 
     /**
      *  get
@@ -35,7 +34,7 @@ angular.module('urban_impacts.location_controller', [])
      *  @param key {String}  - Variable name
      */
     this.getLabel = function(key){
-        return this.indicators[key]['label_' + current_lang];
+        return Langs.get_indicator(this.indicators[key]);
     }
 
 
@@ -56,14 +55,14 @@ angular.module('urban_impacts.location_controller', [])
      *  @param key {String} - Category name
      */
     this.getNote = function(key){
-        return this.indicators[key]['meth_' + current_lang ];
+        return Langs.get_note(this.indicators[key]);
     }
 
     this.legend_texts   = {
        'a' : this.project[ this.indicators.project.var ],
-       'b' : "Media de proyectos en " + this.getCategory('program').toUpperCase(),
-       'c' : "Media de proyectos en " + this.getCategory('hood').toLowerCase(),
-       'd' : "Media de las ciudades incluidas en el catálogo",
+       'b' : Langs.get_legend_text('b_c', this.getCategory('program').toUpperCase()),
+       'c' : Langs.get_legend_text('b_c', this.getCategory('hood')),
+       'd' : Langs.get_legend_text('d', ''),
     }
 
     /**
