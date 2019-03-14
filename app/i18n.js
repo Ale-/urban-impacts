@@ -43,6 +43,9 @@ angular.module('urban_impacts.i18n', [])
             'Ver todo' : 'See all',
             'Barriada' : 'Neighborhood',
             'Casco Histórico' : 'Historic Center',
+            'URBAN I' : 'URBAN I',
+            'URBAN II' : 'URBAN II',
+            'URBANA' : 'URBANA',
             'Volver atrás' : 'Go back',
         }
     };
@@ -76,10 +79,10 @@ angular.module('urban_impacts.i18n', [])
             return {
                 'es' : {
                     'b_c' : "Media de proyectos en " + val,
-                    'd'   : "Average of cities in catalog",
+                    'd'   : "Media de las ciudades en catálogo",
                 },
                 'en' : {
-                    'b_c' : "Project average in " + val,
+                    'b_c' : "Project average in " +  translations['en'][val],
                     'd'   : "Average of cities in catalog",
                 }
             }[this.lang][key]

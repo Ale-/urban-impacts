@@ -42,7 +42,6 @@ angular.module('urban_impacts.map_directive', [])
                 // Invisibilize not selected map features
                 Object.keys(geodata._layers).forEach(function(key){
                     var layer = geodata._layers[key];
-                    console.log(layer.feature.properties);
                     if(layer.feature.properties.Cod_proy != "" + scope.code){
                         layer.options.fillColor   = 'transparent';
                         layer.options.color = 'transparent';

@@ -10,8 +10,8 @@
         mostradas en el catálogo de proyectos.</p>
         <ul class="methodology__section">
             <li class="methodology__indicator" ng-repeat="var in methodology.general_variables">
-                <h5>{{ methodology.indicators[var].label_es }}</h5>
-                <p ng-bind-html="methodology.indicators[var].meth_es"></p>
+                <h5>{{ methodology.getLabel(var) }}</h5>
+                <p ng-bind-html="methodology.getNote(var)"></p>
             </li>
         </ul>
         <ul class="methodology__section">
@@ -28,8 +28,8 @@
               Fondos Comunitarios del Ministerio de Hacienda.
             </p>
             <li class="methodology__indicator" ng-repeat="var in methodology.urban_variables">
-                <h5>{{ methodology.indicators[var].label_es }}</h5>
-                <p ng-bind-html="methodology.indicators[var].meth_es"></p>
+                <h5>{{ methodology.getLabel(var) }}</h5>
+                <p ng-bind-html="methodology.getNote(var)"></p>
             </li>
         </ul>
         <ul class="methodology__section">
@@ -56,8 +56,8 @@
                 </p>
                 <ul>
                     <li class="methodology__indicator" ng-repeat="var in methodology.budget_variables">
-                        <h5>{{ methodology.indicators[var].label_es }}</h5>
-                        <p ng-bind-html="methodology.indicators[var].meth_es"></p>
+                        <h5>{{ methodology.getLabel(var) }}</h5>
+                        <p ng-bind-html="methodology.getNote(var)"></p>
                     </li>
                 </ul>
             </li>
