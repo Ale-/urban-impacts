@@ -23,8 +23,9 @@
 path.leaflet-interactive
   stroke-width: 1
   stroke-opacity: .4
+  cursor: inherit
 
-  
+
 // Header
 
 .project
@@ -48,6 +49,8 @@ path.leaflet-interactive
     width: 33%
 .project-legend__name
   margin-top: $m/3
+  text-transform: uppercase
+  line-height: 1
 .bar-chart,
 .bubble-chart
   +breakpoint('sm')
@@ -160,6 +163,7 @@ path.leaflet-interactive
 .stacked-chart circle
   opacity: .75
 text.category
+  display: inline-block
   max-width: 240px !important
   overflow: hidden
   text-overflow: ellipsis
@@ -182,7 +186,7 @@ text.category
   left: 10%
   text-align: center
 .stacked-chart .tooltip
-  right: $m*7
+  right: $m
   top: -$m
 
 // Footer

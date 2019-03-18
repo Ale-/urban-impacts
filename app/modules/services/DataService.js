@@ -3,7 +3,7 @@ angular.module('urban_impacts.data_service', [])
 /**
  *   Factory that stores the data visualized in the app
  */
-.factory("DataService", ['$http', 'IndicatorsService', 'CONFIG', function($http, IndicatorsService, CONFIG){
+.factory("DataService", ['$http', 'IndicatorsService', 'CONFIG', 'Langs', function($http, IndicatorsService, CONFIG, Langs){
 
     // Data indicators, encapsulated in another service to decouple it
     var indicators = IndicatorsService.get();
@@ -21,8 +21,8 @@ angular.module('urban_impacts.data_service', [])
                 '3' : { k : 'Urbana',   v: 2, n : 0 },
             },
             'hood' : {
-                '1' : { k : 'Barriada',        v: 1, n : 0 },
-                '2' : { k : 'Casco Histórico', v: 2, n : 0 },
+                '0' : { k : 'Barriada',        v: 1, n : 0 },
+                '1' : { k : 'Casco Histórico', v: 2, n : 0 },
             },
         },
         geodata  : {},
@@ -61,11 +61,11 @@ angular.module('urban_impacts.data_service', [])
                             },
                         },
                         'hood'    : {
-                            '1' : {
+                            '0' : {
                                'items' : 0,
                                'value' : 0,
                             },
-                            '2' : {
+                            '1' : {
                                'items' : 0,
                                'value' : 0,
                             },
@@ -77,11 +77,11 @@ angular.module('urban_impacts.data_service', [])
                     }
                 };
 
-                averages[key].program[ item_program ].value += value;
+                averages[key].program[ item_program ].value += value ? value : 0;
                 averages[key].program[ item_program ].items++;
-                averages[key].hood[ item_hood ].value       += value;
+                averages[key].hood[ item_hood ].value       += value ? value : 0;
                 averages[key].hood[ item_hood ].items++;
-                averages[key].all.value                     += value;
+                averages[key].all.value                     += value ? value : 0;
                 averages[key].all.items++;
             }
         }
@@ -89,8 +89,9 @@ angular.module('urban_impacts.data_service', [])
             var avg = averages[k];
             avg.program['1'].value /= avg.program['1'].items;
             avg.program['2'].value /= avg.program['2'].items;
+            avg.program['3'].value /= avg.program['3'].items;
+            avg.hood['0'].value    /= avg.hood['0'].items;
             avg.hood['1'].value    /= avg.hood['1'].items;
-            avg.hood['2'].value    /= avg.hood['2'].items;
             avg.all.value          /= avg.all.items;
         }
     };
@@ -167,19 +168,27 @@ angular.module('urban_impacts.data_service', [])
                     for(var key in project){
                         if( IndicatorsService.isAveraged(key) ){
                             project[key] = [
-                                { k : project[indicators.project.var], v : parseFloat(project[key]) },
-                                { k : "Media de proyectos en " + service.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase(), v : averages[key].program[ project[ indicators.program.var] ].value },
-                                { k : "Media de proyectos en " + service.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase(), v : averages[key].hood[ project[ indicators.hood.var] ].value },
-                                { k : "Media de las ciudades incluidas en catálogo", v : averages[key].all.value },
+                                {
+                                    k : project[indicators.project.var],
+                                    v : parseFloat(project[key])
+                                },
+                                {
+                                    k : Langs.get_legend_text('b_c', service.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase()),
+                                    v : averages[key].program[ project[ indicators.program.var] ].value
+                                },
+                                {
+                                    k : Langs.get_legend_text('b_c', service.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase()),
+                                    v : averages[key].hood[ project[ indicators.hood.var] ].value
+                                },
+                                {
+                                    k : Langs.get_legend_text('d'),
+                                    v : averages[key].all.value
+                                },
                             ];
                         }
                     }
                  }
-                service.geodata = new L.Shapefile(CONFIG.GEODATA_PATH, {
-                    onEachFeature : function(feature, layer){
-                        layer.bindPopup("<h6>Sección " + feature.properties.SECCION + "</h6>");
-                    }
-                });
+                service.geodata = new L.Shapefile(CONFIG.GEODATA_PATH);
                 return service.data;
             }, function(response){
                 if(CONFIG.DEBUG && !CONFIG.FAKE_DATA)
@@ -198,9 +207,9 @@ angular.module('urban_impacts.data_service', [])
         var project  = this.getProject(id);
         var averages = [
             project[indicators.project.var],
-            "Media de proyectos en " + this.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase(),
-            "Media de proyectos en " + this.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase(),
-            "Media de las ciudades incluidas en catálogo",
+            Langs.get_legend_text('b_c', this.getCategory('program')[project[indicators.program.var]]['k'].toUpperCase()),
+            Langs.get_legend_text('b_c', this.getCategory('hood')[project[indicators.hood.var]]['k'].toLowerCase()),
+            Langs.get_legend_text('d'),
         ];
         for(var i in averages){
             var avg = { 'key' : averages[i] };

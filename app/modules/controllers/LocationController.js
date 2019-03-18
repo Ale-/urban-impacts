@@ -16,7 +16,10 @@ angular.module('urban_impacts.location_controller', [])
     this.budget_keys = IndicatorsService.getBudgetKeys();
     this.categories  = DataService.getCategories();
     this.palette     = CONFIG.PALETTE;
-
+    this.lon         = this.project.Latitud;
+    this.lat         = this.project.Longitud;
+    console.log(this.lat, this.lon);
+    
     /**
      *  get
      *  Gets the value of a variable of the current project

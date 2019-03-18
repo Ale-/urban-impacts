@@ -12,7 +12,7 @@
   margin-top: $m/2
 
 .view-location__name
-  line-height: $m*2
+  line-height: 1.1
   +h(6)
   font-size: .9em
   &:hover
@@ -62,7 +62,6 @@
   .view-location-item__col--neighborhood
     margin-left: $m/2
 
-
   +breakpoint('md')
     padding: 0
   i
@@ -86,8 +85,12 @@
   +breakpoint('md')
     display: inline-block
     float: left
-    padding: 0 $m/2
-    line-height: $m*2
+    padding: $m/2
+    min-height: $m*2
+
+.view-location-item__col--project
+  line-height: 1.1
+  text-transform: uppercase
 
 +breakpoint('md')
   .view-location-item__col--town,

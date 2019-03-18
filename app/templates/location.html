@@ -1,7 +1,9 @@
 <section>
     <!-- Map. @see directives -->
-    <div class="project-map" w="100%" h="500px" city="{{ location.get('town') }}" code="{{ location.town_code }}"></div>
-
+    <div class="project-map" w="100%" h="500px"
+         lat="{{ location.lat }}" lon="{{ location.lon }}"
+         city="{{ location.get('town') }}" code="{{ location.town_code }}">
+    </div>
     <div class="container-fixed project">
         <!-- Project legend -->
         <div class="project-legend">
@@ -82,8 +84,13 @@
                 </div>
                 <div class="bar-chart" data="location.get('bad_housing')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('bad_housing') }}" unit="%"
+                     title="{{ location.getLabel('bad_housing') }}" unit="%" max="75"
                      help="{{ location.getNote('bad_housing') }}">
+                </div>
+                <div class="bar-chart" data="location.get('companies')"
+                     width="100" height="100" left="0" right="0" top="0" bottom="0"
+                     title="{{ location.getLabel('companies') }}" unit="emp./100 hab." max="50"
+                     help="{{ location.getNote('companies') }}">
                 </div>
             </div>
         </div>
@@ -110,12 +117,12 @@
             <div class="project-stats-block__charts">
                 <div class="bar-chart" data="location.get('youth')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('youth') }}" unit="%"
+                     title="{{ location.getLabel('youth') }}" unit="%" max="50"
                      help="{{ location.getNote('youth') }}">
                 </div>
                 <div class="bar-chart" data="location.get('aging')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('aging') }}" unit="%"
+                     title="{{ location.getLabel('aging') }}" unit="%" max="50"
                      help="{{ location.getNote('aging') }}">
                 </div>
                 <div class="bar-chart" data="location.get('foreigners')"
@@ -125,22 +132,22 @@
                 </div>
                 <div class="bar-chart" data="location.get('unemployment')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('unemployment') }}" unit="%"
+                     title="{{ location.getLabel('unemployment') }}" max="50" unit="%"
                      help="{{ location.getNote('unemployment') }}">
                 </div>
                 <div class="bar-chart" data="location.get('illiteracy')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('illiteracy') }}" unit="%"
+                     title="{{ location.getLabel('illiteracy') }}" max="50" unit="%"
                      help="{{ location.getNote('illiteracy') }}">
                 </div>
                 <div class="bar-chart" data="location.get('non_cualified')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('non_cualified') }}" unit="%"
+                     title="{{ location.getLabel('non_cualified') }}" max="50" unit="%"
                      help="{{ location.getNote('non_cualified') }}">
                 </div>
                 <div class="bar-chart" data="location.get('economy_level')"
                      width="100" height="100" left="0" right="0" top="0" bottom="0"
-                     title="{{ location.getLabel('economy_level') }}" unit="%"
+                     title="{{ location.getLabel('economy_level') }}" max="50" unit="%"
                      help="{{ location.getNote('economy_level') }}">
                 </div>
             </div>
@@ -241,7 +248,9 @@
                 <h5>
                     {{ 'Citar de la forma siguiente' | t }}:
                 </h5>
-                <p>Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.</p>
+                <p>
+                    {{ location.getLabel('quote') }}
+                </p>
                 <p><a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">https://www.upo.es/investiga/urbanimpacts</a></p>
             </div>
             <nav class="breadcrumb--footer">

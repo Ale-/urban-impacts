@@ -3,56 +3,56 @@
         <button onclick="history.go(-1)">{{ 'Volver atrás' | t }}</button>
     </nav>
     <h1 class="methodology__title">
-        Catálogo de Proyectos URBAN IMPACTS:<br/>Nota Metodológica
+        {{ methodology.getLabel('catalogue_title') }}
     </h1>
+    <h2 class="methodology__title">
+        {{ methodology.getLabel('catalogue_subtitle') }}
+    </h2>
     <div class="methodology__content">
-        <p>A continuación se detalla la metodología para obtener las variables
-        mostradas en el catálogo de proyectos.</p>
+        <p>
+            {{ methodology.getLabel('catalogue_intro') }}
+        </p>
         <ul class="methodology__section">
             <li class="methodology__indicator" ng-repeat="var in methodology.general_variables">
-                <h5>{{ methodology.getLabel(var) }}</h5>
+                <h5>
+                    {{ methodology.getLabel(var) }}
+                </h5>
                 <p ng-bind-html="methodology.getNote(var)"></p>
             </li>
         </ul>
         <ul class="methodology__section">
-            <h3>Área urbana y composición social</h3>
+            <h3>
+                {{ methodology.getLabel('urban_areas_section_title') }}
+            </h3>
             <p class="methodology__section-intro">
-              La fuente de las variables de área urbana y composición social es
-              el Censo de Población y Vivienda del Instituto Nacional de Estadística
-              en una fecha previa al inicio de los proyectos. Por tanto, se toma
-              el año 1991 para los proyectos URBAN I y el año 2001 para los proyectos
-              URBAN II y URBANA. Los indicadores se refieren al área territorial
-              afectada por el proyecto, que ha sido definida como la agregación
-              de secciones censales, a partir de la información que proporciona
-              la documentación de los proyectos facilitada Dirección general de
-              Fondos Comunitarios del Ministerio de Hacienda.
+                {{ methodology.getLabel('urban_areas_section_title') }}
             </p>
             <li class="methodology__indicator" ng-repeat="var in methodology.urban_variables">
-                <h5>{{ methodology.getLabel(var) }}</h5>
+                <h5>
+                    {{ methodology.getLabel(var) }}
+                </h5>
                 <p ng-bind-html="methodology.getNote(var)"></p>
             </li>
         </ul>
         <ul class="methodology__section">
-            <h3>Estrategia del proyecto</h3>
+            <h3>
+                {{ methodology.getLabel('strategy_section_title') }}
+            </h3>
             <p class="methodology__section-intro">
-              La fuente para los indicadores incluidos en este apartado se ha
-              obtenido a partir del análisis de los documentos de programación
-              y seguimiento de los proyectos facilitados por la Dirección general
-              de Fondos Comunitarios del Ministerio de Hacienda. Para más
-              información acerca los análisis realizados ver Gómez et al., 2018.
+                {{ methodology.getLabel('strategy_section_intro') }}
             </p>
             <li class="methodology__indicator">
-                <h5>{{ methodology.indicators.budget.label_es }}</h5>
-                <p ng-bind-html="methodology.indicators.budget.meth_es"></p>
+                <h5>
+                    {{ methodology.indicators.budget.label_en }}
+                </h5>
+                <p ng-bind-html="methodology.indicators.budget.meth_en"></p>
             </li>
             <li class="methodology__indicator">
-                <h5>Porcentaje de presupuestos por áreas de actuación</h5>
+                <h5>
+                    {{ methodology.getLabel('urban_areas_section_title') }}
+                </h5>
                 <p>
-                    Porcentaje de presupuesto <strong>ejecutado</strong> agrupadas
-                    en cada una de las macro áreas de actuación definidas por
-                    el equipo de investigación a partir de las áreas oficiales
-                    de los proyectos. Estas macro-áreas son: territorio, desarrollo
-                    económico, bienestar, medio ambiente y gobernanza/gestión.
+                    {{ methodology.getLabel('urban_areas_section_intro') }}
                 </p>
                 <ul>
                     <li class="methodology__indicator" ng-repeat="var in methodology.budget_variables">
@@ -62,20 +62,26 @@
                 </ul>
             </li>
             <li class="methodology__indicator">
-                <h5>{{ methodology.indicators.investment.label_es }}</h5>
-                <p ng-bind-html="methodology.indicators.investment.meth_es"></p>
+                <h5>{{ methodology.indicators.investment.label_en }}</h5>
+                <p ng-bind-html="methodology.indicators.investment.meth_en"></p>
             </li>
             <li class="methodology__indicator">
-                <h5>{{ methodology.indicators.diversity.label_es }}</h5>
-                <p ng-bind-html="methodology.indicators.diversity.meth_es"></p>
+                <h5>{{ methodology.indicators.diversity.label_en }}</h5>
+                <p ng-bind-html="methodology.indicators.diversity.meth_en"></p>
             </li>
         </ul>
     </div>
     <div class="view-colophon">
         <div class="citation-notes">
             <h5>{{ 'Citar de la forma siguiente' | t }}:</h5>
-            <p>Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.</p>
-            <p><a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">https://www.upo.es/investiga/urbanimpacts</a></p>
+            <p>
+                {{ methodology.getLabel('quote') }}
+            </p>
+            <p>
+                <a href="https://www.upo.es/investiga/urbanimpacts" target="_blank">
+                    https://www.upo.es/investiga/urbanimpacts
+                </a>
+            </p>
         </div>
     </div>
 </section>
