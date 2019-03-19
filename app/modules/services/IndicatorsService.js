@@ -195,7 +195,7 @@ angular.module('urban_impacts.indicators_service', [])
               'var'      : 'esfuerzo',
               'label_es' : 'Esfuerzo económico',
               'label_en' : 'Effort index',
-              'meth_es'  : 'Coste Elegible total sobre población afectada por el proyecto según su documento de programación.',
+              'meth_es'  : 'Coste elegible total sobre población afectada por el proyecto según su documento de programación.',
               'meth_en'  : 'Total Budget on total resident population in the Project área.',
           },
           'diversity' : {
@@ -232,7 +232,7 @@ angular.module('urban_impacts.indicators_service', [])
           },
           'strategy_section_intro' : {
             'label_es' : 'Unidad: proyectos. Fuente: análisis del contenido de la documentación del proyecto recopilada de la Dirección General de Fondos Comunitarios-Ministerio de Hacienda (Gobierno de España). Más información sobre políticas e índices en Navarro et al., 2019 [http://dx.doi.org/10.12795/anduli/FORTHCOMING]',
-            'label_en' : 'Unit: projects. Source: content analysis of project documentation gathered from  Dirección General de Fondos Comunitarios-Ministerio de Hacienda (Gobierno de España). More information about policy areas and indexes in Navarro, C.J.; Rodríguez-García, M.J. y Gómez, I. (2019): La agenda del desarrollo urbano integral en España (1994-2013): "efecto policy frame" y "efecto barrio" en las Iniciativas URBAN y URBANA, Anduli...',
+            'label_en' : 'Unit: projects. Source: content analysis of project documentation gathered from Dirección General de Fondos Comunitarios-Ministerio de Hacienda (Gobierno de España). More information about policy areas and indexes in Navarro, C.J.; Rodríguez-García, M.J. y Gómez, I. (2019): La agenda del desarrollo urbano integral en España (1994-2013): "efecto policy frame" y "efecto barrio" en las Iniciativas URBAN y URBANA, Anduli...',
           },
           'areas_section_title' : {
             'label_es' : 'Áreas de actuación',

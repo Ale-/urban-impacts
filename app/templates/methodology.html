@@ -5,7 +5,7 @@
     <h1 class="methodology__title">
         {{ methodology.getLabel('catalogue_title') }}
     </h1>
-    <h2 class="methodology__title">
+    <h2 class="methodology__subtitle">
         {{ methodology.getLabel('catalogue_subtitle') }}
     </h2>
     <div class="methodology__content">
@@ -43,9 +43,9 @@
             </p>
             <li class="methodology__indicator">
                 <h5>
-                    {{ methodology.indicators.budget.label_en }}
+                    {{ methodology.getLabel('budget') }}
                 </h5>
-                <p ng-bind-html="methodology.indicators.budget.meth_en"></p>
+                <p ng-bind-html="methodology.getNote('budget')"></p>
             </li>
             <li class="methodology__indicator">
                 <h5>
@@ -54,20 +54,14 @@
                 <p>
                     {{ methodology.getLabel('urban_areas_section_intro') }}
                 </p>
-                <ul>
-                    <li class="methodology__indicator" ng-repeat="var in methodology.budget_variables">
-                        <h5>{{ methodology.getLabel(var) }}</h5>
-                        <p ng-bind-html="methodology.getNote(var)"></p>
-                    </li>
-                </ul>
             </li>
             <li class="methodology__indicator">
-                <h5>{{ methodology.indicators.investment.label_en }}</h5>
-                <p ng-bind-html="methodology.indicators.investment.meth_en"></p>
+                <h5>{{ methodology.getLabel('investment') }}</h5>
+                <p ng-bind-html="methodology.getNote('investment')"></p>
             </li>
             <li class="methodology__indicator">
-                <h5>{{ methodology.indicators.diversity.label_en }}</h5>
-                <p ng-bind-html="methodology.indicators.diversity.meth_en"></p>
+                <h5>{{ methodology.getLabel('diversity') }}</h5>
+                <p ng-bind-html="methodology.getNote('diversity')"></p>
             </li>
         </ul>
     </div>
