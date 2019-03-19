@@ -43,6 +43,7 @@ angular.module('urban_impacts.i18n', [])
             'Ver todo' : 'See all',
             'Barriada' : 'Neighborhood',
             'Casco Histórico' : 'Historic Center',
+            'casco histórico' : 'historic center',
             'URBAN I' : 'URBAN I',
             'URBAN II' : 'URBAN II',
             'URBANA' : 'URBANA',
