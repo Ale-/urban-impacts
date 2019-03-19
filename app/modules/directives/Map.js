@@ -54,7 +54,7 @@ angular.module('urban_impacts.map_directive', [])
                 }
             });
 
-            map.setView([scope.lat, scope.lon], 13);
+            map.setView([scope.lat, scope.lon], 14);
             if(CONFIG.DEBUG){
                 map.setView([37.392570,-5.9966025], 14)
             }
