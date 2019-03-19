@@ -18,7 +18,7 @@ angular.module('urban_impacts.location_controller', [])
     this.palette     = CONFIG.PALETTE;
     this.lon         = this.project.Latitud;
     this.lat         = this.project.Longitud;
-    console.log(this.lat, this.lon);
+    this.lang        = Langs.getLang();
     
     /**
      *  get

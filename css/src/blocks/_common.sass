@@ -21,7 +21,7 @@
 .citation-notes--location,
   background-color: transparent !important
   margin: 0 !important
-  padding-left: 0
+  padding: $m 0 0 0
 abbr
   text-decoration: none
 abbr:hover
@@ -57,4 +57,8 @@ abbr:hover
     margin: $m
   +breakpoint('md')
     float: right
-    margin-top: -$m
+    margin-top: -$m*2
+.page-explanation--en
+  +breakpoint('md')
+    float: right
+    margin-top: -$m/2

@@ -60,6 +60,10 @@ angular.module('urban_impacts.i18n', [])
             { k: 'en', v: 'en'},
         ],
 
+        getLang: function(){
+            return this.lang;
+        },
+
         get: function(text){
             var lang = this.lang;
             return (lang == 'es' || !translations[lang] ) ? text : translations[lang][text];

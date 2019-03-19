@@ -582,7 +582,7 @@ select:hover {
 .citation-notes--location {
   background-color: transparent !important;
   margin: 0 !important;
-  padding-left: 0; }
+  padding: 24px 0 0 0; }
 
 /* line 25, ../src/blocks/_common.sass */
 abbr {
@@ -640,7 +640,13 @@ abbr:hover {
     /* line 47, ../src/blocks/_common.sass */
     .page-explanation {
       float: right;
-      margin-top: -24px; } }
+      margin-top: -48px; } }
+
+@media screen and (min-width: 992px) {
+  /* line 61, ../src/blocks/_common.sass */
+  .page-explanation--en {
+    float: right;
+    margin-top: -12px; } }
 
 /* line 3, ../src/blocks/_methodology.sass */
 .methodology {
