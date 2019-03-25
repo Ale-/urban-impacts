@@ -38,8 +38,8 @@ angular.module('urban_impacts.indicators_service', [])
             'var'      : 'convocatoria',
             'label_es' : 'Programa',
             'label_en' : 'Program',
-            'meth_es'  : 'Programas en los que se desarrollan los proyectos. Se corresponden con las convocatorias del programa URBAN I (1994-1999) o del Programa URBAN II (2000-2006) y URBANA (2007-2012).',
-            'meth_en'  : 'Programs in which the project have been  developed. They correspond to the calls for URBAN I program (1994-1999), URBAN II  (2000-2006), and URBANA (2007-2012) Initiatives.'
+            'meth_es'  : 'Programas en los que se desarrollan los proyectos. Se corresponden con a las convocatorias del programa URBAN I (1994-1999), del Programa URBAN II (2000-2006) y URBANA (2007-2012).  Los casos de Langreo, Avilés-Corvera (URBAN I) y Teruel (URBAN II) no han sido incluidos por no cumplir las características definidas por el Proyecto.',
+            'meth_en'  : 'Programs in which the project have been  developed. They correspond to the calls for URBAN I program (1994-1999), URBAN II  (2000-2006), and URBANA (2007-2012) Initiatives. The cases of Langreo, Avilés-Corvera (URBAN I) and Teruel (URBAN II) have not been included in the catalogue due to the fact that they do not have the characteristics defined by the Project.'
           },
           'hood' : {
             'var'      : 'barrio',
@@ -243,7 +243,7 @@ angular.module('urban_impacts.indicators_service', [])
             'label_en' : 'Weight of policy areas on total Budget. Policy areas has been delimitated in the framework of the URBAN IMPACTS Project. These are: territorial space, economic development, social welfare, environment, and governance/management. For more details about these policy areas and Project strategy see Navarro, Rodrígue-García and Gómez (2019).',
           },
           'quote' : {
-            'label_es' : 'Proyecto Urban Impacts. Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.',
+            'label_es' : 'URBAN IMPACTS (CSO2015-70048-R; MINECO/FEDER), Catálogo de Proyectos. Centro de Sociología y Políticas Locales-Universidad Pablo de Olavide.',
             'label_en' : 'URBAN IMPACTS (CSO2015-70048-R; MINECO/FEDER), Project Catalogue. The Urban Governance Lab. Universidad Pablo de Olavide.',
           },
     };

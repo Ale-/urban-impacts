@@ -3,7 +3,13 @@ angular.module('urban_impacts.view_controller', [])
 /**
  *   Controller that handles the table with different projects
  */
-.controller("ViewController", ['CONFIG', 'data', 'DataService', 'IndicatorsService', 'Langs', function(CONFIG, data, DataService, IndicatorsService, Langs){
+.controller("ViewController", [
+    'CONFIG',
+    'data',
+    'DataService',
+    'IndicatorsService',
+    'Langs',
+    function(CONFIG, data, DataService, IndicatorsService, Langs){
 
     /**
      *  Scope
@@ -17,6 +23,7 @@ angular.module('urban_impacts.view_controller', [])
     this.selected_hood    = '';
     this.selected_program = '';
     this.lang             = Langs.getLang();
+    this.quote            = Langs.get_indicator(this.indicators['quote']);
 
     /**
      *  Sorts projects by a given property
